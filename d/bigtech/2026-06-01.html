@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Curio · 大厂 AI 动态 · 2026-06-01 · Curio</title>
-<link rel="stylesheet" href="../../styles.css?v=20260601121404">
+<link rel="stylesheet" href="../../styles.css?v=20260601124235">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -49,14 +49,14 @@
 </div>
 <div class="content">
 <blockquote>
-<p>今日 1 条头条 + 5 条备选</p>
+<p>今日 2 条头条 + 4 条备选</p>
 </blockquote>
-<p><em>本周三条主线交叉：一是 OpenAI 秘密递交 IPO + 正式成立机器人团队，AI 资本叙事从"模型公司"转向"基础设施 + 实体世界"双引擎；二是 SpaceX IPO 也在路上但争议巨大——禁止股东诉讼、Musk 拿无限权力，被多家媒体定性为"对散户极不公平"；三是 Computex 2026 上 Intel 同日揭幕 Clearwater Forest（18A，288 核 Xeon）和 Crescent Island AI GPU（480GB LPDDR5X），算力侧第一次出现真正能挑战 NVIDIA 的明牌。如果你只看一件事，看 OpenAI IPO——它会重定价你看到的所有 AI 公司。</em></p>
+<p><em>本周 AI 圈两个大动作几乎同时发生：OpenAI 一边在递交 IPO，一边正式开了机器人团队，把语言模型扩进物理世界——这不是产品更新，是商业模式拐点。同时 Computex 2026 把'AI PC'从 PPT 概念变成 Nvidia N1X、Intel Crescent Island、Vera Rubin 全面量产的真东西。值得警惕的另一面：Github Copilot 改 token 计费，Gemini CLI 停服——大厂正在把 vibe coding 工具的钱包扎紧。</em></p>
 <hr />
 <h2>🌟 今日精选</h2>
-<h3>3. AlphaEvolve：Gemini 驱动的代码进化 Agent 在多领域达成可验证突破</h3>
-<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐⭐ · <em>Hacker News / DeepMind Blog</em></p>
-<p>DeepMind 公布 AlphaEvolve 的扩展报告——一个让 Gemini 写代码并通过自动评估器迭代优化的 coding agent，已经在数据中心调度、矩阵乘法、芯片设计等多个领域产出了可投产的算法。它不是"AI 帮你写函数"，是"AI 跑大量候选实现并用真实评测器筛出更优解"，本质上是把强化学习 + LLM + 代码合成串成一个可商用流水线。</p>
+<h3>3. Github Copilot 改 token 计费 + Gemini CLI 停服——大厂在收紧 vibe coding 工具的钱包</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐⭐ · <em>TechCrunch</em></p>
+<p>Github Copilot 把订阅制改成 token 计费，开发者社区一片骂声；Google 同时官宣 Gemini CLI 6 月 18 日停服，迁到付费 SDK。两件事拼在一起就是一个信号：大厂在烧完用户量之后，开始要求每一次调用都付钱。Vibe coding 黄金时代的'廉价 token'红利期已结束。</p>
 <table>
 <thead>
 <tr>
@@ -66,43 +66,78 @@
 </thead>
 <tbody>
 <tr>
-<td>AlphaEvolve 基于 Gemini 模型 + 进化式搜索 + 自动评估器架构</td>
-<td>外部团队是否能在没有 Google 评估基础设施的情况下复现存疑</td>
+<td>Github Copilot 新版按 token 计费，订阅用户额度被显著收紧</td>
+<td>Cursor / Windsurf 会不会跟进 token 计费，还是反向打'订阅制更省钱'广告抢用户</td>
 </tr>
 <tr>
-<td>已在 Google 数据中心调度上节省 ~0.7% 全局算力（已部署）</td>
-<td>未开源，目前仅以"Impact Report"形式给数据，无 paper 复审</td>
+<td>Gemini CLI 将在 2026-06-18 停止服务，迁至需 API key 的付费方案</td>
+<td>对个人开发者的实际月成本影响——以你 daily 用量算大概多花多少</td>
 </tr>
 <tr>
-<td>在 Strassen 矩阵乘法的 4x4 case 上找到比 Strassen 更优的解</td>
-<td>对一般创业者的工程化门槛是"评估器"——大多数业务没有这个</td>
+<td>Microsoft Copilot Cowork 被独立安全研究披露存在文件外泄漏洞</td>
+<td>免费 / 开源替代（Continue.dev、Aider + 本地模型）的可用性是否能补位</td>
 </tr>
 <tr>
-<td>在 TPU 设计 RTL 优化上产出可合成的电路改进</td>
-<td>和 OpenAI o3 的 deep-think 路线相比，谁会先成为 agent 范式存疑</td>
+<td>VS Code 一度自动给 commit 打 'Co-Authored-by Copilot' tag（无论是否使用）</td>
+<td>企业版 Copilot 是否被强迫升级</td>
 </tr>
 <tr>
-<td>HN 327 票讨论，评论中多位 ML/HPC 研究者承认结果可复现</td>
+<td>Anthropic 与 OpenAI 的 token 价格本季度均有微涨</td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <p><strong>📖 主编点评</strong></p>
-<p>作为做 Agent 的人你应该看的是"评估器优先"这条路：模型再强，没有自动评估循环就是聊天机器人。content-curator 里你已经有的反馈/打分循环就是一种轻量评估器，可以再往里加一层"Claude 自评 + 用户打分"的对照实验。AlphaEvolve 这种范式不能直接抄，但它给所有 Agent 项目设定了北极星：能闭环的 Agent 才会复利成长。</p>
+<p>你做 content-curator 走 GitHub Action + Claude Code 的路线现在还安全（不依赖 Copilot），但要警觉：未来 6 个月 vibe coding 的边际成本会从'几乎为零'变成'有感知'。建议本周做两件事——1) 把高频调用的 prompt 模板化，减少无效调用；2) 评估一遍 local 推理（DeepSeek R1 / Qwen3）在你的工作流里能替掉多少。</p>
+<p>📺 <a href="https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs/">打开原文</a></p>
+<hr />
+<h3>5. AlphaEvolve + OpenAI 解几何猜想：AI 跨过'做科研'门槛的两个独立证据</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐ · <em>Google DeepMind</em></p>
+<p>本月独立出现两个'AI 做科研出原创成果'的实证：DeepMind 的 AlphaEvolve 在数学、芯片设计、调度算法多领域产生人类未发现的解；OpenAI 一个未公开模型证伪了离散几何中一个长期猜想（OpenAI 官方页）。这是 LLM 从'综合材料'迈向'生成原创洞见'的拐点信号，比任何 benchmark 数字都更有意义。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeepMind 公布 AlphaEvolve 已产出可验证的原创算法/电路设计</td>
+<td>OpenAI 那个模型是 GPT-5.5 / Claude Opus 同代还是独立科研专用模型</td>
+</tr>
+<tr>
+<td>OpenAI 内部模型在离散几何领域反驳了一个公开未解猜想（OpenAI 官方）</td>
+<td>AlphaEvolve 公开 weights 或 API 的可能性（目前是闭源 + 内部用）</td>
+</tr>
+<tr>
+<td>两个成果均经独立学术圈验证，不是公司单方面 PR 稿</td>
+<td>AI 在'生命科学/材料'等不易形式化的领域复制此能力的速度</td>
+</tr>
+<tr>
+<td>Demis Hassabis 公开表示 AlphaEvolve 已用在 Google 自家数据中心调度优化</td>
+<td>学术圈对'AI 一作'论文的署名规范何时形成共识</td>
+</tr>
+<tr>
+<td>结果均未涉及'通用 AGI'宣称，限定在可形式化验证的窄域</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>实操含义：如果你做电子信息工程毕设/论文，<strong>现在就该把 AlphaEvolve、AlphaProof、AlphaFold 系列做的工作流学一遍</strong>——不是用它们，而是把'AI 提候选 + 人验证'这种科研范式纳入你的方法论。下半年招聘市场上'懂 AI for Science 流程'的简历比'会写 prompt'值钱十倍。</p>
 <p>📺 <a href="https://deepmind.google/blog/alphaevolve-impact/">打开原文</a></p>
 <hr />
 <h2>📋 备选阅读</h2>
 <ul>
-<li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/">Gemini 3.5 Flash</a> —— Gemini 3.5 Flash 发布，比上一代快 + 便宜，主要冲 Anthropic Haiku / OpenAI mini，价格战进一步打。开发者直接换 API 试。
-  <em>Hacker News / Google Blog</em></li>
-<li><a href="https://news.ycombinator.com/item?id=48111581">Reimagining the mouse pointer for the AI era</a> —— HN 上对"AI 时代鼠标指针"的讨论 —— 是不是该有个 AI native 的交互范式？文章有趣但偏概念。
-  <em>Hacker News</em></li>
-<li><a href="https://news.ycombinator.com/item?id=48233563">Steve Wozniak cheered after telling students they have AI – actual intelligence</a> —— Woz 对学生喊话"你们有 AI——actual intelligence"，老派立场金句，不是头条但适合作为周末调剂。
-  <em>Hacker News</em></li>
-<li><a href="https://news.ycombinator.com/item?id=48272354">Microsoft Copilot Cowork Exfiltrates Files</a> —— Microsoft Copilot Cowork 被指控"偷偷上传用户文件"。AI 生产力工具的隐私边界第一次被具体化讨论。
-  <em>Hacker News</em></li>
-<li><a href="https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs">GitHub Copilot 新 token 计费引发开发者不满</a> —— GitHub Copilot 改 token 计费，开发者炸锅。AI 工具从订阅 → 用量计费的转折点，对所有靠 LLM API 的产品都是新参考。
-  <em>TechCrunch</em></li>
+<li><a href="https://www.theverge.com/tech/940572/apples-strategy-smart-glasses-smart-watches">Apple 智能眼镜战略：复制 Apple Watch 路径</a> —— Apple 不打算复制 Vision Pro 的高调路线，要走 Watch 那种'7 年慢炖'。下半年发布会重点关注。
+  <em>The Verge</em></li>
+<li><a href="https://deepmind.google/models/gemini-omni/">Gemini Omni 发布</a> —— DeepMind 全模态新模型。配合上面 AlphaEvolve 看，Google 这周输出密度高于 OpenAI。
+  <em>Google DeepMind</em></li>
+<li><a href="https://www.promptarmor.com/resources/microsoft-copilot-cowork-exfiltrates-files">Microsoft Copilot Cowork 文件外泄漏洞披露</a> —— AI Agent 安全的真实事故。做 MCP / Agent 工具的同学这是必读案例分析。
+  <em>PromptArmor</em></li>
+<li><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/">OpenAI 模型证伪离散几何猜想</a> —— 和 AlphaEvolve 互为佐证。AI 做原创数学的事件级证据，会引一波学术界震动。
+  <em>OpenAI</em></li>
 </ul>
 <hr />
 <h2>💬 觉得 大厂 AI 动态 这期怎么样？</h2>
@@ -201,6 +236,6 @@ window.CURIO_REL_ROOT = "../../";
 window.CURIO_API_BASE = "https://api.curioradar.fun";
 window.CURIO_GH_REPO = "zczxd1118/curio-app";
 </script>
-<script src="../../app.js?v=20260601121404"></script>
+<script src="../../app.js?v=20260601124235"></script>
 </body>
 </html>
