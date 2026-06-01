@@ -395,11 +395,30 @@ async function openSettingsModal() {
   const cur = current || {};
   const cfg = cur.configured ? cur : {};
   modal.innerHTML = `
-    <div class="modal" style="max-width:560px">
-      <h3>⚙️ 设置 · 外接 LLM API（BYOK）</h3>
-      <p style="color:var(--text-soft);font-size:13px">
-        配好后，CI 会调你的 API 评分写 scored.json，<strong>电脑可关机</strong>，无人值守跑全流程。
-        Key 仅存在 Curio 的 KV 中，不会同步到 GitHub。
+    <div class="modal" style="max-width:580px">
+      <h3>⚙️ 设置 · 评分链路</h3>
+
+      <div class="form-row">
+        <label style="margin-bottom:8px">评分模式</label>
+        <div class="mode-pick-row">
+          <div class="mode-pick" data-mode="local">
+            <div class="mode-label">🖥️ 本地（Claude）</div>
+            <div class="mode-desc">WorkBuddy 唤醒 Claude 写评分。免费但电脑要在线。</div>
+          </div>
+          <div class="mode-pick" data-mode="api">
+            <div class="mode-label">☁️ API（无人值守）</div>
+            <div class="mode-desc">CI 调你下面的 API。电脑可关机，需 API key。</div>
+          </div>
+          <div class="mode-pick" data-mode="off">
+            <div class="mode-label">⏸ 暂停</div>
+            <div class="mode-desc">两条都不跑，主页保留最近一期。</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="api-config-section">
+      <p style="color:var(--text-soft);font-size:12px;margin:4px 0 12px 0">
+        ↓ "API 模式"需要在下面配好 key。Key 仅存在 Curio 的 KV，不上 GitHub。
       </p>
 
       <div class="form-row">
@@ -426,9 +445,10 @@ async function openSettingsModal() {
       </div>
 
       <div id="llm-test-result" style="margin:12px 0;padding:10px;border-radius:4px;font-size:13px;display:none"></div>
+      </div>
 
-      <div class="modal-actions" style="display:flex;justify-content:space-between;gap:8px">
-        <button class="btn-secondary" id="llm-clear" style="margin-right:auto">清除配置</button>
+      <div class="modal-actions" style="display:flex;justify-content:space-between;gap:8px;margin-top:16px">
+        <button class="btn-secondary" id="llm-clear" style="margin-right:auto">清除 API</button>
         <button class="btn-secondary" id="llm-cancel">取消</button>
         <button class="btn-secondary" id="llm-test">测试连接</button>
         <button class="btn-primary" id="llm-save">保存</button>
@@ -436,6 +456,25 @@ async function openSettingsModal() {
     </div>
   `;
   document.body.appendChild(modal);
+
+  // 评分模式 radio：默认 local，从 cur 回填
+  const initMode = cur.scoring_mode || 'local';
+  let currentMode = initMode;
+  const updateModeUI = () => {
+    $$('.mode-pick', modal).forEach(p => {
+      p.classList.toggle('active', p.dataset.mode === currentMode);
+    });
+    // api 配置区在 api 模式时高亮，其他模式时变灰但仍可填（提前配好备用）
+    const apiSection = $('#api-config-section', modal);
+    apiSection.style.opacity = currentMode === 'api' ? '1' : '0.55';
+  };
+  $$('.mode-pick', modal).forEach(p => {
+    p.addEventListener('click', () => {
+      currentMode = p.dataset.mode;
+      updateModeUI();
+    });
+  });
+  updateModeUI();
 
   // 回填 provider
   if (cfg.provider) $('#llm-provider', modal).value = cfg.provider;
@@ -488,18 +527,34 @@ async function openSettingsModal() {
     const provider = $('#llm-provider', modal).value;
     const api_key = $('#llm-key', modal).value.trim();
     const model = $('#llm-model', modal).value.trim();
-    if (!api_key) { showResult('err', '请填 API Key'); return; }
+
+    // API 模式时强制要求填 key（除非已有保存的 key）
+    if (currentMode === 'api' && !api_key && !cfg.key_masked) {
+      showResult('err', '选 API 模式时必须填 API Key（或之前已保存）');
+      return;
+    }
+
     showResult('ok', '⏳ 保存中...');
     try {
+      const body = { scoring_mode: currentMode };
+      // 只在 api_key 真填了时才传，避免覆盖已有 key
+      if (api_key) {
+        body.provider = provider;
+        body.api_key = api_key;
+        body.model = model;
+      }
       const r = await fetch(window.CURIO_API_BASE + '/llm/config', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'X-Curio-Owner-Pin': pin },
-        body: JSON.stringify({ provider, api_key, model }),
+        body: JSON.stringify(body),
       });
       const data = await r.json();
       if (data.ok) {
-        showResult('ok', `✅ 已保存。Provider=${data.provider}, Key=${data.key_masked}`);
-        setTimeout(() => modal.remove(), 1200);
+        const modeText = { local: '🖥️ 本地', api: '☁️ API', off: '⏸ 暂停' }[data.scoring_mode] || data.scoring_mode;
+        let msg = `✅ 已保存。模式：${modeText}`;
+        if (data.key_masked) msg += `，API Key=${data.key_masked}`;
+        showResult('ok', msg);
+        setTimeout(() => modal.remove(), 1500);
       } else {
         showResult('err', '❌ ' + (data.error || '保存失败'));
       }
