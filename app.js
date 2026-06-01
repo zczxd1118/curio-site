@@ -258,12 +258,17 @@ function openAddDomainViaIssue() {
 function openGenerateViaIssue(domainId, domainName) {
   // 简单 cooldown 检查（localStorage，软限）
   const key = 'curio:gen:' + domainId;
-  const last = parseInt(localStorage.getItem(key) || '0', 10);
+  let last = parseInt(localStorage.getItem(key) || '0', 10);
   const now = Date.now();
-  const cooldownMs = 6 * 60 * 60 * 1000; // 6 小时
-  if (now - last < cooldownMs) {
-    const remain = Math.ceil((cooldownMs - (now - last)) / 1000 / 60);
-    if (!confirm(`你刚才已经触发过「${domainName}」的生成，建议等 ${remain} 分钟再试。\n\n仍要继续吗？`)) return;
+  const cooldownMs = 30 * 60 * 1000; // 30 分钟（够 Agent 跑一次）
+  // 兜底：last 是脏数据（NaN / 大于现在 / 老到无意义）→ 清掉
+  if (!Number.isFinite(last) || last > now || last < now - 365 * 24 * 60 * 60 * 1000) {
+    localStorage.removeItem(key);
+    last = 0;
+  }
+  if (last > 0 && now - last < cooldownMs) {
+    const remain = Math.max(1, Math.ceil((cooldownMs - (now - last)) / 1000 / 60));
+    if (!confirm(`你刚才已经触发过「${domainName}」的生成，建议等 ${remain} 分钟（让 Agent 跑一次）。\n\n点确定继续提交，点取消放弃。`)) return;
   }
 
   let modal = $('.modal-overlay.gen-issue');
@@ -275,7 +280,7 @@ function openGenerateViaIssue(domainId, domainName) {
       <h3><span class="icon-sm">${UI_ICONS.bolt}</span> 立刻生成「${domainName}」</h3>
       <p>提交后会在 GitHub 上自动开一个 Issue，Curio Agent 每小时检查一次，看到后会立刻为你重跑（抓取 → 打分 → 中文摘要 → 主编点评 → 邮件通知）。</p>
       <p style="background:var(--bg-elev);padding:10px 12px;border-left:3px solid var(--accent);font-size:13px;color:var(--text-soft);margin:12px 0;">
-        <span class="icon-inline">${UI_ICONS.clock}</span> <strong>预计等待：最长 60 分钟</strong>（Agent 调度间隔 1 小时）<br>
+        <span class="icon-inline">${UI_ICONS.clock}</span> <strong>预计等待：5 ~ 60 分钟</strong>（CI 抓取 ~2 分钟 + Agent 每小时调度一次）<br>
         <span class="icon-inline">${UI_ICONS.mail}</span> 留下邮箱跑完会发一封通知<br>
         <span class="icon-inline">${UI_ICONS.list}</span> Agent 收到时会在 GitHub Issue 评论"已收到，开始跑"，完成时再评论结果链接
       </p>
@@ -288,7 +293,7 @@ function openGenerateViaIssue(domainId, domainName) {
         <textarea id="gen-note" placeholder="例：本期想多看一些 AI 硬件的"
           style="width:100%;min-height:60px;background:var(--bg-elev);border:1px solid var(--line);color:var(--text);padding:8px;border-radius:4px;font-family:var(--sans);font-size:13px"></textarea>
       </div>
-      <p style="font-size:12px;color:var(--text-mute)">注：Agent 跑生成有冷却限制（同一领域 6 小时内一次），高峰期会排队。</p>
+      <p style="font-size:12px;color:var(--text-mute)">注：同一领域 30 分钟内只能触发一次（够 Agent 跑完一轮），重复点会弹确认。</p>
       <div class="modal-actions">
         <button class="btn-secondary" id="gen-cancel">取消</button>
         <button class="btn-primary" id="gen-go">提交并跳转 GitHub</button>
@@ -349,6 +354,160 @@ function openGenerateViaIssue(domainId, domainName) {
       toast('已打开 GitHub 提交页，Agent 在下次触发时（最长 1 小时）拉到');
     }
   });
+  modal.classList.add('show');
+}
+
+// 设置 modal：BYOK · 外接 LLM API（配 key 后 CI 调 API 评分，电脑可关机）
+async function openSettingsModal() {
+  // 取 owner pin（首次让用户输入，存 sessionStorage 关浏览器就忘）
+  let pin = sessionStorage.getItem('curio:owner_pin');
+  if (!pin) {
+    pin = window.prompt('请输入 Owner PIN（部署时设的 OWNER_PIN，4-32 位）：');
+    if (!pin) return;
+    pin = pin.trim();
+  }
+
+  // 拉一次现有配置（顺便验证 PIN）
+  let current = null;
+  let pinOk = false;
+  try {
+    const r = await fetch(window.CURIO_API_BASE + '/llm/config', {
+      headers: { 'X-Curio-Owner-Pin': pin },
+    });
+    if (r.status === 401) {
+      sessionStorage.removeItem('curio:owner_pin');
+      alert('PIN 错误，请重试。');
+      return;
+    }
+    pinOk = true;
+    sessionStorage.setItem('curio:owner_pin', pin);
+    current = await r.json();
+  } catch (e) {
+    alert('无法连接 API：' + e.message);
+    return;
+  }
+
+  let modal = $('.modal-overlay.settings');
+  if (modal) modal.remove();
+  modal = document.createElement('div');
+  modal.className = 'modal-overlay settings';
+
+  const cur = current || {};
+  const cfg = cur.configured ? cur : {};
+  modal.innerHTML = `
+    <div class="modal" style="max-width:560px">
+      <h3>⚙️ 设置 · 外接 LLM API（BYOK）</h3>
+      <p style="color:var(--text-soft);font-size:13px">
+        配好后，CI 会调你的 API 评分写 scored.json，<strong>电脑可关机</strong>，无人值守跑全流程。
+        Key 仅存在 Curio 的 KV 中，不会同步到 GitHub。
+      </p>
+
+      <div class="form-row">
+        <label>提供商</label>
+        <select id="llm-provider" style="width:100%;padding:8px;background:var(--bg-elev);border:1px solid var(--line);color:var(--text);border-radius:4px;font-size:13px">
+          <option value="deepseek">DeepSeek（推荐：便宜 + 中文好）</option>
+          <option value="openai">OpenAI</option>
+          <option value="kimi">Kimi（Moonshot）</option>
+          <option value="zhipu">智谱 GLM</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label>API Key</label>
+        <input type="password" id="llm-key" placeholder="${cfg.key_masked ? '当前：' + cfg.key_masked + '（留空保留）' : 'sk-xxxxxxxx...'}"
+          style="width:100%;padding:8px;background:var(--bg-elev);border:1px solid var(--line);color:var(--text);border-radius:4px;font-family:var(--mono);font-size:12px">
+      </div>
+
+      <div class="form-row">
+        <label>模型（留空用默认）</label>
+        <input type="text" id="llm-model" placeholder="deepseek-chat"
+          value="${cfg.model || ''}"
+          style="width:100%;padding:8px;background:var(--bg-elev);border:1px solid var(--line);color:var(--text);border-radius:4px;font-family:var(--mono);font-size:12px">
+      </div>
+
+      <div id="llm-test-result" style="margin:12px 0;padding:10px;border-radius:4px;font-size:13px;display:none"></div>
+
+      <div class="modal-actions" style="display:flex;justify-content:space-between;gap:8px">
+        <button class="btn-secondary" id="llm-clear" style="margin-right:auto">清除配置</button>
+        <button class="btn-secondary" id="llm-cancel">取消</button>
+        <button class="btn-secondary" id="llm-test">测试连接</button>
+        <button class="btn-primary" id="llm-save">保存</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  // 回填 provider
+  if (cfg.provider) $('#llm-provider', modal).value = cfg.provider;
+
+  $('#llm-cancel', modal).addEventListener('click', () => modal.remove());
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+
+  $('#llm-clear', modal).addEventListener('click', async () => {
+    if (!confirm('确定清除已保存的 LLM 配置？清除后 CI 链路会失败。')) return;
+    const r = await fetch(window.CURIO_API_BASE + '/llm/config', {
+      method: 'DELETE',
+      headers: { 'X-Curio-Owner-Pin': pin },
+    });
+    if (r.ok) { alert('已清除'); modal.remove(); }
+    else alert('清除失败：' + r.status);
+  });
+
+  const showResult = (kind, msg) => {
+    const el = $('#llm-test-result', modal);
+    el.style.display = 'block';
+    el.style.background = kind === 'ok' ? 'rgba(34,197,94,0.1)' : 'rgba(239,68,68,0.1)';
+    el.style.border = '1px solid ' + (kind === 'ok' ? 'rgba(34,197,94,0.3)' : 'rgba(239,68,68,0.3)');
+    el.style.color = kind === 'ok' ? '#16a34a' : '#dc2626';
+    el.textContent = msg;
+  };
+
+  $('#llm-test', modal).addEventListener('click', async () => {
+    const provider = $('#llm-provider', modal).value;
+    const api_key = $('#llm-key', modal).value.trim();
+    const model = $('#llm-model', modal).value.trim();
+    showResult('ok', '⏳ 测试中...');
+    try {
+      const r = await fetch(window.CURIO_API_BASE + '/llm/test', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Curio-Owner-Pin': pin },
+        body: JSON.stringify(api_key ? { provider, api_key, model } : {}),
+      });
+      const data = await r.json();
+      if (data.ok) {
+        showResult('ok', `✅ 通了（${data.latency_ms}ms）回复：${data.reply || '(空)'}`);
+      } else {
+        showResult('err', `❌ ${data.status || ''} ${data.error || ''}`.slice(0, 300));
+      }
+    } catch (e) {
+      showResult('err', '请求失败：' + e.message);
+    }
+  });
+
+  $('#llm-save', modal).addEventListener('click', async () => {
+    const provider = $('#llm-provider', modal).value;
+    const api_key = $('#llm-key', modal).value.trim();
+    const model = $('#llm-model', modal).value.trim();
+    if (!api_key) { showResult('err', '请填 API Key'); return; }
+    showResult('ok', '⏳ 保存中...');
+    try {
+      const r = await fetch(window.CURIO_API_BASE + '/llm/config', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Curio-Owner-Pin': pin },
+        body: JSON.stringify({ provider, api_key, model }),
+      });
+      const data = await r.json();
+      if (data.ok) {
+        showResult('ok', `✅ 已保存。Provider=${data.provider}, Key=${data.key_masked}`);
+        setTimeout(() => modal.remove(), 1200);
+      } else {
+        showResult('err', '❌ ' + (data.error || '保存失败'));
+      }
+    } catch (e) {
+      showResult('err', '请求失败：' + e.message);
+    }
+  });
+
   modal.classList.add('show');
 }
 
@@ -886,6 +1045,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 订阅按钮
   const subBtn = $('#subscribe-btn');
   if (subBtn) subBtn.addEventListener('click', openSubscribeModal);
+  // 设置按钮（BYOK · 外接 LLM API）
+  const setBtn = $('#settings-btn');
+  if (setBtn) setBtn.addEventListener('click', openSettingsModal);
 
   // 删除领域按钮
   $$('.del-btn').forEach(btn => {
