@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Curio · AI · 2026-06-01 · Curio</title>
-<link rel="stylesheet" href="../../styles.css?v=20260601124234">
+<link rel="stylesheet" href="../../styles.css?v=20260601125334">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -49,14 +49,14 @@
 </div>
 <div class="content">
 <blockquote>
-<p>今日 1 条头条 + 3 条备选</p>
+<p>今日 1 条头条 + 0 条备选</p>
 </blockquote>
-<p><em>本周三条主线交叉：一是 OpenAI 秘密递交 IPO + 正式成立机器人团队，AI 资本叙事从"模型公司"转向"基础设施 + 实体世界"双引擎；二是 SpaceX IPO 也在路上但争议巨大——禁止股东诉讼、Musk 拿无限权力，被多家媒体定性为"对散户极不公平"；三是 Computex 2026 上 Intel 同日揭幕 Clearwater Forest（18A，288 核 Xeon）和 Crescent Island AI GPU（480GB LPDDR5X），算力侧第一次出现真正能挑战 NVIDIA 的明牌。如果你只看一件事，看 OpenAI IPO——它会重定价你看到的所有 AI 公司。</em></p>
+<p><em>今天有两条产业级信号：一是 OpenAI 计划本周递交 IPO 招股书，叠加 SpaceX 1.8 万亿美元 IPO 倒逼指数规则改写，AI 独角兽集体进入定价时刻；二是 Computex 2026 + GTC Taipei 同步开锣，Nvidia Vera Rubin 量产 + N1X PC 处理器入场，Intel 18A Xeon 6+ 反扑，AI 硬件竞争从 GPU 蔓延到 CPU/PC 全栈。Stratechery 本周新增 Eric Seufert 访谈值得你听完。</em></p>
 <hr />
 <h2>🌟 今日精选</h2>
-<h3>4. Claude Code 国内浪潮：B 站本周 Top 3 教程都在讲它</h3>
-<p><strong>[AI]</strong> · ⭐⭐⭐⭐ · <em>Bilibili</em></p>
-<p>本周 B 站 AI 编程榜被 Claude Code 教程刷屏：BV1e7VA6vEJU（25K 播放）、BV1NYVG6jEKE（10K，5/30 发）、BV1oNVH6xEWS（8K，5/31 发）三条都是"国内直连 + 实战"主题，节奏是"4 月零星教程 → 5 月底集中爆发"。这不是单条新闻，是一个信号：Claude Code 在中文开发者圈完成从"小众玩具"到"基本工具"的心智迁移。</p>
+<h3>5. Claude Code Workflow 隐藏功能首测：脚本化 + 多 Agent 协同的可复用工作流</h3>
+<p><strong>[AI]</strong> · ⭐⭐⭐⭐ · <em>AI超元域</em></p>
+<p>Anthropic 在 Claude Code V2.1.47 / 48 秘密上线了 Workflow 功能，被官方从 Changelog 删除但代码里还在。这条 B 站视频是目前最早的实测，演示三个阶段六种形态：自动生成 JS 脚本、ultrawork 召唤多 Agent 协同、可复用的精准可控工作流。对你这种自己用 Claude Code 写 Agent 项目的人，是把 "一次性 prompt" 升级到 "工程化工作流" 的关键转折。</p>
 <table>
 <thead>
 <tr>
@@ -66,40 +66,27 @@
 </thead>
 <tbody>
 <tr>
-<td>B 站近 7 天 Claude Code 相关新教程 ≥ 6 条，最高 25K+ 播放</td>
-<td>热度是否会随 OpenAI Codex CLI / Cursor Agent 的反扑而消退仍待观察</td>
+<td>Claude Code V2.1.47 / V2.1.48 已包含 Workflow 代码（B 站 5/24 实测）</td>
+<td>因为官方未官宣，API 与稳定性可能在后续小版本被改</td>
 </tr>
 <tr>
-<td>教程主题集中在"国内直连 + 实战开发 + Vibe Coding 范式"</td>
-<td>国内直连方式合规性灰色，长期可持续性存疑</td>
+<td>Workflow 支持脚本化（自动生成 JS）、多 Agent 协同（ultrawork）、可复用模板</td>
+<td>ultrawork 召唤的多 Agent 是否真有 token 节省 / 还是单纯多轮拆解，缺独立 benchmark</td>
 </tr>
 <tr>
-<td>5/26 - 5/31 6 天内出现 3 条 "保姆级" 视频，发布节奏明显加快</td>
-<td>"教程红利期" 通常持续 2-4 个月，6-7 月可能见顶</td>
+<td>Anthropic 官方未在 Changelog 公布，目前是 "半地下" 功能</td>
+<td>对接 Skills 体系后是否会和 WorkBuddy 当前的 skill / subagent 模式撞车，需要你自己 diff</td>
 </tr>
 <tr>
-<td>评论区高频问题已从"怎么装"过渡到"如何工程化（Spec 模式 / 多 Agent / 测试驱动）"</td>
-<td>中文开发者真正的工程化使用率仍未有数据</td>
-</tr>
-<tr>
-<td>Anthropic 官方未在国内做任何运营，纯靠开发者社区自发扩散</td>
+<td>另一条相关视频：Simon 林《Claude Code 多 Agent 模式实战》验证 subagents + 独立 agent 两种模式（4/23）</td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <p><strong>📖 主编点评</strong></p>
-<p>你做 content-curator 时如果有用 Claude Code，可以系统记录"什么场景必须用、什么时候 Cursor 更顺手"的对比——这是当前中文圈极度稀缺的内容（你已有的项目笔记可以直接转博客）。简历层面，把 Claude Code + Skills + Subagent 的实战经验写进"Vibe Coding 实战" 这个 tag 下，今年校招会非常吃香。趋势上：先用，再写，下半年别人开始抄你。</p>
-<p>📺 <a href="https://www.bilibili.com/video/BV1NYVG6jEKE">打开原文</a></p>
+<p>你 content-curator 已经在用 Skills + automation，这个 Workflow 功能正好补上 "多步任务可复用" 的缺口。建议这周抽 30 分钟把视频里的 ultrawork demo 跑一遍，然后对照你现有的 cli_generate prepare_unified → finalize_unified 这条链路，看能不能把脚本逻辑搬到 Claude Code 里——如果能，每周一的 daily automation 就可以变成 Claude 直接驱动。</p>
+<p>📺 <a href="http://www.bilibili.com/video/av116629702777532">打开原文</a></p>
 <hr />
-<h2>📋 备选阅读</h2>
-<ul>
-<li><a href="https://www.bilibili.com/video/BV1kX546QEjG">保姆级 Claude Code 速成教程</a> —— B 站 74 万播放的 Claude Code 教程，对国内入门者最友好。和头条 Claude Code 浪潮同主题，去重放备选。
-  <em>Bilibili</em></li>
-<li><a href="https://www.bilibili.com/video/BV1ZjDYB7Eam">从 0 到 1：6 小时掌握 Vibe Coding（Claude Code + AI）</a> —— 5 万播放的 Vibe Coding 综合教程，从概念到工程实践覆盖较全，适合作为入门后第二步学习路径。
-  <em>Bilibili</em></li>
-<li><a href="https://www.bilibili.com/video/BV11urFBrEc4">告别 Vibe Coding！用 Superpowers 让 Claude Code 写工程级代码</a> —— 13 万播放，反 Vibe Coding 的工程主义视角——TDD + Spec 模式做出可发布代码。和你简历主题契合度极高。
-  <em>Bilibili</em></li>
-</ul>
 <hr />
 <h2>💬 觉得 AI 这期怎么样？</h2>
 <p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
@@ -206,6 +193,6 @@ window.CURIO_REL_ROOT = "../../";
 window.CURIO_API_BASE = "https://api.curioradar.fun";
 window.CURIO_GH_REPO = "zczxd1118/curio-app";
 </script>
-<script src="../../app.js?v=20260601124234"></script>
+<script src="../../app.js?v=20260601125334"></script>
 </body>
 </html>
