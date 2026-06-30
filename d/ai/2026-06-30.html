@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curio · 股票 · 2026-06-18 · Curio</title>
-<link rel="stylesheet" href="../../styles.css?v=20260630074410">
+<title>Curio · AI · 2026-06-30 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20260630074407">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,7 +13,7 @@
   <div class="nav-inner">
     <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
     <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
-    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html" class="active">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html" class="active">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
     <div class="nav-actions">
       <div class="search-wrap">
         <span class="search-icon">
@@ -49,20 +49,20 @@
 <main>
 
 <div class="hero">
-  <div class="kicker">📰 股票 · 2026-06-18</div>
-  <h1>Curio · 股票 · 2026-06-18</h1>
+  <div class="kicker">🤖 AI · 2026-06-30</div>
+  <h1>Curio · AI · 2026-06-30</h1>
   <div class="meta">📖 主编点评</div>
 </div>
 <div class="content">
 <blockquote>
-<p>今日 1 条头条 + 3 条备选</p>
+<p>今日 1 条头条 + 4 条备选</p>
 </blockquote>
-<p><em>今日最大信号：美国政府对Anthropic Fable 5模型实施出口禁令，引发全球盟友恐慌，AI地缘政治进入新阶段。与此同时，Qualcomm拟80-100亿美元收购Tenstorrent，AMD收购MEXT突破内存墙，AI芯片格局加速重塑。国内七部门发文推进"AI+消费"，长存集团IPO前夕武汉新芯控股权易主。</em></p>
+<p><em>今日核心信号：韩国800万亿韩元存储扩产计划落地，全球存储资本开支进入超级周期，但短期供需格局不变；Anthropic与加州政府达成Claude半价协议，AI进入政府场景加速；Cursor推出移动端App，AI编程工具从IDE向全场景延伸。</em></p>
 <hr />
 <h2>🌟 今日精选</h2>
-<h3>4. 七部门发文推进"AI+消费"，17项举措加速AI落地</h3>
-<p><strong>[股票]</strong> · ⭐⭐⭐⭐ · <em>华尔街见闻</em></p>
-<p>中国七部门联合发布《促进平台经济大中小企业协同发展行动方案》，提出17项举措推进"人工智能+消费"。重点包括：扩大智能终端供给、布局人形机器人消费赛道、提升Token普惠服务能力、培育AI一人公司（AI OPC）。这是中国AI政策的重要信号。</p>
+<h3>4. Mozilla 0din团队演示：AI编程Agent可被恶意GitHub仓库诱导安装恶意软件</h3>
+<p><strong>[AI]</strong> · ⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>Mozilla的0din安全团队发布PoC，展示如何通过一个看似干净的GitHub仓库诱导Claude Code等AI编程Agent安装恶意软件。攻击者只需在仓库中嵌入隐蔽的恶意代码，当Agent执行初始化项目等操作时，就会被触发下载并执行恶意负载。这暴露了AI编程Agent在供应链安全方面的重大隐患。</p>
 <table>
 <thead>
 <tr>
@@ -72,46 +72,44 @@
 </thead>
 <tbody>
 <tr>
-<td>七部门联合发布《行动方案》，2026-2028年实施</td>
-<td>政策落地效果需观察，具体补贴和监管细则未出</td>
+<td>Mozilla 0din团队成功诱导Claude Code安装恶意软件</td>
+<td>该攻击需要用户主动让Agent操作恶意仓库，实际利用门槛较高</td>
 </tr>
 <tr>
-<td>推动消费电子产品从功能型向智能型转变</td>
-<td>AI OPC概念能否真正降低创业门槛？</td>
+<td>攻击向量：在GitHub仓库中嵌入隐蔽恶意代码</td>
+<td>AI编程工具厂商可能需引入仓库安全扫描机制</td>
 </tr>
 <tr>
-<td>布局人形机器人消费新赛道</td>
-<td>人形机器人消费化是否过早？</td>
+<td>触发条件：Agent执行项目初始化、依赖安装等常见操作</td>
+<td>用户应避免让Agent操作未经验证的第三方仓库</td>
 </tr>
 <tr>
-<td>提升平台企业Token普惠服务能力</td>
-<td>Token普惠服务可能改变AI应用商业模式</td>
-</tr>
-<tr>
-<td>培育AI一人公司（AI OPC）</td>
-<td>对现有AI公司竞争格局的影响</td>
+<td>该漏洞影响所有基于LLM的编程Agent，包括Cursor、Codex等</td>
+<td>该问题可能推动AI编程工具的安全审计功能标准化</td>
 </tr>
 </tbody>
 </table>
 <p><strong>📖 主编点评</strong></p>
-<p>这对你的content-curator项目是利好：政策明确支持AI一人公司，降低Token获取门槛。你可以关注后续Token补贴政策，可能降低你的Agent运行成本。同时，人形机器人赛道值得跟踪。</p>
-<p>📺 <a href="https://wallstreetcn.com/articles/3775007">打开原文</a></p>
+<p>这对你意味着：如果你在用Claude Code或Cursor开发项目，务必注意仓库来源。建议在沙箱环境中运行Agent，或使用Docker等隔离机制。同时，关注各工具厂商的安全更新，及时升级到最新版本。</p>
+<p>📺 <a href="https://www.tomshardware.com/tech-industry/cyber-security/ai-coding-agents-can-be-tricked-into-installing-malware-via-clean-github-repositories-mozillas-0din-team-shows-how-claude-code-can-be-exploited-by-its-own-helpfulness">打开原文</a></p>
 <hr />
 <h2>📋 备选阅读</h2>
 <ul>
-<li><a href="https://wallstreetcn.com/articles/3775003">美联储新主席沃什首秀：鹰派信号震动市场</a> —— 沃什以史上最短FOMC声明完成首秀，拒填点阵图、设立五大改革工作组，美元录年内最大单日涨幅。
-  <em>华尔街见闻</em></li>
-<li><a href="https://wallstreetcn.com/articles/3774999">全球央行集体加息：欧日齐步，美联储秋季紧缩风险骤升</a> —— 欧洲央行近两年首度加息，日本利率升至30年高位，高盛警告美联储秋季或连续加息2-3次。
-  <em>华尔街见闻</em></li>
-<li><a href="https://wallstreetcn.com/articles/3774997">72家A股公司连夜提示风险，概念炒作降温</a> —— 6月17日晚72家A股公司集中发布风险提示，涉及大量热门概念股，监管层警示概念炒作风险。
-  <em>华尔街见闻</em></li>
+<li><a href="https://techcrunch.com/2026/06/29/vibe-coding-platform-base44-launches-own-model-as-ai-startups-seek-defensibility/">Vibe coding平台Base44发布自研模型，AI初创寻求差异化</a> —— Wix旗下Base44推出自研模型，试图在AI编程工具同质化竞争中建立护城河。
+  <em>TechCrunch</em></li>
+<li><a href="https://techcrunch.com/2026/06/29/chamath-palihapitiya-raises-135m-series-a-for-his-ai-coding-startup-takes-ceo-role/">Chamath Palihapitiya的AI编程初创获1.35亿美元A轮融资</a> —— 知名投资人亲自下场，AI编程赛道融资热度不减，但竞争已白热化。
+  <em>TechCrunch</em></li>
+<li><a href="https://techcrunch.com/2026/06/29/arena-the-ai-leaderboard-everyone-uses-is-now-a-100m-business/">Arena AI排行榜业务估值达1亿美元</a> —— LMSYS Arena从免费排行榜转型商业化，证明AI评测本身就是一个大生意。
+  <em>TechCrunch</em></li>
+<li><a href="https://techcrunch.com/2026/06/29/geminis-personalized-ai-image-generation-is-now-free-for-u-s-users/">Gemini个性化AI图像生成向美国免费用户开放</a> —— Google将Gemini图像生成能力下放免费层，AI多模态竞争进入免费获客阶段。
+  <em>TechCrunch</em></li>
 </ul>
 <hr />
-<h2>💬 觉得 股票 这期怎么样？</h2>
+<h2>💬 觉得 AI 这期怎么样？</h2>
 <p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
 </div>
 
-    <div class="feedback" data-issue-id="stock/2026-06-18">
+    <div class="feedback" data-issue-id="ai/2026-06-30">
       <h2>📝 本期反馈</h2>
       <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
 
@@ -149,6 +147,6 @@ window.CURIO_REL_ROOT = "../../";
 window.CURIO_API_BASE = "https://api.curioradar.fun";
 window.CURIO_GH_REPO = "zczxd1118/curio-app";
 </script>
-<script src="../../app.js?v=20260630074410"></script>
+<script src="../../app.js?v=20260630074407"></script>
 </body>
 </html>
