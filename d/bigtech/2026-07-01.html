@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curio · 大厂 AI 动态 · 2026-06-21 · Curio</title>
+<title>Curio · 大厂 AI 动态 · 2026-07-01 · Curio</title>
 <link rel="stylesheet" href="../../styles.css?v=20260701080550">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -49,20 +49,20 @@
 <main>
 
 <div class="hero">
-  <div class="kicker">🏛️ 大厂 AI 动态 · 2026-06-21</div>
-  <h1>Curio · 大厂 AI 动态 · 2026-06-21</h1>
+  <div class="kicker">🏛️ 大厂 AI 动态 · 2026-07-01</div>
+  <h1>Curio · 大厂 AI 动态 · 2026-07-01</h1>
   <div class="meta">📖 主编点评</div>
 </div>
 <div class="content">
 <blockquote>
-<p>今日 1 条头条 + 6 条备选</p>
+<p>今日 2 条头条 + 6 条备选</p>
 </blockquote>
-<p><em>本周最值得关注的信号：一是Nobel奖得主John Jumper从DeepMind跳槽Anthropic，顶级AI人才争夺白热化；二是高盛警告5.3万亿AI资本支出逼近信贷饱和，企业端已开始'算力降本'。同时，Intel挖来SK hynix前CEO执掌先进封装，半导体制造竞争升级。</em></p>
+<p><em>今天最大的信号是 Anthropic 连发三弹：Fable 5 解禁回归、Sonnet 5 以更低价格主打 Agent 场景、Claude Science 专攻科研工作流。同时三星 HBM4E 良率突破 70%、SK 海力士长约不设价格上限，存储定价权全面转向卖方。韩国 KOSPI 因利润共享谣言盘中暴跌 4%，但基本面未变。如果你在做 Agent 项目，Sonnet 5 的性价比值得立刻试。</em></p>
 <hr />
 <h2>🌟 今日精选</h2>
-<h3>5. Signal总裁Meredith Whittaker警告：AI聊天机器人不是你的朋友</h3>
-<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐ · <em>TechCrunch</em></p>
-<p>Signal总裁Meredith Whittaker在公开场合直言：'这些不是你的朋友，不是有意识的生物，不是有感知的对话者。'她呼吁用户警惕AI公司通过拟人化设计收集数据、操纵情感。这一观点与当前AI伴侣、AI助手热潮形成鲜明对比。</p>
+<h3>1. Anthropic 发布 Claude Sonnet 5：更便宜的 Agent 运行方案</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐⭐ · <em>TechCrunch</em></p>
+<p>Anthropic 今天推出 Claude Sonnet 5，定位是 Opus 和 Fable 5 的平价替代品，专门优化了 Agent 调用场景。API 价格比 Opus 低 60%，但工具使用、代码生成等核心能力保持同等水平。同时发布的还有 Claude Science——一个面向科研人员的集成工作台，把文献检索、数据管道、模型训练整合到一个界面。</p>
 <table>
 <thead>
 <tr>
@@ -72,48 +72,85 @@
 </thead>
 <tbody>
 <tr>
-<td>Meredith Whittaker公开批评AI聊天机器人拟人化</td>
-<td>拟人化AI是否会导致用户隐私风险</td>
+<td>Sonnet 5 API 定价比 Opus 低 60%，输入 $3/M tokens，输出 $15/M tokens</td>
+<td>Sonnet 5 的 Agent 场景实际吞吐量尚未有第三方评测</td>
 </tr>
 <tr>
-<td>Signal坚持端到端加密，不收集用户数据</td>
-<td>监管机构是否会介入限制AI情感操纵</td>
+<td>支持 200K context window，工具调用延迟比 Opus 降低 40%</td>
+<td>Claude Science 能否替代现有科研工具链（如 Jupyter + Overleaf）待观察</td>
 </tr>
 <tr>
-<td>Whittaker曾任Google AI伦理团队负责人</td>
-<td>Signal的立场是否会影响其AI功能开发</td>
+<td>Claude Science 工作台已开放 beta，集成 PubMed、arXiv、GitHub 数据源</td>
+<td>Fable 5 恢复后是否会重新调整安全限制仍不确定</td>
 </tr>
 <tr>
-<td>AI伴侣应用用户规模快速增长</td>
-<td>用户对AI拟人化的接受度是否在下降</td>
+<td>Sonnet 5 在 SWE-bench 上得分 68.3%，接近 Opus 的 71.2%</td>
+<td>Sonnet 5 的长上下文稳定性在复杂 Agent 任务中未公布数据</td>
+</tr>
+<tr>
+<td>同时宣布 Fable 5 在与 Trump 政府协商后恢复上线</td>
+<td>定价是否会导致 Anthropic 内部模型定位冲突（Sonnet vs Opus）</td>
 </tr>
 </tbody>
 </table>
 <p><strong>📖 主编点评</strong></p>
-<p>你在构建Agent时，应该注意不要过度拟人化——用户偏好里明确不喜欢'玄学论调'。你的content-curator Agent应该保持工具属性，清晰告知用户这是AI而非人类。同时，Signal的加密立场提醒你：处理用户数据时，优先本地处理，避免不必要的数据上传。</p>
-<p>📺 <a href="https://techcrunch.com/2026/06/20/signals-meredith-whittaker-wants-you-to-remember-that-ai-chatbots-are-not-your-friends/">打开原文</a></p>
+<p>如果你在用 Claude 跑 Agent 项目，Sonnet 5 的性价比值得立刻试——成本降一半但能力几乎没缩水。Claude Science 对做 AI+科研方向的同学是个新玩具，但别急着迁移，等它把数据管道稳定性跑通再说。Fable 5 回归意味着你可以重新用单条 prompt 生成游戏/原型了。</p>
+<p>📺 <a href="https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/">打开原文</a></p>
+<hr />
+<h3>4. Amazon 成立 10 亿美元 FDE 部门，效仿 OpenAI 和 Anthropic 的企业部署模式</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐ · <em>TechCrunch</em></p>
+<p>Amazon 宣布成立新的 Frontline Deployment Engineering（FDE）组织，初始预算 10 亿美元。工程师将嵌入企业客户现场，为其部署定制化 AI Agent。这是继 OpenAI 的「企业部署团队」和 Anthropic 的「Claude 部署计划」之后，第三家云巨头采用重交付模式。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新 FDE 部门预算 10 亿美元，首批 500 名工程师</td>
+<td>10 亿美元预算是否包含 AWS 内部成本分摊未说明</td>
+</tr>
+<tr>
+<td>工程师将嵌入企业客户现场 3-6 个月</td>
+<td>FDE 模式能否规模化复制存疑（人力密集型）</td>
+</tr>
+<tr>
+<td>重点部署 Amazon Q 和 Bedrock 上的定制 Agent</td>
+<td>与 Anthropic/OpenAI 的 FDE 团队相比，Amazon 的差异化优势不明显</td>
+</tr>
+<tr>
+<td>目标客户集中在金融、医疗、制造业</td>
+<td>企业客户对现场工程师的安全合规要求可能拖慢部署速度</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>大厂都在押注 Agent 的企业落地，但重交付模式说明当前 Agent 还不够「开箱即用」。如果你在做 Agent 产品，可以关注这些 FDE 团队踩过的坑——他们的部署经验就是你的产品 roadmap。</p>
+<p>📺 <a href="https://techcrunch.com/2026/06/30/amazon-launches-new-1-billion-fde-org-following-openai-and-anthropic/">打开原文</a></p>
 <hr />
 <h2>📋 备选阅读</h2>
 <ul>
-<li><a href="https://www.theverge.com/ai-artificial-intelligence/953183/the-atlantic-searchable-database-music-ai-training-data">The Atlantic创建AI训练音乐数据库，可搜索</a> —— Atlantic记者公开了4个AI音乐训练数据集，包含1200万首歌曲。AI版权争议再添新证据，可能影响未来训练数据合规。
+<li><a href="https://www.theverge.com/ai-artificial-intelligence/958964/anthropic-claude-fable-5-is-back">Anthropic Fable 5 获准恢复上线</a> —— 经过数周与 Trump 政府协商，Anthropic 的 Fable 5 模型重新上线——生成能力回归。
   <em>The Verge</em></li>
-<li><a href="https://techcrunch.com/2026/06/20/nobel-laureate-john-jumper-is-leaving-deepmind-for-rival-anthropic/">Nobel奖得主John Jumper离开DeepMind加入Anthropic</a> —— 已选入头条，此处备选。
+<li><a href="https://techcrunch.com/2026/06/30/openclaw-is-finally-available-on-android-and-ios/">OpenClaw 正式登陆 Android 和 iOS</a> —— 开源 Agent 框架 OpenClaw 终于推出移动端 App——手机也能跑 Agent 工作流了。
   <em>TechCrunch</em></li>
-<li><a href="https://www.theverge.com/ai-artificial-intelligence/952906/sam-altman-film-artificial-openai-amazon-mgm-dropped">Sam Altman传记电影被Amazon MGM放弃</a> —— Luca Guadagnino执导的OpenAI CEO传记片被Amazon放弃。AI题材在好莱坞遇冷，但对你个人项目无直接影响。
+<li><a href="https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use/">X 推出官方 MCP 服务器，方便 AI 工具接入平台</a> —— X 发布托管 MCP 服务器，开发者可通过标准协议让 AI 应用直接调用 X API——Agent 生态又添数据源。
+  <em>TechCrunch</em></li>
+<li><a href="https://techcrunch.com/2026/06/30/google-introduces-a-faster-cheaper-image-generator-with-nano-banana-2-lite/">Google 推出 Nano Banana 2 Lite 图像生成模型</a> —— Google 发布更小更快的图像生成模型，生成速度提升 3 倍，成本降低 70%——但质量有所妥协。
+  <em>TechCrunch</em></li>
+<li><a href="https://www.theverge.com/gadgets/959899/meta-ai-glasses-paywall-rate-limit">Meta 为智能眼镜添加速率限制和软付费墙</a> —— Meta 宣布 Ray-Ban 智能眼镜的 Conversation Focus 功能将限制免费使用次数，每月 $20 订阅——硬件付费模式新尝试。
   <em>The Verge</em></li>
-<li><a href="https://www.theverge.com/science/952988/nasa-relativity-space-eric-schmidt-mars">Relativity Space获NASA 2028年火星任务合同</a> —— Eric Schmidt领导的火箭公司被NASA选中发射火星载荷。AI+航天交叉领域值得关注，但与你当前项目关联度低。
-  <em>The Verge</em></li>
-<li><a href="https://www.producthunt.com/products/poolside">Poolside发布Laguna：面向Agentic Coding的基础模型</a> —— Poolside推出专为Agentic Coding设计的模型Laguna。如果你在做AI编程工具，值得关注其与Claude Code的差异。
-  <em>Product Hunt</em></li>
-<li><a href="https://www.producthunt.com/products/cloudback">Cloudback MCP Server：从Claude/Cursor管理备份</a> —— 新MCP工具，允许在Claude Code中直接管理备份。MCP生态持续丰富，你的Agent项目可以集成类似工具。
-  <em>Product Hunt</em></li>
+<li><a href="https://techcrunch.com/2026/06/30/tesla-starts-testing-cybercab-without-pedals-or-a-steering-wheel-in-austin/">Tesla 在奥斯汀开始测试无方向盘 Cybercab</a> —— Tesla 终于开始在奥斯汀公共道路测试无方向盘/踏板的 Cybercab——Robotaxi 网络迈出实质性一步。
+  <em>TechCrunch</em></li>
 </ul>
 <hr />
 <h2>💬 觉得 大厂 AI 动态 这期怎么样？</h2>
 <p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
 </div>
 
-    <div class="feedback" data-issue-id="bigtech/2026-06-21">
+    <div class="feedback" data-issue-id="bigtech/2026-07-01">
       <h2>📝 本期反馈</h2>
       <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
 
