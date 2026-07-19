@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI · 2026-07-19 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20260719062424">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html" class="active">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🤖 AI · 2026-07-19</div>
+  <h1>Curio · AI · 2026-07-19</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 3 条备选</p>
+</blockquote>
+<p><em>本周最值得关注的信号：Kimi K3 以 2.8 万亿参数成为最大开源模型，在编程基准上超越 Claude Fable 5，同时 DeepSeek V4 满血版即将发布，中国 AI 模型从价格战转向技术定价权。另一边，SpaceX 股价跌破发行价，空头获利 40 亿美元，AI 算力投资泡沫争议再起。半导体方面，ASML 计划提高 EUV 价格，TSMC A14 工艺进展超预期。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. Moonshot AI 发布 2.8 万亿参数 Kimi K3，开源模型首次在编程基准上超越 Claude Fable 5</h3>
+<p><strong>[AI]</strong> · ⭐⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>Moonshot AI 于 7 月 17 日发布 Kimi K3，2.8 万亿参数、100 万 token 上下文，在 Frontend Code Arena 上超越 Claude Fable 5 和 GPT-5.6。这是中国公司绕开美国算力限制后交出的最大开源模型，API 定价 2.3 美元/百万 token，创国内新高。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kimi K3 拥有 2.8 万亿参数，100 万 token 上下文窗口</td>
+<td>2.8T 参数是否带来推理成本过高，实际部署性价比存疑</td>
+</tr>
+<tr>
+<td>在 Frontend Code Arena 编程基准上超越 Claude Fable 5 和 GPT-5.6</td>
+<td>编程基准领先能否泛化到其他复杂任务（如数学、推理）</td>
+</tr>
+<tr>
+<td>API 定价每百万 token 2.3 美元，为国内模型最高定价</td>
+<td>高定价策略能否持续，还是短期营销手段</td>
+</tr>
+<tr>
+<td>Moonshot AI 称其为“世界首个开放 3T 级系统”</td>
+<td>开源程度：是否完全开放权重，还是部分开源</td>
+</tr>
+<tr>
+<td>已可接入 Claude Code 等工具使用</td>
+<td>对国内其他模型（DeepSeek、智谱）的竞争压力评估</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>如果你在做 Agent 或编程工具，Kimi K3 值得立刻接入测试。2.8T 参数意味着更强的代码理解和生成能力，尤其适合复杂多文件项目。但注意 API 成本，建议先用小量测试对比 Claude Fable 5 和 GPT-5.6 在你的具体场景下的表现。同时关注 DeepSeek V4 明天发布后的定价策略，可能引发新一轮价格战。</p>
+<p>📺 <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/moonshot-releases-2-8-trillion-parameter-kimi-k3">打开原文</a></p>
+<hr />
+<h3>5. DeepSeek V4 满血版最快明日发布，性能直追 GPT-5.6，首推峰谷计费</h3>
+<p><strong>[AI]</strong> · ⭐⭐⭐⭐ · <em>华尔街见闻</em></p>
+<p>据华尔街见闻 7 月 19 日报道，DeepSeek V4 满血版最快明天发布。新版性能直追 GPT-5.6，并首次引入“峰谷计费”模式，价格仅为巨头的七分之一。这将是继 Kimi K3 之后中国 AI 模型的又一重磅发布。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeepSeek V4 满血版最快 7 月 20 日发布</td>
+<td>满血版具体参数规模和架构细节</td>
+</tr>
+<tr>
+<td>性能目标直追 GPT-5.6</td>
+<td>实际性能是否真能对标 GPT-5.6</td>
+</tr>
+<tr>
+<td>首次引入峰谷计费模式</td>
+<td>峰谷计费的具体规则和对用户成本的影响</td>
+</tr>
+<tr>
+<td>定价仅为 OpenAI 等巨头的七分之一</td>
+<td>对国内其他模型（Kimi K3、智谱）的竞争冲击</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>如果你在用 Claude Code 或 Codex，明天 DeepSeek V4 发布后值得立即测试。峰谷计费可能大幅降低你的 API 成本，尤其适合批量推理和夜间任务。建议提前准备好测试用例，重点关注代码生成和 Agent 任务场景。同时关注其是否支持 MCP 协议，这将决定能否无缝替换现有工具链。</p>
+<p>📺 <a href="https://wallstreetcn.com/articles/3777339">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.bilibili.com/video/av116929612221157">GPT-5.6 在 Claude Code 中表现远超 Codex</a> —— Theo 实测显示 GPT-5.6 Sol 版本在 Claude Code 中编程体验远超 Codex，值得关注模型选择对工具链的影响。
+  <em>浮生千山路w</em></li>
+<li><a href="https://www.tomshardware.com/software/linux/linus-torvalds-rebukes-anti-ai-stances-in-the-linux-kernel-code-review-process-says-linux-is-not-one-of-those-anti-ai-projects-creator-embraces-ai-as-just-a-tool-and-clearly-a-useful-one">Linus Torvalds 表态 Linux 内核不排斥 AI 辅助代码审查</a> —— Linus 明确支持 AI 工具，这对 AI 编程工具的合法性是重要信号，尤其对开源项目贡献者。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/">NotebookLM 更名为 Gemini Notebook</a> —— Google 将 NotebookLM 整合进 Gemini 品牌，可能意味着更深度的 AI 笔记功能，值得个人知识管理用户关注。
+  <em>Google Blog</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="ai/2026-07-19">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-07-19 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20260719062424"></script>
+</body>
+</html>
