@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 股票 · 2026-07-30 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20260730062126">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html" class="active">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">📰 股票 · 2026-07-30</div>
+  <h1>Curio · 股票 · 2026-07-30</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 3 条备选</p>
+</blockquote>
+<p><em>今日核心信号：AI 算力泡沫担忧引发全球芯片股剧烈抛售，韩股两日熔断，但微软、三星等巨头财报证明 AI 需求真实且供不应求。同时，大厂全面押注企业 Agent 入口，字节跳动重组飞书并入豆包，腾讯阿里跟进，企业 AI 竞争进入决战阶段。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. 微软财报超预期：Azure 增速 43%，资本开支 414 亿创新高，盘后涨 8%</h3>
+<p><strong>[股票]</strong> · ⭐⭐⭐⭐⭐ · <em>华尔街见闻</em></p>
+<p>微软 FY2026 Q4 总营收 900 亿美元全面超预期，Azure 云计算收入同比增速 43%，其中 AI 贡献 13 个百分点。资本开支 414 亿美元再创新高，但市场奖励其正现金流——证明 AI 投入能转化为实际收入，而非无底洞。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>总营收 900 亿美元，超预期</td>
+<td>资本开支高增速能否持续</td>
+</tr>
+<tr>
+<td>Azure 收入同比增 43%，AI 贡献 13 个百分点</td>
+<td>AI 收入占比是否足以支撑估值</td>
+</tr>
+<tr>
+<td>资本开支 414 亿美元，创历史新高</td>
+<td>Copilot 等产品商业化进度</td>
+</tr>
+<tr>
+<td>调整折旧年限释放隐形成长性</td>
+<td>与 OpenAI、Anthropic 的竞合关系演变</td>
+</tr>
+<tr>
+<td>盘后股价涨约 8%</td>
+<td>折旧调整的会计影响</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>微软财报是你判断 AI 泡沫与否的关键锚点。Azure 43% 的增速和 AI 贡献 13 个百分点说明企业级 AI 需求真实且强劲。如果你在做 Agent 项目，应该关注微软的 Copilot 生态和 Azure AI 服务——它们是你项目落地的潜在平台。</p>
+<p>📺 <a href="https://wallstreetcn.com/premium/articles/3778285?layout=wscn-layout">打开原文</a></p>
+<hr />
+<h3>2. 三星 Q2 净利润暴涨 1299.9%，HBM4 已量产，AI 芯片狂揽 99% 利润</h3>
+<p><strong>[股票]</strong> · ⭐⭐⭐⭐⭐ · <em>华尔街见闻</em></p>
+<p>三星电子 2026 Q2 创史上最强单季：营收 171.5 万亿韩元同比暴增 130%，营业利润 89.49 万亿同比飙升 1814%，利润率 52.2%。DS 部门独揽全公司 99% 利润，HBM4 已规模量产并率先发货 HBM4E 样品。净现金头寸 167.6 万亿较去年近乎翻倍。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>营收 171.5 万亿韩元，同比增 130%</td>
+<td>HBM 需求能否持续高增长</td>
+</tr>
+<tr>
+<td>营业利润 89.49 万亿，同比增 1814%</td>
+<td>消费电子业务何时复苏</td>
+</tr>
+<tr>
+<td>DS 部门贡献全公司 99% 利润</td>
+<td>存储涨价周期何时见顶</td>
+</tr>
+<tr>
+<td>HBM4 已规模量产，HBM4E 样品已发货</td>
+<td>与 SK 海力士的竞争格局</td>
+</tr>
+<tr>
+<td>净现金头寸 167.6 万亿，同比近乎翻倍</td>
+<td>韩国股市波动对三星估值的影响</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>三星的业绩证明 AI 存储需求远未饱和。如果你在做 AI 工程实践（RAG、推理优化），HBM 的演进直接影响你的推理成本和部署方案。关注 HBM4E 的量产进度，它决定了下一代 AI 芯片的内存带宽上限。</p>
+<p>📺 <a href="https://wallstreetcn.com/articles/3778272">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://wallstreetcn.com/premium/articles/3778260?layout=wscn-layout">韩股连续两日熔断后：去杠杆接近尾声？</a> —— 韩股暴跌的后续分析，但头条已覆盖三星业绩和芯片抛售。
+  <em>华尔街见闻</em></li>
+<li><a href="https://wallstreetcn.com/articles/3778276">高通全线提价两位数，苹果订单下季度腰斩</a> —— 高通涨价应对成本压力，但属于公司层面，非行业级信号。
+  <em>华尔街见闻</em></li>
+<li><a href="https://wallstreetcn.com/articles/3778284">A 股 SoC 芯片公司半年报爆发：周期与 AI 分化</a> —— A 股芯片股业绩亮眼，但需区分周期与 AI 驱动，适合关注。
+  <em>华尔街见闻</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 股票 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="stock/2026-07-30">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-07-30 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20260730062126"></script>
+</body>
+</html>
