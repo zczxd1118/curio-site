@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI · 2026-08-03 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20260803065328">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html" class="active">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🤖 AI · 2026-08-03</div>
+  <h1>Curio · AI · 2026-08-03</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 9 条备选</p>
+</blockquote>
+<p><em>今日核心信号：AI 算力链遭遇全球性去杠杆，韩国 KOSPI 暴跌、存储股重挫，但阿里发布千问 3.8-Max 开源模型，性能对标 Anthropic Fable 5，为市场注入强心剂。同时，SpaceX 首份季报在即，股价已跌去近半，成为观察 AI 泡沫成色的关键。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. 阿里发布千问 3.8-Max：2.4 万亿参数开源，性能对标 Anthropic Fable 5</h3>
+<p><strong>[AI]</strong> · ⭐⭐⭐⭐⭐ · <em>华尔街见闻</em></p>
+<p>阿里巴巴今日发布千问 3.8-Max，参数规模达 2.4 万亿，是千问家族最强模型，也是首个开源 Max 级权重的版本（下周发布）。API 定价输入 2.0 美元/百万 tokens、输出 6.0 美元/百万 tokens。基准测试显示其编程与通用智能体能力与 Anthropic Fable 5 相当，部分指标超越，并在芯片设计、量化研究、电商模拟等长程任务中展现出显著的自主执行能力。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>千问 3.8-Max 参数规模 2.4 万亿，为千问家族迄今最强模型</td>
+<td>基准测试的具体方法论和测试集尚未公开，需独立验证</td>
+</tr>
+<tr>
+<td>API 定价：输入 2.0 美元/百万 tokens，输出 6.0 美元/百万 tokens</td>
+<td>与 Anthropic Fable 5 的对比是否涵盖所有关键场景，尚不明确</td>
+</tr>
+<tr>
+<td>基准测试显示编程与通用智能体能力与 Anthropic Fable 5 相当，部分指标超越</td>
+<td>开源版本的实际推理成本和部署难度有待评估</td>
+</tr>
+<tr>
+<td>在芯片设计、量化研究、电商模拟等长程任务中展现显著自主执行能力</td>
+<td>长程任务能力是否能在真实生产环境中稳定复现，仍需观察</td>
+</tr>
+<tr>
+<td>下周将发布开源 Max 级权重版本</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>千问 3.8-Max 的开源策略直接冲击闭源模型市场，你应该关注其权重发布后的社区评测和微调案例。对于你的 Agent 项目，可以尝试用其 API 或本地部署测试长程任务处理能力，尤其在工具调用和自主规划方面。同时，留意阿里云生态的配套工具链，可能成为你构建 content-curator 的替代方案。</p>
+<p>📺 <a href="https://wallstreetcn.com/articles/3778546">打开原文</a></p>
+<hr />
+<h3>5. DeepSeek V4 Flash 实测：Claude Code 接入后连续开发 7 个项目，逼近 Opus 4.8</h3>
+<p><strong>[AI]</strong> · ⭐⭐⭐⭐ · <em>AI超元域</em></p>
+<p>DeepSeek 发布 V4 Flash 0731 版本，284B 总参数、13B 激活参数、100 万 Token 上下文，官方基准表现接近 Claude Opus 4.8。UP 主实测将其接入 Claude Code，连续开发 7 个项目，评估其性能、速度与真实短板，并与 Kimi K3 对比。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeepSeek V4 Flash 0731 版本发布</td>
+<td>官方基准与真实场景表现可能存在差距</td>
+</tr>
+<tr>
+<td>284B 总参数、13B 激活参数、100 万 Token 上下文</td>
+<td>13B 激活参数的实际推理效率，需进一步验证</td>
+</tr>
+<tr>
+<td>官方基准表现接近 Claude Opus 4.8</td>
+<td>100 万 Token 上下文的实用性，取决于具体任务</td>
+</tr>
+<tr>
+<td>UP 主实测接入 Claude Code 连续开发 7 个项目</td>
+<td>与 Claude Opus 4.8 的差距在哪些方面，尚不明确</td>
+</tr>
+<tr>
+<td>与 Kimi K3 进行了对比</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>DeepSeek V4 Flash 的低成本和高性能，可能成为你构建 Agent 的性价比之选。建议你观看视频，了解其在 Claude Code 中的实际表现，特别是长上下文和复杂任务处理能力。如果表现稳定，可以尝试将其作为 content-curator 的底层模型，降低 API 成本。</p>
+<p>📺 <a href="http://www.bilibili.com/video/av117014605731815">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="http://www.bilibili.com/video/av115897075242856">【吴恩达】2026年公认最好的【Agent智能体】教程！大模型入门到进阶，一套全解决！</a> —— 吴恩达的 Agent 教程，系统覆盖设计模式、工具集成与评估，适合作为 Agent 构建的系统性参考。
+  <em>吴恩达Agent</em></li>
+<li><a href="http://www.bilibili.com/video/av116861865887789">从零开始，学会让桌面Agent帮你干活！【小白教程】</a> —— 国产桌面 Agent 实操教程，覆盖 8 大用法，适合快速上手桌面自动化。
+  <em>秋芝2046</em></li>
+<li><a href="http://www.bilibili.com/video/av116711944620974">零基础Vibe Coding教程，vibecoding实战，Claude Code+Codex+Cursor</a> —— 尚硅谷的 Vibe Coding 实战教程，从零开始用自然语言指挥 AI 开发项目，适合入门。
+  <em>尚硅谷</em></li>
+<li><a href="http://www.bilibili.com/video/av116578532200786">从夯到拉，锐评 32 个 AI 编程工具！</a> —— 鱼皮实测 32 个 AI 编程工具，帮你快速找到最适合自己的，避免踩坑。
+  <em>程序员鱼皮</em></li>
+<li><a href="http://www.bilibili.com/video/av116037064331269">Claude Code Agent Teams上手指南+项目实测</a> —— 深入讲解 Claude Code Agent Teams 的架构与实战，解决复杂任务并行处理问题。
+  <em>程序员阿江-Relakkes</em></li>
+<li><a href="http://www.bilibili.com/video/av114155298228756">MCP是啥？技术原理是什么？一个视频搞懂MCP的一切。</a> —— MCP 概念与实战全覆盖，适合理解 Agent 工具调用的底层原理。
+  <em>技术爬爬虾</em></li>
+<li><a href="http://www.bilibili.com/video/av116951003242391">【吴恩达2026】Vibe Coding保姆级教程，手把手从环境搭建到工作流完整闭环！</a> —— 吴恩达的 Vibe Coding 教程，强调标准化流水线，适合建立规范开发流程。
+  <em>吴恩达AIAgent</em></li>
+<li><a href="http://www.bilibili.com/video/av116996217838997">用Codex、cursor 还是Claude ？程序员不作选择题，我都要用，还一起用 | Orca ADE 介绍</a> —— Orca ADE 整合多 Agent 协作，开源免费，适合探索多工具协同工作流。
+  <em>技术胖</em></li>
+<li><a href="http://www.bilibili.com/video/av116579891153749">10分钟完成Ubuntu安装Claude Code并免费使用DeepSeekV4模型</a> —— 快速在 Ubuntu 上配置 Claude Code 并接入 DeepSeek V4，低成本体验。
+  <em>不倒翁lhj</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="ai/2026-08-03">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-08-03 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20260803065328"></script>
+</body>
+</html>
