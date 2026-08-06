@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI 算力 / 半导体 · 2026-08-06 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20260806062335">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html" class="active">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🔬 AI 算力 / 半导体 · 2026-08-06</div>
+  <h1>Curio · AI 算力 / 半导体 · 2026-08-06</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 1 条头条 + 4 条备选</p>
+</blockquote>
+<p><em>今日信号：AI 算力泡沫与存储短缺并行——NVIDIA 被曝 7500 亿美元循环融资疑云，存储长协价底部抬至历史峰值之上；同时 DeepSeek 涨价、张一鸣内部喊话拒绝蒸馏，显示国产模型竞争进入新阶段。Google DeepMind 领导层变动与 Jeff Dean 离职创业，标志 AI 科研范式转向。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. NVIDIA 7500 亿美元交易引发 AI 循环融资担忧，算力泡沫再响警报</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐⭐ · <em>petethomas</em></p>
+<p>Bloomberg 报道，NVIDIA 近期签署的 7500 亿美元交易被质疑存在循环融资——即 AI 公司用 NVIDIA 的芯片抵押贷款再购买更多芯片，推高营收但实际需求存疑。这一数字相当于全球 AI 芯片市场规模的数倍，引发市场对 AI 资本开支可持续性的激烈讨论。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVIDIA 近期达成的交易总额达 7500 亿美元，涉及多家 AI 基础设施公司</td>
+<td>循环融资的具体规模尚不明确，可能仅占 NVIDIA 总营收的一小部分</td>
+</tr>
+<tr>
+<td>部分交易采用芯片抵押融资模式，即用 NVIDIA GPU 作为抵押品获取贷款</td>
+<td>AI 基础设施的真实需求是否被高估，需观察云厂商资本开支后续指引</td>
+</tr>
+<tr>
+<td>市场担忧循环融资推高 AI 营收，但实际终端需求可能不及预期</td>
+<td>监管机构是否介入调查循环融资模式，目前无明确信号</td>
+</tr>
+<tr>
+<td>该报道引发 AI 芯片股波动，NVIDIA 股价当日下跌约 3%</td>
+<td>NVIDIA 是否主动调整销售策略以降低循环融资比例，尚未披露</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这对你意味着：AI 算力泡沫的讨论直接影响你关注的芯片股和 AI 基础设施投资。作为 AI 产品开发者，你应关注算力成本趋势——若泡沫破裂，云服务价格可能下降，利好你的 Agent 项目部署。建议跟踪 NVIDIA 财报和主要云厂商资本开支，判断算力供需真实状况，避免被短期市场情绪左右。</p>
+<p>📺 <a href="https://www.bloomberg.com/news/articles/2026-07-27/nvidia-s-750-billion-deals-revive-fear-of-ai-circular-financing">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.eetimes.com/samsung-lays-out-ai-memory-roadmap/">Samsung Lays Out AI Memory Roadmap: zHBM and zNAND-O promise 8× HBM5 performance</a> —— 三星存储路线图聚焦 zHBM 和 zNAND-O，目标突破 AI 内存墙，与存储长协新闻呼应，值得关注技术细节。
+  <em>EE Times</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/elon-musk-says-spacex-will-exclusively-use-nvidia-gpus-because-they-are-the-best-says-optimized-vera-rubin-nvl72-will-be-launched-into-space-next-year">Elon Musk says SpaceX will exclusively use Nvidia GPUs, Vera Rubin NVL72 to launch into space next year</a> —— SpaceX 与 xAI 将独家采用 NVIDIA GPU，并计划明年将 Vera Rubin 送入太空，算力需求外延至太空场景。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.tomshardware.com/pc-components/ssds/kioxia-and-sandisk-demonstrate-the-worlds-highest-density-3d-nand-flash-332-active-layers-and-up-to-4-800-mt-s-interface">Kioxia and Sandisk demonstrate world's highest-density 3D NAND flash: 332 layers, 4,800 MT/s</a> —— 存储技术突破，332 层 3D NAND 提升密度，与存储涨价周期叠加，影响未来 SSD 成本和性能。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.tomshardware.com/pc-components/liquid-cooling/frore-claims-its-liquidjet-can-drop-nvidia-rubin-gpu-temperatures-by-10-c-can-also-boost-performance-by-15-percent-as-hyperscalers-eye-using-delidded-gpus-in-production-environments">Frore claims LiquidJet can drop Nvidia Rubin GPU temps by 10°C, boost performance 15%</a> —— 液冷方案提升 GPU 性能 15%，对 AI 数据中心能效有影响，但尚属厂商宣称，需验证。
+  <em>Tom's Hardware</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 算力 / 半导体 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="semiconductor/2026-08-06">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-08-06 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20260806062335"></script>
+</body>
+</html>
