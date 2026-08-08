@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI 算力 / 半导体 · 2026-08-08 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20260808044820">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html" class="active">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🔬 AI 算力 / 半导体 · 2026-08-08</div>
+  <h1>Curio · AI 算力 / 半导体 · 2026-08-08</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 3 条头条 + 3 条备选</p>
+</blockquote>
+<p><em>今日 AI 领域信号密集：Google DeepMind 高层换血，Anthropic 自研推理芯片，OpenAI 因安全暂停 Astra 模型，AI 算力需求正从 GPU 蔓延至 CPU 短缺。金融市场上，AI 投资泡沫争议再起，但 Palantir 等应用龙头业绩强劲。半导体方面，三星发布新一代内存技术，RAM 价格飙升。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>2. Anthropic 自研 AI 推理芯片，三星代工，摆脱 Nvidia 依赖</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>Anthropic 宣布组建团队自研定制 ASIC 芯片，用于 AI 推理负载，并据报道与三星合作制造。此举旨在降低对 Nvidia GPU 的依赖，控制推理成本，并优化 Claude 模型的性能。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anthropic 已宣布组建团队自研定制 AI 推理芯片</td>
+<td>自研芯片的流片时间和量产时间未公布，预计至少需要 2-3 年</td>
+</tr>
+<tr>
+<td>三星被报道为制造合作伙伴</td>
+<td>三星的制造工艺（如 3nm/2nm）和良率能否满足需求尚不确定</td>
+</tr>
+<tr>
+<td>芯片将针对 AI 推理工作负载优化</td>
+<td>Anthropic 自研芯片能否在性能和成本上超越 Nvidia 的 GPU 仍是未知数</td>
+</tr>
+<tr>
+<td>Anthropic 希望通过自研芯片降低对 Nvidia GPU 的依赖</td>
+<td>这一举措是否会引发其他 AI 实验室效仿，形成行业趋势</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这对你意味着：AI 推理成本有望下降，但短期内 Claude API 价格不会大幅变动。作为开发者，你可以关注 Anthropic 的芯片进展，但不必改变现有技术选型。长期来看，自研芯片可能带来更便宜的推理服务，值得期待。</p>
+<p>📺 <a href="https://www.tomshardware.com/tech-industry/anthropic-to-build-its-own-co-designed-custom-ai-accelerator-for-inferencing-workloads-samsung-reported-to-be-partnering-with-the-claude-ai-maker-for-manufacturing">打开原文</a></p>
+<hr />
+<h3>3. 弗吉尼亚州要求数据中心自付电力基础设施费用，AI 电力成本转嫁终结</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>弗吉尼亚州监管机构要求所有数据中心项目承担其专用上游电力基础设施的全部费用，此前该州因 AI 数据中心导致居民电价上涨 76%。此举可能推高数据中心建设成本，但保护了普通居民。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>弗吉尼亚州公用事业监管机构已通过新规</td>
+<td>新规是否会导致数据中心建设放缓或转移至其他州</td>
+</tr>
+<tr>
+<td>数据中心项目必须支付其专用电力基础设施的全部费用</td>
+<td>电力成本上升是否会转嫁给云服务客户，导致 AI 服务涨价</td>
+</tr>
+<tr>
+<td>此前 AI 数据中心导致该州居民电价上涨 76%</td>
+<td>其他州是否会效仿弗吉尼亚州的政策</td>
+</tr>
+<tr>
+<td>州长表示此举将为平民节省数亿美元</td>
+<td>对现有数据中心项目的追溯效力尚不明确</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这对你意味着：AI 算力成本可能上升，尤其是云服务价格。作为个人开发者，你可以关注云厂商的定价调整，但不必立即行动。长期来看，数据中心选址将更注重电力成本，可能影响全球 AI 基础设施布局。</p>
+<p>📺 <a href="https://www.tomshardware.com/tech-industry/data-centers/after-severe-76-percent-electricity-price-hikes-due-to-ai-data-centers-virginia-requires-firms-to-pay-for-all-dedicated-upstream-electrical-infrastructure-state-regulators-crack-down-governor-says-move-will-save-civilians-hundreds-of-millions-of-dollars">打开原文</a></p>
+<hr />
+<h3>5. 三星发布 zHBM、zNAND-O、BV-NAND 三款下一代内存技术，面向 AI 数据中心</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>三星在 FMS 峰会上发布三款下一代内存技术：zHBM、zNAND-O 和 BV-NAND，均采用先进晶圆键合技术，分别面向不同市场。此举旨在巩固其在 AI 内存市场的领导地位。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>三星发布了 zHBM、zNAND-O 和 BV-NAND 三款新技术</td>
+<td>这些技术的量产时间和成本尚不明确</td>
+</tr>
+<tr>
+<td>所有技术均依赖先进晶圆键合技术</td>
+<td>能否在性能上超越 SK 海力士和 Micron 的同类产品</td>
+</tr>
+<tr>
+<td>zHBM 面向高带宽内存市场，zNAND-O 面向存储，BV-NAND 面向特定应用</td>
+<td>晶圆键合技术的良率和可靠性有待验证</td>
+</tr>
+<tr>
+<td>这些技术旨在提升 AI 数据中心的性能和效率</td>
+<td>对现有 DRAM 和 NAND 市场格局的影响</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这对你意味着：内存技术正在快速演进，AI 数据中心的性能瓶颈可能被打破。作为开发者，你可以关注这些技术对云服务性能的提升，但短期内影响有限。长期来看，更快的存储将加速 AI 训练和推理。</p>
+<p>📺 <a href="https://www.tomshardware.com/pc-components/dram/samsung-debuts-three-next-generation-memory-technologies-for-ai-data-centers-zhbm-znand-o-and-bv-nand-all-rely-on-advanced-wafer-bonding-technologies">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.eetimes.com/ai-chip-startup-taalas-acquired-by-amd/">AMD 收购 AI 芯片初创 Taalas</a> —— AMD 补强推理加速，但细节未披露，影响有限。
+  <em>EE Times</em></li>
+<li><a href="https://www.tomshardware.com/pc-components/ram/scientist-says-ram-pricing-has-reverted-to-normalized-2007-levels-memory-prices-have-been-falling-exponentially-for-decades-but-the-ai-shortage-undid-20-years-of-progress-in-a-matter-of-months">RAM 价格回到 2007 年水平，AI 短缺逆转二十年下降趋势</a> —— 内存涨价影响所有硬件成本，但非头条，因用户更关注 AI 软件。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://wallstreetcn.com/articles/3778989">AWS 出现 CPU 短缺，Agentic AI 驱动需求激增</a> —— CPU 与 GPU 使用比例接近 1:1，云计算成本或上涨，但不如头条事件直接。
+  <em>华尔街见闻</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 算力 / 半导体 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="semiconductor/2026-08-08">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-08-08 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20260808044820"></script>
+</body>
+</html>
