@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI 算力 / 半导体 · 2026-08-09 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20260809045703">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html" class="active">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🔬 AI 算力 / 半导体 · 2026-08-09</div>
+  <h1>Curio · AI 算力 / 半导体 · 2026-08-09</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 5 条备选</p>
+</blockquote>
+<p><em>今日核心信号：AI 算力军备竞赛进入新阶段——Anthropic 自研推理芯片、SpaceX Terafab 动工、AWS 遭遇 CPU 短缺，同时 Google DeepMind 高层变动与 Kimi 逃逸事件凸显 AI 安全与治理的紧迫性。金融市场上，伯克希尔转向净买入、SK 海力士巨额回购，显示资金在 AI 波动中寻找确定性。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. Anthropic 自研推理芯片，三星代工，摆脱英伟达依赖</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>Anthropic 宣布组建团队自研定制 ASIC 芯片，专攻 AI 推理负载，三星据报成为制造伙伴。此举意在降低对英伟达 GPU 的依赖，并优化推理成本。对 Claude 生态和整个 AI 算力格局都将产生深远影响。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anthropic 已宣布组建团队，co-design 定制 ASIC 芯片用于 AI 推理。</td>
+<td>芯片的具体架构、性能指标和量产时间尚未公布。</td>
+</tr>
+<tr>
+<td>三星被报道为 Anthropic 的制造合作伙伴。</td>
+<td>三星代工的具体工艺节点（如 3nm/2nm）和产能分配未确认。</td>
+</tr>
+<tr>
+<td>该芯片将用于推理工作负载，而非训练。</td>
+<td>自研芯片能否在成本/性能上真正超越英伟达 GPU，尚待验证。</td>
+</tr>
+<tr>
+<td>Anthropic 旨在通过自研芯片获得对计算基础设施的更大控制权。</td>
+<td>对英伟达的依赖降低程度，以及是否会影响与英伟达的现有合作，尚不明朗。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你正在做 AI Agent 项目，推理成本是长期痛点。Anthropic 自研芯片若成功，可能降低 Claude API 价格，但短期影响有限。建议关注其进展，同时继续优化你的 prompt 和缓存策略来省 token。另外，三星代工意味着非台积电路线的成熟，未来 AI 芯片供应多元化，你选型时可以留意更多国产或非英伟达方案。</p>
+<p>📺 <a href="https://www.tomshardware.com/tech-industry/anthropic-to-build-its-own-co-designed-custom-ai-accelerator-for-inferencing-workloads-samsung-reported-to-be-partnering-with-the-claude-ai-maker-for-manufacturing">打开原文</a></p>
+<hr />
+<h3>4. 马斯克 Terafab 动工：1 亿平方英尺、168 亿美元，剑指芯片制造</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>SpaceX 和特斯拉正式开建 Terafab 芯片制造设施，占地 1 亿平方英尺，初始投资 168 亿美元，规模是三星平泽园区的三倍。该设施将为 xAI 和 SpaceX 的数据中心生产芯片，并依赖天然气发电。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Terafab 正式开建，占地 1 亿平方英尺。</td>
+<td>Terafab 的具体产能和量产时间未公布。</td>
+</tr>
+<tr>
+<td>初始资本投资 168 亿美元。</td>
+<td>依赖天然气发电，与特斯拉太阳能愿景不符，能源策略待明确。</td>
+</tr>
+<tr>
+<td>该设施比三星平泽园区大三倍。</td>
+<td>芯片制造技术来源（自研或合作）未披露。</td>
+</tr>
+<tr>
+<td>将为 SpaceX 和 xAI 的数据中心生产芯片。</td>
+<td>项目能否按期完成并盈利，存在不确定性。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>马斯克入局芯片制造，可能加剧 AI 算力竞争，但短期对市场影响有限。你作为 AI 从业者，更应关注算力供给的长期变化。Terafab 若成功，可能降低 AI 芯片成本，但项目风险高。建议你保持关注，但不必过度反应。你的 Agent 项目目前依赖云服务，算力价格波动可能影响成本，可考虑预留预算弹性。</p>
+<p>📺 <a href="https://www.tomshardware.com/tech-industry/semiconductors/terafab-starts-to-take-shape-100-million-square-feet-of-manufacturing-space-and-usd16-8b-initial-capital-investment">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://chipsandcheese.com/p/nvidias-vera-whitepaper-has-a-thread">Nvidia 的 Vera 白皮书存在漏洞？Chips and Cheese 深度分析</a> —— 技术深度分析，适合硬件爱好者，但用户更关注应用层，故入备选。
+  <em>Chips and Cheese</em></li>
+<li><a href="https://www.bloomberg.com/news/articles/2026-07-31/moonshot-s-kimi-built-on-20-000-nvidia-chip-cluster-from-alibaba">Moonshot 的 Kimi 使用阿里 2 万块 Nvidia 芯片集群</a> —— Kimi 算力规模曝光，与逃逸事件关联，但信息量有限。
+  <em>Bloomberg</em></li>
+<li><a href="https://www.bloomberg.com/news/articles/2026-07-27/nvidia-s-750-billion-deals-revive-fear-of-ai-circular-financing">Nvidia 7500 亿美元交易引发循环融资担忧</a> —— AI 泡沫论的重要论据，但用户可能已了解，故不选头条。
+  <em>Bloomberg</em></li>
+<li><a href="https://www.eetimes.com/ai-chip-startup-taalas-acquired-by-amd/">AMD 收购 AI 芯片初创公司 Taalas</a> —— AMD 补强推理加速，对 AI 芯片竞争格局有影响，但相对小众。
+  <em>EE Times</em></li>
+<li><a href="https://www.tomshardware.com/pc-components/ram/chinas-memory-making-champion-smashes-ddr5-8800-barrier-on-amd-platform-cxmt-chips-close-the-gap-with-sk-hynix">CXMT 内存超频突破 DDR5-8800，追赶 SK 海力士</a> —— 国产内存进步，但用户关注 AI 应用，硬件新闻优先级低。
+  <em>Tom's Hardware</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 算力 / 半导体 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="semiconductor/2026-08-09">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-08-09 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20260809045703"></script>
+</body>
+</html>
