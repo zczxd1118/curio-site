@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI 算力 / 半导体 · 2026-08-14 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20260814052608">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html" class="active">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🔬 AI 算力 / 半导体 · 2026-08-14</div>
+  <h1>Curio · AI 算力 / 半导体 · 2026-08-14</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 3 条备选</p>
+</blockquote>
+<p><em>今日核心信号：AI 算力军备竞赛进入新阶段——Nvidia 发布 Nemotron 3.5 Lightning 与 NeMo Switchyard，同时 xAI 宣布数据中心容量 7 倍扩张；存储芯片市场因 CXMT 上市和闪迪指引而剧烈重估。OpenAI 年化收入 400 亿美元，冲刺 IPO。你的 Agent 项目可关注 DeepSeek Harness 开源带来的新工具链机会。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. Nvidia 发布 Nemotron 3.5 Lightning 与 NeMo Switchyard，推理效率再升级</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐⭐ · <em>droidjj</em></p>
+<p>Nvidia 官方博客今日发布 Nemotron 3.5 Lightning 模型及 NeMo Switchyard 推理框架，主打低延迟与高吞吐。这是 Nvidia 从训练向推理市场渗透的关键一步，直接对标 vLLM 等开源方案。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nemotron 3.5 Lightning 是 30B-A3B 的 MoE 模型，支持 NVFP4 量化</td>
+<td>实际性能提升需第三方基准验证</td>
+</tr>
+<tr>
+<td>NeMo Switchyard 提供动态批处理和模型路由功能</td>
+<td>NVFP4 量化对精度的影响尚不明确</td>
+</tr>
+<tr>
+<td>官方宣称推理性能较上一代提升 2 倍</td>
+<td>能否撼动 vLLM 生态地位仍待观察</td>
+</tr>
+<tr>
+<td>已开放 HuggingFace 权重下载</td>
+<td>企业采用率未知</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你在做 Agent 项目时，可以关注 Nemotron 3.5 Lightning 的本地部署，其 30B 激活参数适合单卡运行。NeMo Switchyard 的模型路由概念值得借鉴，可用于你的 content-curator 中多模型调度。建议先跑通 HuggingFace 上的 demo，对比一下与 Qwen 等模型的输出质量。</p>
+<p>📺 <a href="https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/">打开原文</a></p>
+<hr />
+<h3>3. xAI 数据中心容量 2027 年将扩 7 倍，目标 10GW 算力与 5000 亿美元营收</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐ · <em>Anton Shilov</em></p>
+<p>马斯克宣称 xAI 到 2027 年底将把数据中心容量提升至 10GW，较当前增长 7 倍，并设下 5000 亿美元营收目标。这标志着 AI 算力军备竞赛进一步白热化。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xAI 计划 2027 年底达到 10GW 算力</td>
+<td>10GW 目标能否实现受电力供应和审批制约</td>
+</tr>
+<tr>
+<td>营收目标为 2027 年底 5000 亿美元</td>
+<td>5000 亿美元营收目标过于激进，可能无法达成</td>
+</tr>
+<tr>
+<td>Colossus 2 已建成全球首个吉瓦级数据中心</td>
+<td>xAI 的算力扩张是否会导致行业过剩</td>
+</tr>
+<tr>
+<td>xAI 采用独特 RL 方法论训练模型</td>
+<td>电力成本上升可能压缩利润率</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>算力扩张意味着未来模型能力会大幅提升，你的 Agent 项目可以提前布局，比如设计更复杂的多智能体协作。但也要警惕算力泡沫，建议关注 xAI 的实际落地进展，不要盲目跟风。</p>
+<p>📺 <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/elon-musk-says-xai-will-increase-data-center-capacity-7x-by-2027-targeting-10-gigawatts-of-compute-up-to-usd500-billion-in-revenue-by-the-end-of-next-year">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.tomshardware.com/tech-industry/cxmt-overtakes-tencent-to-become-chinas-most-valuable-company-17-days-after-its-ipo">CXMT 超越腾讯成中国市值最高公司，IPO 17 天市值 5240 亿美元</a> —— 存储芯片国产替代的里程碑，但估值泡沫风险高，适合关注而非追高。
+  <em>Luke James</em></li>
+<li><a href="https://www.tomshardware.com/pc-components/gpus/nvidia-doubles-rtx-pro-6000-blackwells-msrp-to-a-staggering-usd16-000-96gb-card-started-pre-orders-below-usd8-000-last-year">Nvidia RTX PRO 6000 Blackwell 价格翻倍至 16000 美元</a> —— AI 硬件成本飙升，个人开发者需关注性价比替代方案。
+  <em>Hassam Nasir</em></li>
+<li><a href="https://www.eetimes.com/meta-cuts-server-count-25-by-reusing-old-memory-can-anyone-else-do-it/">Meta 通过复用旧内存削减 25% 服务器数量</a> —— CXL 技术降低 AI 基础设施成本，值得关注其可复制性。
+  <em>Yashasvini Razdan</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 算力 / 半导体 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="semiconductor/2026-08-14">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-08-14 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20260814052608"></script>
+</body>
+</html>
