@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI · 2026-08-15 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20260815042152">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html" class="active">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🤖 AI · 2026-08-15</div>
+  <h1>Curio · AI · 2026-08-15</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 3 条备选</p>
+</blockquote>
+<p><em>今日核心信号：Anthropic 营收爆发式增长，Q2 超 115 亿美元，同比增 14 倍，AI 商业化进入兑现期；但英伟达 5000 亿美元融资平台引发市场对 AI 泡沫的担忧，博通暴跌 20%，AI 资本开支的可持续性成为焦点。此外，DeepSeek 开源 Harness 和 V4 Pro 模型为开发者提供高性价比新选择，值得关注。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. DeepSeek Harness 开源：Claude Code 的强劲对手，Agent 开发新范式</h3>
+<p><strong>[AI]</strong> · ⭐⭐⭐⭐⭐ · <em>Lau博士的云组会</em></p>
+<p>DeepSeek 开源了其 Harness 工具，Lau 博士在视频中解读其独特之处。这不仅是又一个 CLI 工具，而是 DeepSeek 对 Agent 开发底层逻辑的重新思考，可能改变开发者构建 AI Agent 的方式。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeepSeek Harness 已开源，视频详细解读其架构和设计理念。</td>
+<td>Harness 的实际性能和稳定性尚未经过大规模社区验证。</td>
+</tr>
+<tr>
+<td>Harness 被定位为 Claude Code 的替代或补充，强调其独特优势。</td>
+<td>其与 Claude Code 的生态兼容性未知，迁移成本待评估。</td>
+</tr>
+<tr>
+<td>视频由 Lau 博士发布，内容深度解读，非简单教程。</td>
+<td>DeepSeek 官方对 Harness 的长期支持策略不明确。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你应该立即关注 DeepSeek Harness，它可能成为你 content-curator 项目的底层工具。其开源特性意味着你可以深度定制，且 DeepSeek 的 API 成本远低于 Claude，适合预算有限的个人项目。建议观看视频并尝试部署，对比其与 Claude Code 在真实任务中的表现。</p>
+<p>📺 <a href="http://www.bilibili.com/video/av117089415204498">打开原文</a></p>
+<hr />
+<h3>2. DeepSeek V4 Pro 实测：5 元开发 5 个项目，1M 上下文，性价比之王</h3>
+<p><strong>[AI]</strong> · ⭐⭐⭐⭐⭐ · <em>AI超元域</em></p>
+<p>DeepSeek V4 Pro 0813 版本发布，AI 超元域将其接入 Claude Code 进行实测，仅花费 5.36 元完成 6 个复杂编程项目，性能接近 Kimi K3。这标志着国产模型在编程领域已具备极高性价比。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeepSeek V4 Pro 0813 已上线，支持 1M 上下文。</td>
+<td>测试项目类型有限，可能未覆盖所有复杂场景。</td>
+</tr>
+<tr>
+<td>实测中，使用 Claude Code 接入 V4 Pro 完成 6 个项目，总花费 5.36 元。</td>
+<td>1M 上下文在长文档处理中的实际效果待验证。</td>
+</tr>
+<tr>
+<td>视频中对比了 Kimi K3，称性能接近。</td>
+<td>与 Claude Opus 4.8 的差距未量化，可能仍有明显不足。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>对于你的 Agent 项目，DeepSeek V4 Pro 是极具吸引力的选择。超低成本和长上下文支持，让你可以大规模测试和迭代。建议尝试将 V4 Pro 接入你的工作流，对比其与 Claude 在代码生成、RAG 等任务上的表现，以决定是否作为主力模型。</p>
+<p>📺 <a href="http://www.bilibili.com/video/av117087234430329">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="http://www.bilibili.com/video/av117030980230736">Vibe Coding竞赛，Claude遗憾落败?</a> —— 实战对比 Claude Code 与秒哒，展示不同工具在快速开发中的优劣，对选择工具有参考价值。
+  <em>GenJi是真想教会你</em></li>
+<li><a href="http://www.bilibili.com/video/av116578532200786">从夯到拉，锐评 32 个 AI 编程工具！</a> —— 全面评测主流 AI 编程工具，帮你快速了解生态，但内容较泛，适合入门选型。
+  <em>程序员鱼皮</em></li>
+<li><a href="http://www.bilibili.com/video/av116996217838997">用Codex、cursor 还是Claude ？程序员不作选择题，我都要用，还一起用 | Orca ADE 介绍</a> —— 介绍开源 Agent 开发环境 Orca ADE，可整合多种编程 Agent，适合多工具协作场景。
+  <em>技术胖</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="ai/2026-08-15">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-08-15 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20260815042152"></script>
+</body>
+</html>
