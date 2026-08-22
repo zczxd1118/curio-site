@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 股票 · 2026-08-22 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20260822042425">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html" class="active">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">📰 股票 · 2026-08-22</div>
+  <h1>Curio · 股票 · 2026-08-22</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 6 条备选</p>
+</blockquote>
+<p><em>今日核心信号：Nvidia 在 ARC-AGI-3 上 100% 得分，标志 Agent 能力从模型转向 harness 工程；同时 Nvidia 缩减 OpenAI 基础设施融资担保，AI 资本开支出现裂缝。金融端，Anthropic IPO 面临公众抵制风险，博通 700 亿美元债务融资为 AI 芯片买单。半导体端，H200 终于入华但国产芯片已抢占市场。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>3. Anthropic 招股书或列入 AI 抵制风险，IPO 面临民意逆风</h3>
+<p><strong>[股票]</strong> · ⭐⭐⭐⭐ · <em>华尔街见闻 API</em></p>
+<p>据媒体报道，Anthropic 正在筹备 IPO，估值可能高达 2 万亿美元。但盖洛普调查显示，70% 的美国人反对在当地建设 AI 数据中心，两党政客也在回应选民情绪，宾州已落地数据中心限制法案。Anthropic 可能将公众抵制列为招股书核心风险因素，这将对 IPO 定价和未来增长构成压力。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anthropic 正在筹备 IPO，估值或达 2 万亿美元。</td>
+<td>公众抵制情绪是否会影响 IPO 的最终定价和需求，尚不确定。</td>
+</tr>
+<tr>
+<td>盖洛普调查显示 70% 的美国人反对在当地建设 AI 数据中心。</td>
+<td>Anthropic 是否会调整数据中心选址策略以缓解抵制，未知。</td>
+</tr>
+<tr>
+<td>宾夕法尼亚州已通过数据中心限制法案。</td>
+<td>其他 AI 公司（如 OpenAI）是否也会面临类似风险，可能。</td>
+</tr>
+<tr>
+<td>媒体报道 Anthropic 可能将公众抵制列为招股书风险因素。</td>
+<td>监管层面是否会出台更严格的数据中心建设规定，待观察。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>如果你关注 AI 行业的长期发展，公众抵制是一个不可忽视的风险。对于你的 Agent 项目，这提醒你考虑 AI 的社会接受度，比如在设计中加入隐私保护和透明度。同时，Anthropic 的 IPO 可能成为 AI 行业估值的重要参考，你可以关注其定价和上市后的表现。</p>
+<p>📺 <a href="https://wallstreetcn.com/articles/3780042">打开原文</a></p>
+<hr />
+<h3>4. 博通拟融资 700-800 亿美元，为 AI 芯片采购输血</h3>
+<p><strong>[股票]</strong> · ⭐⭐⭐⭐ · <em>华尔街见闻 API</em></p>
+<p>据媒体报道，博通正就 700 亿至 800 亿美元的债务融资展开谈判，资金将用于支持 Anthropic 等 AI 公司的芯片采购需求。融资拟采用分层结构，优先档约 450 亿美元，次级档约 350 亿美元。这一巨额融资凸显 AI 算力需求的资金密集程度，也反映出芯片供应商在 AI 产业链中的金融角色。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>博通正谈判 700 亿至 800 亿美元的债务融资。</td>
+<td>融资能否成功完成，取决于市场对 AI 前景的信心。</td>
+</tr>
+<tr>
+<td>资金将用于支持 Anthropic 等 AI 公司的芯片采购。</td>
+<td>如此高的债务水平是否会增加博通的财务风险，需评估。</td>
+</tr>
+<tr>
+<td>融资结构分层，优先档约 450 亿美元，次级档约 350 亿美元。</td>
+<td>Anthropic 等公司是否真的需要如此大规模芯片采购，未知。</td>
+</tr>
+<tr>
+<td>该融资规模在科技行业债务融资中属于顶级。</td>
+<td>这一融资模式是否会被其他芯片厂商效仿，可能。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>博通的大规模融资表明 AI 芯片需求依然强劲，但同时也增加了金融杠杆。对于你，这可能意味着 AI 基础设施成本将继续高企，你的 Agent 项目在算力选择上要更注重性价比。可以关注博通融资的进展，如果失败，可能引发市场对 AI 资本开支的重新评估。</p>
+<p>📺 <a href="https://wallstreetcn.com/articles/3780035">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://wallstreetcn.com/articles/3780047">黄金冲破 200 日均线，高盛多头增至六成</a> —— 金价重回 4600 美元，看涨期权需求激增，做市商对冲或放大涨幅。
+  <em>华尔街见闻 API</em></li>
+<li><a href="https://wallstreetcn.com/articles/3780034">Citadel 已卖掉 80% 的 Situational Awareness 股票组合</a> —— AI 和半导体仓位大幅削减，旗舰基金 7 月回报 5.94%。
+  <em>华尔街见闻 API</em></li>
+<li><a href="https://www.cnbc.com/2026/08/19/open-ai-ipo-timing-2027-friar.html">OpenAI 计划 2027 年上市，CFO 向员工确认</a> —— IPO 时间表明确，但人才流失和风险团队解散是隐患。
+  <em>thm</em></li>
+<li><a href="https://www.cnbc.com/2026/08/17/treasury-yields-federal-reserve-fomc-minutes.html">30 年期美债收益率突破 5.31%，创 19 年新高</a> —— 长期利率飙升，对成长股估值构成压力。
+  <em>root-parent</em></li>
+<li><a href="https://wallstreetcn.com/articles/3780040">英伟达拟 60 亿美元获 Poolside 模型授权，另投 10 亿美元</a> —— 英伟达加码 AI 模型领域，吸纳百余名员工。
+  <em>华尔街见闻 API</em></li>
+<li><a href="https://wallstreetcn.com/articles/3780044">苹果裁撤 Siri 与 Vision Pro 逾 200 个岗位</a> —— 集中资源押注 AI，Vision Pro 游戏团队近乎解散。
+  <em>华尔街见闻 API</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 股票 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="stock/2026-08-22">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-08-22 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20260822042425"></script>
+</body>
+</html>
