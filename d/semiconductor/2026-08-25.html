@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI 算力 / 半导体 · 2026-08-25 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20260825043104">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html" class="active">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🔬 AI 算力 / 半导体 · 2026-08-25</div>
+  <h1>Curio · AI 算力 / 半导体 · 2026-08-25</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 3 条头条 + 4 条备选</p>
+</blockquote>
+<p><em>今日信号：英伟达Vera Rubin首测吞吐暴涨30倍，AI算力军备竞赛进入新阶段；同时Nvidia警告涨价15%，AI服务器成本飙升。金融端，字节发布“豆包工作”加入Agent大战，OpenAI IPO临近但人才流失成疑。半导体端，Hot Chips 2026揭示HBM4e技术瓶颈，存储涨价潮持续。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. 英伟达Vera Rubin首测：DeepSeek吞吐暴涨30倍，Token成本暴降35倍</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐⭐ · <em>华尔街见闻 API</em></p>
+<p>英伟达首次公布Vera Rubin NVL72片上实测数据，搭配DeepSeek-V4-Pro跑Agent编码任务，较GB300每兆瓦吞吐量最高飙升30倍，Token成本暴降35倍。同日，专为Agent设计的Vera CPU已被SpaceXAI规模化部署，并计划2028年送上太空。Groq加速器全面量产。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>英伟达首次公布Vera Rubin NVL72实测数据，搭配DeepSeek-V4-Pro跑Agent编码任务</td>
+<td>Vera Rubin实际商用性能是否与宣传一致，尚需第三方验证</td>
+</tr>
+<tr>
+<td>较GB300每兆瓦吞吐量最高飙升30倍，Token成本暴降35倍</td>
+<td>30倍吞吐提升是否在真实负载下可复现，有待观察</td>
+</tr>
+<tr>
+<td>Vera CPU已被SpaceXAI规模化部署，计划2028年送上太空</td>
+<td>SpaceXAI部署Vera CPU的具体应用场景和规模未披露</td>
+</tr>
+<tr>
+<td>Groq加速器全面量产</td>
+<td>Groq加速器量产对市场格局的影响尚不明朗</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这是AI硬件性能跃迁的明确信号，你应关注Vera Rubin架构对Agent工作负载的优化思路，可能影响你未来选择云服务或本地部署策略。Token成本暴降35倍意味着Agent应用的经济性将大幅改善，你的content-curator项目可考虑基于此类硬件优化成本。</p>
+<p>📺 <a href="https://wallstreetcn.com/articles/3780194">打开原文</a></p>
+<hr />
+<h3>3. Nvidia警告AI服务器涨价15%，内存成本飙升成主因</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>Nvidia已通知最大客户，AI服务器价格将上涨15%，主要原因是内存成本持续飙升。涨价将影响Grace Blackwell和Vera Rubin系统，预计明年初生效。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nvidia已通知最大客户AI服务器涨价15%</td>
+<td>涨价是否会传导至最终用户，尚待观察</td>
+</tr>
+<tr>
+<td>涨价主要因内存成本飙升</td>
+<td>内存成本飙升的持续时间不确定</td>
+</tr>
+<tr>
+<td>影响Grace Blackwell和Vera Rubin系统</td>
+<td>其他硬件厂商是否会跟进涨价，尚不明朗</td>
+</tr>
+<tr>
+<td>涨价预计明年初生效</td>
+<td>涨价对AI服务器需求的影响有待评估</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>AI服务器涨价将推高你的Agent项目部署成本，你应提前规划硬件预算或考虑使用云服务时锁定价格。同时，内存成本上升可能影响整个AI产业链，你需关注存储类股票和硬件供应商的动态。</p>
+<p>📺 <a href="https://www.tomshardware.com/pc-components/dram/nvidia-reportedly-warns-biggest-customers-of-15-percent-price-hikes-on-ai-servers">打开原文</a></p>
+<hr />
+<h3>4. HBM4e遇技术瓶颈：SK海力士称混合键合未就绪，HBM5才用</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>Hot Chips 2026上，SK海力士表示HBM4e不会采用混合键合技术，因为HBM立方体总厚度限制在775微米，混合键合尚未准备好。公司计划将混合键合用于HBM5，并继续使用MR-MUF技术支持Nvidia Rubin。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SK海力士表示HBM4e不会采用混合键合技术</td>
+<td>HBM5采用混合键合的时间表尚不确定</td>
+</tr>
+<tr>
+<td>HBM立方体总厚度限制在775微米</td>
+<td>775微米厚度限制是否会被突破，有待观察</td>
+</tr>
+<tr>
+<td>混合键合计划用于HBM5</td>
+<td>MR-MUF技术能否满足未来性能需求，尚待验证</td>
+</tr>
+<tr>
+<td>继续使用MR-MUF技术支持Nvidia Rubin</td>
+<td>其他存储厂商是否跟进类似技术路线，尚不明朗</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>HBM技术瓶颈将影响AI硬件性能提升速度，你应关注存储技术演进对AI模型训练和推理成本的影响。同时，SK海力士的技术路线选择可能影响存储市场格局，你需留意相关投资机会。</p>
+<p>📺 <a href="https://www.tomshardware.com/tech-industry/semiconductors/sk-hynix-says-hybrid-bonding-wont-be-ready-for-hbm4e-as-ai-memory-runs-into-a-775-micron-ceiling">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://twitter.com/NVIDIAAI/status/2090786258981466231">Nvidia AVO scores 100% on ARC-AGI-3 benchmark</a> —— Nvidia AVO在ARC-AGI-3上满分，但基准可靠性存疑，谨慎看待。
+  <em>Hacker News</em></li>
+<li><a href="https://arstechnica.com/information-technology/2026/08/nvidia-discloses-21b-stake-in-spacex/">Nvidia discloses $21B stake in SpaceX</a> —— Nvidia投资SpaceX，跨界布局太空AI，值得关注但非直接相关。
+  <em>Ars Technica</em></li>
+<li><a href="https://www.tomshardware.com/pc-components/cpus/intel-xeon-7-diamond-rapids-comes-with-up-to-256-p-cores-1-28-gb-of-last-level-cache-next-gen-18a-p-cpu-also-brings-avx-10-2-and-uses-ucie-s-instead-of-emib">Intel Xeon 7 'Diamond Rapids' with 256 P-cores</a> —— Intel新Xeon核心数翻倍，但AI市场影响有限，备选。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/semiconductors/sk-hynix-says-hybrid-bonding-wont-be-ready-for-hbm4e-as-ai-memory-runs-into-a-775-micron-ceiling">SK hynix pushes hybrid bonding to HBM5</a> —— HBM技术路线图更新，影响AI硬件性能，但细节不足。
+  <em>Tom's Hardware</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 算力 / 半导体 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="semiconductor/2026-08-25">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-08-25 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20260825043104"></script>
+</body>
+</html>
