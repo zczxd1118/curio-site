@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curio · AI · 2026-07-03 · Curio</title>
-<link rel="stylesheet" href="../../styles.css?v=20260826053802">
+<title>Curio · AI · 2026-08-26 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20260826053801">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -49,20 +49,20 @@
 <main>
 
 <div class="hero">
-  <div class="kicker">🤖 AI · 2026-07-03</div>
-  <h1>Curio · AI · 2026-07-03</h1>
+  <div class="kicker">🤖 AI · 2026-08-26</div>
+  <h1>Curio · AI · 2026-08-26</h1>
   <div class="meta">📖 主编点评</div>
 </div>
 <div class="content">
 <blockquote>
-<p>今日 2 条头条 + 3 条备选</p>
+<p>今日 1 条头条 + 0 条备选</p>
 </blockquote>
-<p><em>今日核心信号：Anthropic与三星洽谈定制AI芯片，引爆韩国股市V型反转，三星涨9%；同时Meta被曝计划出租算力，扎克伯格承认AI Agent进展慢于预期，但SemiAnalysis驳斥算力过剩论。OpenAI向美国政府提议捐赠5%股权，AI产业与地缘政治深度交织。</em></p>
+<p><em>今日核心信号：OpenAI 自研芯片 Jalapeño 实测超越 Blackwell，AI 算力格局生变；苹果发布 M6/M5 Ultra，桌面 AI 算力跃升；中国险资监管新规或重塑红利资产格局。AI 芯片、大厂动态、金融政策三条主线交织，建议关注算力自主化与 AI 基础设施投资逻辑。</em></p>
 <hr />
 <h2>🌟 今日精选</h2>
-<h3>1. Anthropic与三星洽谈定制AI芯片，对标OpenAI-Broadcom合作</h3>
-<p><strong>[AI]</strong> · ⭐⭐⭐⭐⭐ · <em>TechCrunch</em></p>
-<p>继OpenAI与Broadcom联合开发AI芯片后，Anthropic也被曝正与三星讨论定制芯片。消息一出，韩国KOSPI指数暴涨5%触发熔断，三星电子涨近9%。AI军备竞赛从模型层延伸到芯片层，定制化ASIC成为新战场。</p>
+<h3>4. DeepSeek Harness 多 Agent 协作插件开源，一条指令拉起 Agent Teams</h3>
+<p><strong>[AI]</strong> · ⭐⭐⭐⭐ · <em>程序员阿江-Relakkes</em></p>
+<p>开发者阿江在 DeepSeek Harness 内测期间开发了开源插件 dsh-agent-teams，实现多 Agent 协作。插件自动创建队长与成员 Agent，分析任务生成依赖 DAG，无依赖任务并行执行，通过共享任务池原子领取任务，避免冲突。这为 Agent 开发提供了新的协作范式。</p>
 <table>
 <thead>
 <tr>
@@ -72,75 +72,33 @@
 </thead>
 <tbody>
 <tr>
-<td>Anthropic与三星已就定制AI芯片展开初步讨论</td>
-<td>Anthropic与三星的合作具体规模和量产时间未披露</td>
+<td>开源插件 dsh-agent-teams 支持 DeepSeek Harness 多 Agent 协作。</td>
+<td>插件处于早期阶段，稳定性和扩展性有待验证。</td>
 </tr>
 <tr>
-<td>OpenAI一周前宣布与Broadcom合作开发自有AI芯片</td>
-<td>定制芯片能否在性能或成本上超越NVIDIA GPU尚不确定</td>
+<td>自动创建队长与多个成员 Agent，分析任务并生成依赖 DAG。</td>
+<td>DeepSeek Harness 本身是否主流，影响插件的适用范围。</td>
 </tr>
 <tr>
-<td>三星电子Q3 DRAM价格计划上调至多20%，存储需求持续旺盛</td>
-<td>三星的芯片制造产能能否满足Anthropic需求存疑</td>
+<td>无依赖任务并行执行，通过共享任务池原子领取任务，避免成员冲突。</td>
+<td>多 Agent 协作的实际效果取决于任务复杂度和模型能力。</td>
 </tr>
 <tr>
-<td>韩国KOSPI指数当日涨5%触发熔断，三星涨近9%</td>
-<td>AI芯片定制化趋势是否会加速NVIDIA生态分化</td>
+<td>通过本地数据协议完成队长、成员之间的通信与状态同步。</td>
+<td>开源社区反馈和后续更新值得关注。</td>
 </tr>
 </tbody>
 </table>
 <p><strong>📖 主编点评</strong></p>
-<p>你应该关注AI芯片定制化趋势——这直接关系到未来模型训练和推理的成本结构。如果你在做Agent项目，底层芯片变化会影响API定价和可用性。Anthropic选择三星而非台积电，也暗示地缘供应链重组。</p>
-<p>📺 <a href="https://techcrunch.com/2026/07/02/anthropic-is-discussing-a-new-custom-chip-with-samsung/">打开原文</a></p>
+<p>如果你在做 Agent 项目，这个插件提供了一种多 Agent 协作的实现思路，可以借鉴其任务分解和通信机制。你可以尝试在本地搭建 DeepSeek Harness 环境，体验一下多 Agent 协作的效果，或许能启发你优化自己的 content-curator 项目。</p>
+<p>📺 <a href="http://www.bilibili.com/video/av117111879898943">打开原文</a></p>
 <hr />
-<h3>5. OpenAI提议向美国政府捐赠5%股权，换取监管绿灯</h3>
-<p><strong>[AI]</strong> · ⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
-<p>Sam Altman向特朗普政府提议将OpenAI 5%股权注入美国主权财富基金，此举发生在华盛顿推迟GPT-5.6发布之后。Altman还建议所有领先AI实验室向类似阿拉斯加永久基金的公共基金注资。</p>
-<table>
-<thead>
-<tr>
-<th>✅ 已确认</th>
-<th>⚖️ 尚属判断</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>OpenAI提议向美国政府捐赠5%股权</td>
-<td>5%股权估值基础是什么（最新估值约3000亿美元）</td>
-</tr>
-<tr>
-<td>Altman已与特朗普、商务部长和财长讨论</td>
-<td>该提议能否换取实质性的监管放松</td>
-</tr>
-<tr>
-<td>此前华盛顿以安全为由推迟GPT-5.6发布</td>
-<td>其他AI公司（Anthropic、Google）是否会跟进</td>
-</tr>
-<tr>
-<td>Altman建议所有领先AI实验室向公共基金注资</td>
-<td>主权财富基金的资金用途和治理结构</td>
-</tr>
-</tbody>
-</table>
-<p><strong>📖 主编点评</strong></p>
-<p>AI监管正在从"要不要管"转向"怎么分钱"。如果你关注AI政策，这是标志性事件。对个人而言，监管走向直接影响模型可用性和API价格。建议关注后续立法进展。</p>
-<p>📺 <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-floats-5-percent-government-stake-days-after-washington-delayed-gpt-5-6">打开原文</a></p>
-<hr />
-<h2>📋 备选阅读</h2>
-<ul>
-<li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-restores-claude-fable-5-as-us-lifts-export-controls">Anthropic恢复Claude Fable 5全球访问，美国解除出口管制</a> —— Claude Fable 5恢复后安全过滤仅剩单一漏洞检测，模型能力与安全平衡再成焦点。
-  <em>Tom's Hardware</em></li>
-<li><a href="https://arstechnica.com/ai/2026/07/googles-ai-buildout-drove-37-increase-in-electricity-use-in-2025/">Google 2025年AI建设导致用电量增长37%</a> —— AI能耗激增，Google碳中和承诺面临挑战，绿色AI或成下一投资主题。
-  <em>Ars Technica</em></li>
-<li><a href="https://www.bilibili.com/video/av116844031774993">Claude Code封号原因曝光：Anthropic植入隐形用户标记系统</a> —— 逆向工程发现Claude Code客户端含隐蔽用户标记，中国用户被封号原因浮出水面。
-  <em>程序员鱼皮</em></li>
-</ul>
 <hr />
 <h2>💬 觉得 AI 这期怎么样？</h2>
 <p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
 </div>
 
-    <div class="feedback" data-issue-id="ai/2026-07-03">
+    <div class="feedback" data-issue-id="ai/2026-08-26">
       <h2>📝 本期反馈</h2>
       <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
 
@@ -178,6 +136,6 @@ window.CURIO_REL_ROOT = "../../";
 window.CURIO_API_BASE = "https://api.curioradar.fun";
 window.CURIO_GH_REPO = "zczxd1118/curio-app";
 </script>
-<script src="../../app.js?v=20260826053802"></script>
+<script src="../../app.js?v=20260826053801"></script>
 </body>
 </html>
