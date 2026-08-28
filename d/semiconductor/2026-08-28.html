@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI 算力 / 半导体 · 2026-08-28 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20260828154907">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html" class="active">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🔬 AI 算力 / 半导体 · 2026-08-28</div>
+  <h1>Curio · AI 算力 / 半导体 · 2026-08-28</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 4 条备选</p>
+</blockquote>
+<p><em>今日核心信号：Nvidia 拟 129 亿美元收购 Hugging Face，OpenAI 自研芯片 Jalapeño 在 Hot Chips 2026 公布首批基准，AI 基础设施竞赛白热化。同时，美联储主席沃什释放鹰派信号，全球股票基金 13 周来首次净流出，市场避险情绪升温。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. Nvidia 拟 129 亿美元收购 Hugging Face，押注开源模型生态</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐⭐ · <em>mfiguiere</em></p>
+<p>据 Business Insider 报道，Nvidia 正洽谈以 129 亿美元收购 AI 模型托管平台 Hugging Face，交易若达成将成其史上最大收购之一。此举旨在强化 Nvidia 在开源模型分发和 AI 开发者生态中的话语权，直接对抗 OpenAI、Google 等自研芯片和模型厂商的垂直整合。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nvidia 与 Hugging Face 的收购谈判正在进行，估值约 129 亿美元</td>
+<td>交易是否最终达成仍存变数，可能面临反垄断审查</td>
+</tr>
+<tr>
+<td>Hugging Face 是 AI 模型和数据集托管的主要平台，拥有超百万开发者</td>
+<td>Hugging Face 的社区中立性可能受影响，开发者是否会流失待观察</td>
+</tr>
+<tr>
+<td>Nvidia 近期财报显示数据中心业务强劲，有足够现金支撑收购</td>
+<td>Nvidia 能否有效整合 Hugging Face 的商业模式（如企业版）尚不确定</td>
+</tr>
+<tr>
+<td>收购将补充 Nvidia 的软件生态，与 CUDA 和 DGX 云形成协同</td>
+<td>对开源模型生态的长期影响（如模型托管政策）需观察</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>如果你在构建 AI 应用，Hugging Face 可能是你依赖的模型来源。关注收购进展，若落地，模型托管和分发可能更偏向 Nvidia 生态，建议提前规划多平台分发策略。同时，这标志着 AI 基础设施竞争从芯片延伸到开发者平台，你的技能栈中应包含 Hugging Face 相关工具。</p>
+<p>📺 <a href="https://www.businessinsider.com/nvidia-in-talks-to-buy-hugging-face-13-billion-dollars-2026-8">打开原文</a></p>
+<hr />
+<h3>2. OpenAI 自研芯片 Jalapeño 基准首曝：能效比 Blackwell 更优，推理延迟更低</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐⭐ · <em>Nitin Dahad</em></p>
+<p>Hot Chips 2026 上，OpenAI 首次公开其自研 AI 加速器 Jalapeño 的基准测试结果。该芯片专为 AI 工作负载从零设计，在能效和推理延迟上优于 Nvidia Blackwell，但绝对性能仍不及。OpenAI 表示，Jalapeño 将用于降低推理成本，并计划未来迭代。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jalapeño 是 OpenAI 首款自研 AI 加速器，采用 ASIC 设计</td>
+<td>Jalapeño 的绝对性能仍不及 Blackwell，是否适合训练任务未知</td>
+</tr>
+<tr>
+<td>基准测试显示其能效比（每瓦性能）优于 Nvidia Blackwell</td>
+<td>OpenAI 能否持续迭代芯片，追赶 Nvidia 的快速更新节奏</td>
+</tr>
+<tr>
+<td>在推理延迟方面，Jalapeño 比 Blackwell 低 30%</td>
+<td>自研芯片对 OpenAI 的成本结构影响有多大，尚未披露具体数字</td>
+</tr>
+<tr>
+<td>OpenAI 已部署 Jalapeño 用于部分推理任务，计划扩大规模</td>
+<td>对 Nvidia 的市场份额影响需观察，但短期可能有限</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>OpenAI 自研芯片意味着 AI 算力市场将更多元化，长期可能降低推理成本。作为 AI 开发者，你可以关注 OpenAI 的 API 定价变化，若成本下降，你的 Agent 项目运行费用可能降低。同时，关注芯片架构对模型部署的影响，未来可能需要适配不同硬件。</p>
+<p>📺 <a href="https://www.eetimes.com/first-benchmarks-revealed-for-jalapeno-openais-clean-sheet-general-purpose-ai-accelerator-asic/">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-expects-to-sell-usd20-billion-worth-of-vera-rubin-hardware-this-quarter-would-account-for-20-percent-of-data-center-revenue-its-fastest-ramp-in-company-history">Nvidia 预计 Q3 销售 200 亿美元 Vera Rubin 系统，成为史上最快爬坡产品</a> —— Nvidia 新平台 Vera Rubin 季度销售目标 200 亿美元，占数据中心收入 20%，显示 AI 硬件需求强劲。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.tomshardware.com/pc-components/dram/sk-hynix-breaks-ground-on-the-first-hbm-plant-in-the-us-bringing-key-ai-component-production-to-the-states-says-production-starts-in-2029">SK hynix 在美国动工建设首家 HBM 工厂，2029 年投产</a> —— SK hynix 美国 HBM 工厂动工，将连接韩国 DRAM 晶圆与美国 AI 客户，供应链本地化趋势。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/semiconductors/intel-14a-defect-density-is-dropping-faster-than-the-company-expected-we-have-not-seen-this-performance-since-22nm-says-cfo">Intel 14A 缺陷密度下降速度快于预期，CFO 称性能为 22nm 以来最佳</a> —— Intel 14A 工艺进展顺利，或提升其代工竞争力，值得关注。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/policy/trump-administration-weighs-expanding-chip-tariffs-to-laptops-consoles-and-servers">美国考虑对半导体征收新一轮关税，可能扩展至笔记本电脑、游戏机等</a> —— 特朗普政府考虑扩大芯片关税范围，可能影响硬件成本，需关注。
+  <em>Tom's Hardware</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 算力 / 半导体 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="semiconductor/2026-08-28">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-08-28 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20260828154907"></script>
+</body>
+</html>
