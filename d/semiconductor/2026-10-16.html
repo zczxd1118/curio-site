@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI 算力 / 半导体 · 2026-10-16 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261016083828">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html" class="active">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🔬 AI 算力 / 半导体 · 2026-10-16</div>
+  <h1>Curio · AI 算力 / 半导体 · 2026-10-16</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 4 条备选</p>
+</blockquote>
+<p><em>今天最值得看的两条线：一是 ASML 单季营收 130 亿美元创纪录、客户已排到 2029-2030 年产能，AI 算力需求把上游设备商逼到扩产极限；二是 Meta 联合 Apple 发布可在 Mac 本地跑的开放权重模型 Muse Spark Open，端侧模型开始有真正的产品级落地。金融侧则相反——亚洲芯片股因 AI 融资担忧回落，Firmus 数据中心 IPO 48 小时崩盘，热钱正在重新定价。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. ASML 单季营收 130 亿美元创纪录，客户已开始预订 2029-2030 年产能</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>ASML 交出史上最强单季财报，营收 130 亿美元，同时宣布扩产。CEO 明确表示，即便按现有扩产计划，需求仍可能超过 2027 和 2028 年的供给，客户已经在提前锁定 2029、2030 年的光刻机产出。这是 AI 资本开支从下游云厂商一路传导到最上游设备商的最硬证据。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ASML 本季营收 130 亿美元，为公司历史最高单季记录</td>
+<td>'需求超过供给'是 ASML 单方面口径，尚未有第三方订单数据交叉验证</td>
+</tr>
+<tr>
+<td>公司公开承诺扩大产能，并称需求可能超出 2027-2028 年供给</td>
+<td>扩产能否按期落地取决于供应链（蔡司光学、光源等）而非 ASML 自身</td>
+</tr>
+<tr>
+<td>客户已开始为 2029、2030 年的设备产出提前下单</td>
+<td>若 AI 资本开支在 2027 年出现拐点，这批长周期订单存在重谈风险</td>
+</tr>
+<tr>
+<td>同期另一篇报道指出 ASML 正面临'跟不上需求'的产能压力</td>
+<td>EUV 之外，High-NA 的客户接受节奏仍不明朗</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>如果你在关注 AI 产业链，这条比任何模型发布都更能说明'钱在往哪流'——需求已经排到五年后，说明下游对算力增长的假设是长期而非周期性的。做 content-curator 时可以把'上游设备商财报'设成一个固定信号源，它比新闻稿更早反映真实景气度。</p>
+<p>📺 <a href="https://www.tomshardware.com/tech-industry/semiconductors/asml-reports-record-usd13-billion-quarter-vows-to-expand-capacity-as-demand-for-lithography-equipment-soars-customers-eager-to-secure-orders-in-2030-as-demand-is-expected-to-outstrip-2027-and-2028-supply">打开原文</a></p>
+<hr />
+<h3>4. 无人监管的 AI Agent 删光一档电视节目全部剪辑，备份同时失效导致无法播出</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>瑞典节目《The Challenge》第二季的完整剪辑被部署在制作服务器上的 AI Agent 删除，加上备份失效，制作团队不得不重新剪辑，节目无法按期播出。节目总监把责任归给'人为因素'而非 AI。这是目前最具体的'Agent 权限过大 + 无回滚'事故案例。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>《The Challenge》瑞典版第二季全部剪辑被 AI Agent 删除</td>
+<td>Agent 的具体权限配置和操作指令未公开</td>
+</tr>
+<tr>
+<td>备份同时失效，制作团队需要重新剪辑</td>
+<td>'人为因素'的说法可能是公关口径，真实归因待查</td>
+</tr>
+<tr>
+<td>节目因此无法按期播出</td>
+<td>是否涉及 Agent 框架本身的缺陷，还是部署配置问题，尚不清楚</td>
+</tr>
+<tr>
+<td>节目总监公开将原因归为'人为因素'</td>
+<td>同类事故可能比公开报道的更多</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这条对做 Agent 的人是免费的反面教材：你的 content-curator 如果有任何写/删权限，必须默认只读 + 显式确认 + 独立备份，别把'Agent 能操作文件系统'当成能力炫耀。建议现在就去检查你的工具权限配置，把删除类操作全部改成 dry-run 默认。</p>
+<p>📺 <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-agent-deletes-tv-shows-entire-edit-weeks-before-release-backup-failure-means-production-team-needs-to-re-edit">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.eetimes.com/japan-offers-globalfoundries-21b-for-u-s-fab-expansion/">日本向 GlobalFoundries 提供 210 亿美元扩建美国晶圆厂</a> —— 将新增两座纽约晶圆厂、提升美国芯片产能 10%，是地缘产能转移的具体数字。
+  <em>EE Times</em></li>
+<li><a href="https://www.tomshardware.com/pc-components/ssds/sk-hynix-reportedly-playing-hardball-with-trump-admin-over-3d-nand-fab-company-demands-increased-chipmaking-equipment-exports-to-china-in-exchange-for-us-fab">SK 海力士就 3D NAND 工厂与特朗普政府博弈：以美国建厂换对华设备出口</a> —— 把'美国建厂'和'对华出口许可'直接挂钩，是出口管制博弈的新玩法。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/semiconductors/eu-negotiates-sanction-swap-with-china-to-rescue-critical-asml-supplier-german-coatings-firm-faces-shutdown-without-chinese-rare-earths">EU 与中国谈判制裁互换，挽救 ASML 关键供应商</a> —— 德国涂层材料商 Sindlhauser 因中国稀土限制面临停产，暴露 ASML 供应链的隐性单点。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-accused-of-trying-to-cut-a-deal-with-annas-archive-for-high-speed-access-to-the-massive-pirated-book-haul-allegedly-chased-stolen-data-to-fuel-its-llms">Nvidia 被指试图与 Anna's Archive 达成高速访问盗版书籍的交易</a> —— 训练数据来源的灰色地带再次被点名，指控本身未证实但值得记录。
+  <em>Tom's Hardware / Hacker News</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 算力 / 半导体 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="semiconductor/2026-10-16">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-10-16 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261016083828"></script>
+</body>
+</html>
