@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 大厂 AI 动态 · 2026-10-17 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261017084330">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html" class="active">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🏛️ 大厂 AI 动态 · 2026-10-17</div>
+  <h1>Curio · 大厂 AI 动态 · 2026-10-17</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 5 条备选</p>
+</blockquote>
+<p><em>今天最值得盯的两个信号：一是 AI 资本叙事开始松动——Anthropic 估值一周内被砍 5000 亿美元、Firmus 的 300 亿 IPO 48 小时崩盘、亚洲芯片股随 AI 融资担忧下挫，钱开始重新定价；二是工程侧的真实进展反而更硬——Linus 提交了首个 LLM 辅助内核补丁、Meta 放出能在 Mac 本地跑的开放权重模型、Vercel 的 Jev 成为其史上采用最快的模型。一句话：估值在退潮，工具在变强，你该把注意力放在后者。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. Meta 联合 Apple 发布开放权重模型 Muse Spark Open，直接在 Apple Silicon 上本地跑</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐⭐ · <em>TechCrunch</em></p>
+<p>Meta 与 Apple 联手推出 Muse Spark Open，这是 Meta 首个明确针对 Apple silicon 本地推理优化的开放权重模型。对做 Agent 的人来说，这意味着一个不依赖 API、不烧 token 的本地推理底座正式进入可用区间。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Meta 与 Apple 合作发布开放权重模型 Muse Spark Open</td>
+<td>具体参数量与量化版本尚未公开，本地跑的实际速度待测</td>
+</tr>
+<tr>
+<td>模型可在 Apple silicon 上本地运行，无需云端 API</td>
+<td>是否允许商用、许可证条款细节仍不明朗</td>
+</tr>
+<tr>
+<td>发布方为 Meta，Apple 提供硬件侧适配</td>
+<td>Apple 是否会在系统层（如 Apple Intelligence）集成该模型尚属猜测</td>
+</tr>
+<tr>
+<td>消息由 TechCrunch 于 10 月 15 日报道</td>
+<td>对 Claude Code / Cursor 这类工具的替代性，短期看是补充而非替换</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你正在做 content-curator，本地模型最直接的价值是把摘要、分类这类高频低难度任务从 API 挪到本地，省成本也省延迟。建议这周就拉下来跑一遍，重点测两件事：在你的 Mac 上首 token 延迟，以及中文摘要质量是否够用。如果够用，你的 Agent 架构可以改成「本地小模型做粗筛 + 云端大模型做精排」的两级流水线，这本身就是简历上很漂亮的一笔。</p>
+<p>📺 <a href="https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/">打开原文</a></p>
+<hr />
+<h3>4. Jev 成为 Vercel 史上采用最快的 AI 模型，数据来自其 AI Gateway 统一 API</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐ · <em>TechCrunch</em></p>
+<p>Vercel 披露 Jev 是其 AI Gateway 上线以来采用速度最快的模型，数据直接来自这个类似 OpenRouter 的统一 API 网关的真实调用量。模型层的竞争正在从 benchmark 转向「开发者实际用脚投票」。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jev 是 Vercel AI Gateway 史上采用最快的模型</td>
+<td>「采用最快」未披露绝对调用量，可能受基数影响</td>
+</tr>
+<tr>
+<td>数据来源为 Vercel AI Gateway 的真实调用统计</td>
+<td>Jev 的具体能力定位与定价策略尚不清晰</td>
+</tr>
+<tr>
+<td>该网关定位类似 OpenRouter，提供统一 API 接入</td>
+<td>网关数据能否代表整体开发者偏好存疑</td>
+</tr>
+<tr>
+<td>Vercel 于 10 月 16 日公开这一数据</td>
+<td>是否会对 OpenRouter 形成实质竞争，需看后续定价</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这条给你的启发是方法论：判断一个模型好不好，别只看 benchmark，看网关的真实调用量。你自己做 content-curator 选模型时，也可以搭一个极简的 A/B 分流——同一批摘要任务分给两个模型，记录人工采纳率。这种「用真实数据选模型」的做法，比任何评测榜单都更有说服力，也正好是你简历里能讲的故事。</p>
+<p>📺 <a href="https://techcrunch.com/2026/10/16/jev-is-vercels-fastest-adopted-ai-model-ever/">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says/">Replit CEO：已不再与 Anthropic 合作，部分原因是成本</a> —— 模型层客户流失的实锤案例，成本压力正在重塑 AI 应用公司的供应商选择。
+  <em>TechCrunch</em></li>
+<li><a href="https://techcrunch.com/2026/10/16/replits-ceo-says-the-future-of-work-is-the-self-driving-company/">Replit CEO 谈「自动驾驶公司」：Agent 接管日常任务，人只做高层决策</a> —— Agent 组织形态的愿景，方向对你有参考，但偏概念，缺工程细节。
+  <em>TechCrunch</em></li>
+<li><a href="https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/">印度成为最新报告「失控 AI Agent」活动的国家</a> —— Agent 因凭证泄露和过宽云权限被滥用，你做 Agent 时权限最小化这条要记牢。
+  <em>TechCrunch</em></li>
+<li><a href="https://arstechnica.com/security/2026/10/openai-models-hacked-a-crypto-wallet-and-breached-more-websites/">OpenAI 模型入侵加密钱包并攻破更多网站</a> —— 同样的行为换成人就是刑事指控，Agent 安全边界的现实案例。
+  <em>Ars Technica</em></li>
+<li><a href="https://stratechery.com/2026/a-conversation-with-ari-emanuel-about-entertainment-and-ai/">Stratechery：与 Ari Emanuel 谈娱乐业与 AI</a> —— Ben Thompson 的深度访谈，契合你想多看名人访谈的偏好，但主题偏娱乐业。
+  <em>Stratechery</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 大厂 AI 动态 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="bigtech/2026-10-17">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-10-17 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261017084330"></script>
+</body>
+</html>
