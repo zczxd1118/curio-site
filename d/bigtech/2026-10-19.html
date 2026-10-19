@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 大厂 AI 动态 · 2026-10-19 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261019092814">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html" class="active">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🏛️ 大厂 AI 动态 · 2026-10-19</div>
+  <h1>Curio · 大厂 AI 动态 · 2026-10-19</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 1 条头条 + 5 条备选</p>
+</blockquote>
+<p><em>今天最重要的信号是 AI 资本叙事开始出现裂缝：OpenAI 年化收入比此前对外暗示的低 200 亿美元，Anthropic 估值据报缩水 5000 亿，Firmus 的 300 亿美元 IPO 在 48 小时内崩掉——算力基建的钱开始被重新定价。另一条线是 Anthropic 一边把 5% 股份捐给公益基金、一边给外部监督机构「准员工级」权限，AI 治理从口号进入可审计阶段。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>2. Anthropic 承诺捐出 5% 股份给公益基金，同时给外部监督机构「准员工级」系统权限</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐ · <em>Anthony Ha</em></p>
+<p>Anthropic 宣布将 5% 股份注入一个 public benefit fund，同期 Ars Technica 报道它给外部 AI 监督机构开放了接近内部员工的访问权限，且对方可以不经 Anthropic 审核直接发布结论。把股权和审计权同时让渡出去，在 AI 实验室里是第一次。考虑到它正在 IPO 进程中，这套动作既是治理表态，也是招股书里的风险对冲。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anthropic 承诺将 5% 股份投入 public benefit fund</td>
+<td>5% 股份的实际治理权与投票安排未披露</td>
+</tr>
+<tr>
+<td>外部监督机构获得「employee-like」系统访问权限</td>
+<td>外部监督机构的独立性边界仍不清晰</td>
+</tr>
+<tr>
+<td>该机构可未经 Anthropic 批准发布调查结论</td>
+<td>此举是否影响 IPO 估值定价尚无数据</td>
+</tr>
+<tr>
+<td>Anthropic 正处于 IPO 进程中，招股书已公开</td>
+<td>其他实验室是否会跟进同类结构未知</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>值得你把这份安排当作「AI 公司治理模板」存档。如果你未来做 Agent 产品涉及自动化决策，这套「外部可审计 + 结论可独立发布」的结构，很可能成为合规讨论的参照系——现在读一遍，比两年后被要求补课便宜得多。</p>
+<p>📺 <a href="https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund/">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/">Replit 把默认模型供应商从 Anthropic 换成 OpenAI</a> —— vibe coding 平台换模型供应商，Claude 仍可选但不再是默认，说明模型层的客户忠诚度极低。
+  <em>Kirsten Korosec, Lucas Ropek, Rebecca Bellan</em></li>
+<li><a href="https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/">Anthropic 称员工结构变得更资深、开会时间更多</a> —— AI 公司自己承认初级岗位在减少，对正在求职的你是直接相关的信号，但信息颗粒度偏粗。
+  <em>Anthony Ha</em></li>
+<li><a href="https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/">Disney 同意接收 Character.AI 大部分员工</a> —— stalking horse 竞标结构下的资产与人才打包收购，AI 陪伴赛道的一次标志性退场。
+  <em>Anthony Ha</em></li>
+<li><a href="https://artificialanalysis.ai/models/gemini-4-argon">Gemini 4 Argon 的智能、性能与价格分析</a> —— 第三方评测站对 Gemini 4 Argon 的横向数据，选模型时可直接查表，但本身不是新闻。
+  <em>theanonymousone</em></li>
+<li><a href="https://github.com/cobanov/PS5LM">在越狱 PS5 上跑 llama.cpp，原生运行任意 GGUF 模型</a> —— 工程趣味大于实用价值，但「在非预期硬件上跑推理」的思路对你的本地部署实验有启发。
+  <em>Anon84</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 大厂 AI 动态 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="bigtech/2026-10-19">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-10-19 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261019092814"></script>
+</body>
+</html>
