@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 金融 · 2026-10-20 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261020090208">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html" class="active">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">📰 金融 · 2026-10-20</div>
+  <h1>Curio · 金融 · 2026-10-20</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 1 条头条 + 4 条备选</p>
+</blockquote>
+<p><em>今天最重要的信号来自资本端：AI 算力泡沫的裂缝正在显形——CoreWeave 债券跌入困境区间、OpenAI 年化收入比此前口径少 200 亿美元、Firmus 30B IPO 48 小时崩盘。另一条线是 Anthropic 一边谈 450 亿美元算力单、一边被传估值缩水 5000 亿，AI 基建的融资结构正在被重新定价。对做 Agent 的你来说，工程侧的看点则是 Nvidia 开源 Agent 模型和 Amazon 用 TorchNeuron 撬 PyTorch 生态。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. CoreWeave 债券跌入困境区间，AI 基建的债务问题开始外溢成整个行业的风险</h3>
+<p><strong>[金融]</strong> · ⭐⭐⭐⭐⭐ · <em>Elizabeth Lopatto / The Verge</em></p>
+<p>CoreWeave 上周债券收益率相对国债溢价突破 1000 个基点，按通行定义已进入 distressed 区间。这家公司是 AI 数据中心扩张最激进的杠杆玩家之一，它的融资成本直接决定后续算力租赁的定价。判断：这不是单一公司的信用事件，而是市场第一次给「AI 基建用债务堆出来」这件事标价。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CoreWeave 债券利差突破 1000bp，进入 distressed 定义区间</td>
+<td>债券下跌是否已触发算力租赁合同的重新议价，尚无公开数据</td>
+</tr>
+<tr>
+<td>公司是 AI 数据中心扩张中杠杆最激进的玩家之一</td>
+<td>若融资成本持续走高，中小 AI 云厂商可能先于 CoreWeave 出问题</td>
+</tr>
+<tr>
+<td>同期 Firmus 的 30B 美元 IPO 在 48 小时内崩盘</td>
+<td>Nvidia 作为「最后担保人」的角色能撑多久，没有明确边界</td>
+</tr>
+<tr>
+<td>创始人此前已通过 33 亿美元股票减持锁定个人财富</td>
+<td>市场对 AI 基建的定价是否已从「增长」切换到「信用」，还需一两个季度验证</td>
+</tr>
+<tr>
+<td>10 年期美债收益率升至 5.3%，为 24 年新高</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你如果打算长期跑 Agent 项目，别把基础设施押在单一新兴云厂商的长期合约上——这类公司的融资结构正在被重新审视。更实际的动作是：把推理成本假设按「未来 6 个月可能涨价 20-30%」重算一遍，优先选能随时切回大厂 API 的架构。</p>
+<p>📺 <a href="https://www.theverge.com/ai-artificial-intelligence/1014045/coreweave-stock-debt-sector-ai">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.telegraph.co.uk/business/2026/10/16/anthropic-valuation-ipo-ai-stock-listing/">Anthropic 被传估值缩水 5000 亿美元，同时洽谈 450 亿美元算力协议</a> —— 估值下修与巨额算力采购同时发生，逻辑上矛盾，值得单独追踪，但两条信源都偏二手，未上头条。
+  <em>Telegraph / TechCrunch</em></li>
+<li><a href="https://finance.yahoo.com/economy/policy/article/the-us-federal-budget-deficit-for-2026-just-came-in-its-1992-trillion-191917669.html">美国联邦赤字一年跳增 12%，逼近 2 万亿美元</a> —— 宏观背景板，解释了为什么长端利率压着 AI 基建的融资成本，但本身不是 AI 事件。
+  <em>Yahoo Finance / HN</em></li>
+<li><a href="https://www.wsj.com/finance/investing/surging-yields-bring-the-bond-market-back-to-the-turn-of-the-century-2b74773f">10 年期美债收益率升破 5.3%，24 年新高</a> —— 和 CoreWeave 债券是同一条因果链的上游，单独看信息量不足，配合头条 1 读。
+  <em>WSJ / HN</em></li>
+<li><a href="https://madrobot.blog/2026/10/19/us-bans-deepseek-federal-agencies-dhs-order-remove-third-party/">美国下令所有文职机构移除 DeepSeek，含基于它构建的工具</a> —— 对国内做 Agent 的人有间接影响（模型可获取性），但信源是个人博客，待官方确认。
+  <em>madrobot / HN</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 金融 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="finance-fed/2026-10-20">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-10-20 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261020090208"></script>
+</body>
+</html>

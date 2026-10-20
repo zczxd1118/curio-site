@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 半导体 · 2026-10-20 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261020090201">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html" class="active">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🔬 AI 算力 / 半导体 · 2026-10-20</div>
+  <h1>Curio · 半导体 · 2026-10-20</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 1 条头条 + 4 条备选</p>
+</blockquote>
+<p><em>今天最重要的信号来自资本端：AI 算力泡沫的裂缝正在显形——CoreWeave 债券跌入困境区间、OpenAI 年化收入比此前口径少 200 亿美元、Firmus 30B IPO 48 小时崩盘。另一条线是 Anthropic 一边谈 450 亿美元算力单、一边被传估值缩水 5000 亿，AI 基建的融资结构正在被重新定价。对做 Agent 的你来说，工程侧的看点则是 Nvidia 开源 Agent 模型和 Amazon 用 TorchNeuron 撬 PyTorch 生态。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>4. OpenAI 年化收入比此前对外口径少 200 亿美元，算力采购承诺的可持续性被打上问号</h3>
+<p><strong>[半导体]</strong> · ⭐⭐⭐⭐ · <em>mfiguiere / CNBC</em></p>
+<p>CNBC 报道称 OpenAI 的年化收入比此前对外释放的信号低约 200 亿美元。这个差额直接关系到它对 Nvidia、Oracle、CoreWeave 那一长串算力采购承诺能不能兑现。判断：收入口径的修正，是这轮 AI 基建叙事里第一个来自需求侧的硬数字。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI 年化收入比此前对外口径低约 200 亿美元</td>
+<td>200 亿美元的差额是口径差异还是实际下修，报道未完全说清</td>
+</tr>
+<tr>
+<td>报道同时点名 Nvidia、Oracle、CoreWeave 作为关联方</td>
+<td>OpenAI 是否会因此调整已签的多年算力采购合同，尚无公开信息</td>
+</tr>
+<tr>
+<td>该消息与 CoreWeave 债券跌入困境区间时间接近</td>
+<td>收入下修对 Nvidia 订单簿的实际影响，可能要等下个财报季才显现</td>
+</tr>
+<tr>
+<td>Anthropic 同期被传正洽谈 450 亿美元算力协议</td>
+<td>这是否标志 AI 需求侧叙事转向，单条数据不足以定论</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这条和头条 1 要连起来读：需求侧数字下修 + 供给侧债务承压，是同一个故事的两面。对你的实际含义是——别把「模型能力会一直便宜下去」当成架构前提，推理成本的中期走势现在比过去一年更不确定。</p>
+<p>📺 <a href="https://www.cnbc.com/2026/10/08/open-ai-revenue-nvidia-oracle-coreweave.html">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.tomshardware.com/pc-components/cpus/arm-claims-agi-cpu-delivers-double-the-performance-per-rack-of-amd-epyc-9755-in-independent-analysis-new-cpu-evaluation-methodology-developed-by-arm-evaluates-agentic-ai-performance-across-seven-workloads">Arm 称其 AGI CPU 在 agentic AI 测试中每机架性能近 AMD EPYC 9755 的两倍</a> —— 方法论由 Arm 联合 Fujitsu、Meta、OpenAI 自建，厂商自评需打折看，但 agentic 负载基准本身值得关注。
+  <em>Etiido Uko / Tom's Hardware</em></li>
+<li><a href="https://www.eetimes.com/qualcomm-wins-key-claims-against-arm-but-damages-total-just-2/">Qualcomm 在对 Arm 的关键诉讼中胜诉，但赔偿总额仅 2 美元</a> —— 四年 IP 纠纷的阶段性结果，保住了 Qualcomm 自研处理器路线，但 2 美元赔偿说明象征意义大于财务意义。
+  <em>Pablo Valerio / EE Times</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/semiconductors/asml-says-its-sells-absolutely-nothing-in-europe-calls-on-eu-to-help-create-demand">ASML 称 2026 年在欧洲「什么都没卖出去」</a> —— 欧洲半导体产能政策的尴尬注脚，数据够硬，但发布于 9 月底，时效性偏弱。
+  <em>MC995 / HN</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/data-centers/300-plus-local-data-center-bans-have-only-delayed-just-three-us-projects-bans-much-more-bark-than-bite-only-2-3-gigawatts-of-data-centers-are-held-up-versus-38-gigawatts-expected-online-in-2027">300 多个地方数据中心禁令，实际只拖慢了 3 个美国项目</a> —— SemiAnalysis 的量化结论：2.3GW 被卡 vs 2027 年预计上线 38GW，说明地方阻力被高估。
+  <em>Shane Downing / Tom's Hardware</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 半导体 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="semiconductor/2026-10-20">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-10-20 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261020090201"></script>
+</body>
+</html>
