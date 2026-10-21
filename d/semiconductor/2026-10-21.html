@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI 算力 / 半导体 · 2026-10-21 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261021090049">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html" class="active">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🔬 AI 算力 / 半导体 · 2026-10-21</div>
+  <h1>Curio · AI 算力 / 半导体 · 2026-10-21</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 4 条备选</p>
+</blockquote>
+<p><em>今天最值得盯的是两条反向信号：一边是 SpaceX 靠 AI 业务把季度营收推到 146 亿美元、净利 44 亿，另一边是 Anthropic 估值被传缩水 5000 亿、云算力拿不到、IPO 前夜承压。AI 泡沫的分歧已经从口水战变成财报和估值数字，同时 Google 和 Amazon 都在推工具把 PyTorch 应用搬离 Nvidia GPU，算力层的护城河开始被撬。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>3. Modal 实测 Nvidia Vera CPU 在 Agent 负载上吞吐是 Intel/AMD 的两倍</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>AI 推理平台 Modal 把 Nvidia 的 Vera CPU 部署进现有 x86 集群，内部测试显示在 AI Agent 类负载上吞吐达到 Intel 和 AMD 芯片的两倍。同一周 Arm 也放出自家 AGI CPU 对比 AMD EPYC 9755 的"每机架近 2 倍"数据。CPU 侧针对 Agent 负载的军备竞赛正式开打。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modal 已在生产环境部署 Nvidia Vera CPU</td>
+<td>两倍吞吐的测试条件与基线未完整公开，需谨慎看待</td>
+</tr>
+<tr>
+<td>内部测试称 Agent 负载吞吐为 Intel/AMD 的 2 倍</td>
+<td>Agent 负载的基准是否代表真实生产流量，存疑</td>
+</tr>
+<tr>
+<td>Arm 同期发布 AGI CPU，称每机架性能近 2 倍于 EPYC 9755</td>
+<td>Vera CPU 的定价与供货时间未披露</td>
+</tr>
+<tr>
+<td>Arm 的评测方法由 Fujitsu、Meta、OpenAI 共同参与制定</td>
+<td>CPU 侧竞争能否真正削弱 Nvidia 在训练端的地位，为时尚早</td>
+</tr>
+<tr>
+<td>Google 与 Amazon 均在推工具帮 PyTorch 用户迁离 Nvidia GPU</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>如果你关心推理成本，这条比模型发布更实用。Agent 类负载（多轮工具调用、长上下文）和传统推理的硬件偏好不同，未来选型不能只看 GPU。做 content-curator 这类项目时，把"CPU 侧 Agent 负载"作为一个观察维度记下来，面试时是加分细节。</p>
+<p>📺 <a href="https://www.tomshardware.com/pc-components/cpus/nvidia-vera-cpu-deployed-at-ai-startup-modal-alongside-existing-x86-fleet-internal-testing-showed-2x-throughput-compared-to-amd-and-intel">打开原文</a></p>
+<hr />
+<h3>5. DeepMind 四个 Gemini 4 Agent 用 27 小时通关 Minecraft，自己写了 2783 个程序</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>DeepMind 研究者称四个 Gemini 4 Argon Agent 在无人工干预下 27 小时通关 Minecraft，期间自行编写 2783 个程序，死亡 605 次（简单难度），烧掉约 520 美元 token。数字很诚实——包括失败次数和成本。这是多 Agent 协作在长程任务上少见的完整公开数据。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>四个 Gemini 4 Argon Agent 协作通关 Minecraft</td>
+<td>"通关"的判定标准与是否用了模组未说明</td>
+</tr>
+<tr>
+<td>耗时 27 小时，全程无人工干预</td>
+<td>2783 个程序的质量与复用率未知</td>
+</tr>
+<tr>
+<td>Agent 自行编写 2783 个程序</td>
+<td>简单难度下的成绩能否外推到复杂任务，存疑</td>
+</tr>
+<tr>
+<td>死亡 605 次，难度为简单</td>
+<td>多 Agent 协作的具体分工机制未公开</td>
+</tr>
+<tr>
+<td>token 成本约 520 美元</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这条的价值在"失败数据"：605 次死亡和 520 美元成本，比任何"Agent 通关游戏"的标题都更能说明长程 Agent 的真实状态。你做 content-curator 时，可以借鉴它的思路——记录 Agent 的失败次数和 token 成本，作为项目的一个量化指标写进 README。</p>
+<p>📺 <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/google-deepmind-claims-four-gemini-4-agents-beat-minecraft-in-27-hours-by-writing-2-783-programs-of-their-own-the-ai-team-died-605-times-on-easy-difficulty-and-ran-up-an-estimated-usd520-in-tokens">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.tomshardware.com/pc-components/gpus/chinas-tech-giants-drop-usd35-billion-on-export-compliant-nvidia-rtx-pro-5500-workstation-gpu-orders-to-power-ai-ambitions-according-to-reports-bytedance-alibaba-and-tencent-order-3-million-cards-despite-warnings-that-only-10-percent-of-orders-are-fulfillable">China's tech giants drop $35B on Nvidia RTX Pro 5500 orders</a> —— 字节、阿里、腾讯下单 35 亿美元合规版 GPU，但据报仅 10% 订单可交付，供需缺口惊人。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/big-tech/us-takes-unprecedented-step-of-recommissioning-nuclear-plants-due-to-ai-power-demand-2-25-gw-currently-on-tap-from-refurbished-reactors">US restarts three shut-down nuclear reactors to feed AI data centers</a> —— 美国重启三座核反应堆供电 AI 数据中心，现有 2.25GW 容量，电力正成为算力瓶颈。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.eetimes.com/chris-lattner-ai-code-generation-doesnt-solve-software-engineering/">Chris Lattner: AI Code Generation Doesn't Solve Software Engineering</a> —— LLVM 之父谈 AI 生成代码反而让软件生态更难维护，观点稀缺，适合你这种重度 vibe coding 玩家反刍。
+  <em>EE Times</em></li>
+<li><a href="https://www.eetimes.com/qualcomm-wins-key-claims-against-arm-but-damages-total-just-2/">Qualcomm Wins Key Claims Against Arm, but Damages Total Just $2</a> —— 高通在四年 IP 诉讼中赢下关键主张，但赔偿仅 2 美元，象征意义大于财务意义。
+  <em>EE Times</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 算力 / 半导体 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="semiconductor/2026-10-21">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-10-21 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261021090049"></script>
+</body>
+</html>

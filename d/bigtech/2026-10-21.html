@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 大厂 AI 动态 · 2026-10-21 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261021090051">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html" class="active">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🏛️ 大厂 AI 动态 · 2026-10-21</div>
+  <h1>Curio · 大厂 AI 动态 · 2026-10-21</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 4 条备选</p>
+</blockquote>
+<p><em>今天最值得盯的是两条反向信号：一边是 SpaceX 靠 AI 业务把季度营收推到 146 亿美元、净利 44 亿，另一边是 Anthropic 估值被传缩水 5000 亿、云算力拿不到、IPO 前夜承压。AI 泡沫的分歧已经从口水战变成财报和估值数字，同时 Google 和 Amazon 都在推工具把 PyTorch 应用搬离 Nvidia GPU，算力层的护城河开始被撬。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. SpaceX 季度营收 146 亿美元、净利 44 亿，AI 业务成了增长引擎</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐⭐ · <em>TechCrunch</em></p>
+<p>SpaceX 在 Q3 财报里报出 146 亿美元营收，同比增长 161%，净利 44 亿美元，公司明确把增长归因于 Super Intelligence 业务。同一场电话会上 Musk 还确认 Tesla 与 SpaceX 已各自成立特别委员会评估合并。一家火箭公司靠 AI 赚钱，这件事本身就说明算力与模型的现金流正在从纯 AI 公司外溢。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q3 营收 146 亿美元，同比 +161%</td>
+<td>Super Intelligence 业务的具体构成与客户尚未披露</td>
+</tr>
+<tr>
+<td>季度净利 44 亿美元，公司称 AI 是主要驱动</td>
+<td>AI 收入是否可持续，还是单季大单拉动，无法判断</td>
+</tr>
+<tr>
+<td>Tesla 与 SpaceX 董事会已成立特别委员会评估合并</td>
+<td>合并若成行，监管审查周期可能长达一年以上</td>
+</tr>
+<tr>
+<td>Musk 称合并"有很多合理性"，本人不在委员会内</td>
+<td>SpaceX 的 AI 算力从哪来、与 xAI 的关系如何，仍是空白</td>
+</tr>
+<tr>
+<td>SpaceX 同时宣布下月首次尝试同时回收 Starship 与助推器</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>别只把它当航天新闻看。一个非 AI 原生公司用 AI 把营收翻倍，是"AI 变现"最硬的样本，值得你拆它的业务结构。如果你在准备简历或面试，这类"传统公司靠 AI 重估"的案例比任何模型跑分都更能说明行业阶段。</p>
+<p>📺 <a href="https://techcrunch.com/2026/10/20/spacexs-ai-business-is-beating-expectations/">打开原文</a></p>
+<hr />
+<h3>4. Figma 联创直言 MCP 不是完美协议，计划同时支持多种标准</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐ · <em>TechCrunch</em></p>
+<p>Figma 联合创始人 Dylan Field 在采访中称 MCP 并非完美协议，公司打算支持尽可能多的标准，同时不把全部数据暴露出去。这是头部产品公司第一次公开给 MCP 泼冷水。对重度玩 MCP 的你来说，这比又一篇"MCP 教程"有价值得多——它指向协议层的真实摩擦。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Figma 联创 Dylan Field 公开表示 MCP 不是完美协议</td>
+<td>MCP 的具体缺陷（鉴权、粒度、状态管理？）Field 未展开</td>
+</tr>
+<tr>
+<td>Figma 计划支持多种标准而非只押 MCP</td>
+<td>Figma 会否自研协议或转向 A2A 等方案，不明</td>
+</tr>
+<tr>
+<td>公司强调不会通过协议暴露全部数据</td>
+<td>其他 SaaS 厂商是否跟进"多标准"策略，待观察</td>
+</tr>
+<tr>
+<td>同期 Figma 未公布具体支持哪些替代标准</td>
+<td>MCP 生态的碎片化风险是否被低估</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你在做 Agent 项目时如果深度绑定 MCP，这条是提醒：协议层还没定型。建议把工具接入层做成可替换的抽象，别让 MCP 的 schema 渗进业务代码。这也是一个很好的技术判断素材——"为什么我不把 MCP 写死"。</p>
+<p>📺 <a href="https://techcrunch.com/2026/10/20/figma-co-founder-dylan-field-thinks-mcp-is-not-a-perfect-protocol/">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://techcrunch.com/2026/10/20/us-orders-federal-agencies-to-remove-chinas-deepseek-ai-from-their-systems/">US orders federal agencies to remove China's DeepSeek AI from their systems</a> —— 美政府要求联邦机构移除 DeepSeek 及基于其技术的第三方服务，国产模型出海再添阻力。
+  <em>TechCrunch</em></li>
+<li><a href="https://stratechery.com/2026/muse-spark-open-meta-apple-thin-and-thick/">Muse Spark Open, Meta + Apple, Thin and Thick</a> —— Ben Thompson 分析 Meta 新开源模型与 Apple 合作本地运行，是本周最值得读的深度评论。
+  <em>Stratechery</em></li>
+<li><a href="https://techcrunch.com/2026/10/20/anthropic-pitches-ai-safety-bill-that-may-block-a-model-if-50-people-could-be-killed/">Anthropic pitches AI safety bill that may block a model if 50+ people could be killed</a> —— Anthropic 推安全法案，表面设门槛实则要求法官批准才能阻止模型发布，立法博弈值得关注。
+  <em>TechCrunch</em></li>
+<li><a href="https://techcrunch.com/2026/10/20/metas-muse-hits-10m-u-s-downloads-in-40-days-a-milestone-reached-by-only-11-other-apps/">Meta's Muse hits 10M US downloads in 40 days</a> —— Meta 的 Muse 40 天美国下载破千万，留存率高于 AI 竞品，消费级 AI 格局在变。
+  <em>TechCrunch</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 大厂 AI 动态 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="bigtech/2026-10-21">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-10-21 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261021090051"></script>
+</body>
+</html>
