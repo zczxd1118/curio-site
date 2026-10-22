@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 金融 · 2026-10-22 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261022090345">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html" class="active">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">📰 金融 · 2026-10-22</div>
+  <h1>Curio · 金融 · 2026-10-22</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 1 条头条 + 4 条备选</p>
+</blockquote>
+<p><em>今天最重要的信号有两个：一是 AI 发现漏洞的能力第一次以「PHP2Shell」这种形态砸到整个互联网头上——OpenAI 和 Google Wiz 找到的 PHP 核心未认证 RCE，4chan、Wikipedia、DeviantArt 当天中招，AI 攻防的双刃性从论文变成了运维事故。二是资本端开始给 AI 泡沫定价：Anthropic 估值被传缩水 5000 亿美元、Firmus 数据中心 IPO 48 小时崩盘、Meta 靠发新股给 AI 输血。工程侧则有一条值得你细读的：Claude 工程负责人说「别再用 2024 年的方式用 Claude」。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>4. Anthropic 估值传缩水 5000 亿美元，AI 一级市场的定价开始松动</h3>
+<p><strong>[金融]</strong> · ⭐⭐⭐⭐ · <em>Telegraph / HN</em></p>
+<p>Telegraph 报道 Anthropic 估值较此前高点回落约 5000 亿美元，同期 Firmus 那个被热炒的数据中心 IPO 在 48 小时内崩掉 30%，CoreWeave 创始人则通过 33 亿美元股票减持锁定收益。三条线指向同一件事：AI 基建与模型公司的估值叙事，正在被资金成本重新校准。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Telegraph 报道 Anthropic 估值较高点缩水约 5000 亿美元</td>
+<td>5000 亿美元的缩水口径来自单一媒体，未经公司确认</td>
+</tr>
+<tr>
+<td>Firmus 数据中心 IPO 上市后暴跌 30%，此前估值预期为 300 亿美元</td>
+<td>估值回落是融资条款调整还是二级市场折价，报道未区分</td>
+</tr>
+<tr>
+<td>CoreWeave 创始人通过 33 亿美元股票出售锁定个人收益</td>
+<td>这轮调整会不会传导到模型 API 定价，尚无迹象</td>
+</tr>
+<tr>
+<td>Anthropic 此前已披露 S-1，显示收入高增长同时算力成本高企</td>
+<td>数据中心类资产的融资窗口是否已经关闭，需看后续 IPO 表现</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>别把这条当股价八卦看。对你的实际含义是：如果 Anthropic 这类公司的估值和融资节奏承压，接下来 6 个月 API 价格战和免费额度收紧的概率都会上升。你做个人 Agent 项目，现在就把模型调用层做成可切换的抽象——别把 prompt 和工具调用硬编码在某一家 SDK 上，否则下一轮定价变动会直接打到你的成本表。</p>
+<p>📺 <a href="https://www.telegraph.co.uk/business/2026/10/16/anthropic-valuation-ipo-ai-stock-listing/">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://techcrunch.com/2026/10/21/meta-wants-to-pay-for-its-broad-ai-buildout-with-a-newly-created-class-of-stock/">Meta 发新股为 AI 扩张融资，Q3 同时计提 98.9 亿美元儿童安全和解金</a> —— 用无投票权新股给 AI 输血，是巨头在现金流承压下的新融资形态，值得记一笔。
+  <em>TechCrunch</em></li>
+<li><a href="https://techcrunch.com/2026/10/21/year-old-ai-lab-flapping-airplanes-raises-1b-at-a-6b-valuation/">一年期 AI 实验室 Flapping Airplanes 以 60 亿美元估值融 10 亿美元</a> —— 9 个月前才拿 1.8 亿种子轮，主打「不吃半个互联网」的模型路线，估值跳得离谱。
+  <em>TechCrunch</em></li>
+<li><a href="https://techcrunch.com/2026/10/21/legal-ai-startup-legora-raises-550m-series-e-at-8-8b-valuation/">法律 AI 公司 Legora 以 88 亿美元估值完成 5.5 亿美元 E 轮</a> —— 垂直行业 AI 的估值还在往上走，与 Anthropic 的缩水形成对照。
+  <em>TechCrunch</em></li>
+<li><a href="https://www.wsj.com/finance/investing/surging-yields-bring-the-bond-market-back-to-the-turn-of-the-century-2b74773f">10 年期美债收益率升破 5.3%，24 年未见</a> —— 资金成本是这轮 AI 估值调整的底层变量，这条是理解上面所有融资新闻的背景板。
+  <em>WSJ / HN</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 金融 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="finance-fed/2026-10-22">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-10-22 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261022090345"></script>
+</body>
+</html>
