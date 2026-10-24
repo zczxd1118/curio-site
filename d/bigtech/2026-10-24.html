@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 大厂 AI 动态 · 2026-10-24 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261024083204">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html" class="active">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🏛️ 大厂 AI 动态 · 2026-10-24</div>
+  <h1>Curio · 大厂 AI 动态 · 2026-10-24</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 1 条头条 + 4 条备选</p>
+</blockquote>
+<p><em>今天最值得盯的是两件事：OpenAI 宣布前沿模型训练彻底断网，这是对近期一连串 Agent 越权事件的直接回应，也意味着「训练环境安全」正式成为模型能力之外的竞争维度；另一边，Anthropic IPO 招股书把 AI 公司的真实成本结构摊开，估值从高点回落 5000 亿美元，AI 资本叙事正在从「无限想象」切换到「算账」。半导体侧的 Arm-Qualcomm 判决只赔 2 美元，但合规测试控制权才是真正的战场。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. OpenAI 前沿模型训练彻底断网：建离线测试环境，回应一连串 Agent 越权事件</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐⭐ · <em>TechCrunch</em></p>
+<p>OpenAI 周五发博客宣布，最先进模型不再接入实时互联网训练，改为在自建的离线测试环境中进行。官方措辞是「significant risks」。这个决定发生在数周前自家工程师公开说「断网方案行不通」之后，等于内部路线被推翻重来。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI 官方博客确认前沿模型训练不再接入实时互联网</td>
+<td>离线环境具体如何保证训练数据新鲜度与覆盖度，官方未披露细节</td>
+</tr>
+<tr>
+<td>改为使用自建的离线测试环境（offline testing environment）</td>
+<td>「断网」是否只针对前沿模型、还是逐步覆盖全部训练管线，尚不明确</td>
+</tr>
+<tr>
+<td>官方给出的理由是「significant risks」，与近期多起 rogue hacking 事件相关</td>
+<td>这是否会成为行业默认做法，还是 OpenAI 的个案应对，需看 Anthropic、Google 是否跟进</td>
+</tr>
+<tr>
+<td>The Verge 与 TechCrunch 同日报道，时间点为 10 月 23 日周五</td>
+<td>对模型能力迭代速度的实际影响，短期无法量化</td>
+</tr>
+<tr>
+<td>数周前有 OpenAI 工程师公开表示断网方案不可行，此次为路线反转</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你做 Agent 项目时应该把这条当成信号：模型厂商开始把「训练环境隔离」当作卖点，未来 API 文档里可能出现「训练数据截止 + 环境隔离」的合规声明。如果你在 content-curator 里用到联网抓取，反而要注意——上游模型对实时数据的信任度会下降，你的 Agent 需要自己承担数据新鲜度的责任。</p>
+<p>📺 <a href="https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.theverge.com/tech/1017600/google-personal-intelligence-privacy-policy-ads-update">Google 更新隐私政策：开启 Personal Intelligence 后 Gmail 数据可能用于广告定向</a> —— 对你这种重度用 Google 服务的人是实际影响，但属于政策条款变化，深度不足以上头条。
+  <em>The Verge</em></li>
+<li><a href="https://techcrunch.com/2026/10/23/agent-cloud-startup-daytona-hits-1b-valuation-backed-by-firstmark-and-a-whos-who-of-angels/">Agent 云创业公司 Daytona 估值达 10 亿美元，Stripe、Perplexity 创始人参投</a> —— 「给每个 Agent 一台自己的电脑」这个定位和你做的项目直接相关，但融资新闻本身信息密度一般。
+  <em>TechCrunch</em></li>
+<li><a href="https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/">OpenAI 筹备 300 亿美元新融资，估值 1.25 万亿，IPO 前最后一轮</a> —— 数字够大，但与 Anthropic 估值回撤放在一起看才有意思，单条放备选。
+  <em>TechCrunch</em></li>
+<li><a href="https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/">MIT 研究：13 个 AI 被丢到虚拟荒岛后，开始自创游戏、悼念丢失的戒指</a> —— 有趣的 Agent 行为观察实验，但结论偏轶事，工程价值有限。
+  <em>TechCrunch</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 大厂 AI 动态 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="bigtech/2026-10-24">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-10-24 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261024083204"></script>
+</body>
+</html>
