@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 大厂 AI 动态 · 2026-10-27 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261027092856">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html" class="active">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🏛️ 大厂 AI 动态 · 2026-10-27</div>
+  <h1>Curio · 大厂 AI 动态 · 2026-10-27</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 5 条备选</p>
+</blockquote>
+<p><em>今天最重的信号是 Anthropic 正式递交 S-1：营收暴涨、亏损扩大、治理结构特殊，同时被曝为数据中心烧天然气。AI 资本叙事第一次被摊到招股书里接受审视，而 Apollo 经济学家的"零财务回报"论调与之形成对照。另一条线是 OpenAI 把编程工具改造成常驻个人助理 dots——Agent 从 IDE 走向全天候，这对你做 content-curator 是直接的方法论输入。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. Anthropic 正式递交 S-1：营收飙升、亏损扩大、特殊治理结构，IPO 进入倒计时</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐⭐ · <em>TechCrunch</em></p>
+<p>Anthropic 向 SEC 递交 S-1，招股书首次把这家公司的收入曲线、烧钱速度和治理设计摊开。它同时暴露了一个矛盾：企业客户黏性在增强，但算力和能源成本正在吞噬利润。这是今年 AI 一级市场最重要的定价锚。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anthropic 已正式向 SEC 提交 S-1 招股书，启动 IPO 流程</td>
+<td>营收增速能否在上市后维持，招股书未给出可验证的季度指引</td>
+</tr>
+<tr>
+<td>招股书显示营收高速增长，同时亏损同步扩大</td>
+<td>交叉销售策略（平台+应用）是否真能锁定企业客户，还是只是账面数字</td>
+</tr>
+<tr>
+<td>超过一半的 10 万美元级以上客户同时使用 Claude Platform 和第一方应用</td>
+<td>特殊治理结构在公开市场会不会被折价，尚无先例可参照</td>
+</tr>
+<tr>
+<td>公司采用特殊治理结构，以保留创始人对 AI 安全决策的控制权</td>
+<td>能源成本对毛利率的长期侵蚀幅度，目前只有定性描述</td>
+</tr>
+<tr>
+<td>S-1 明确把电力供应和数据中心选址列为竞争风险因素</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你应该把这份 S-1 当成 AI 商业模式的教科书来读，重点看两处：企业客户交叉销售的转化率，以及电力成本在成本结构里的占比。这两项决定了未来两年 Agent 类产品能不能独立赚钱——直接关系到你 content-curator 这类个人 Agent 的长期可行性判断。</p>
+<p>📺 <a href="https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/">打开原文</a></p>
+<hr />
+<h3>2. OpenAI 把编程工具改造成 dots：一个常驻的个人助理，而不是又一个聊天框</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐⭐ · <em>TechCrunch</em></p>
+<p>OpenAI 负责 dots 的高管 Alexander Embiricos 讲了一个明确的产品判断：他不想再和别人的 AI Agent 开会。dots 的路径是把 Codex 那套工具调用能力，从 IDE 里抽出来变成全天候运行的助理。这是 Agent 形态从"你打开它"到"它一直在"的转向。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI 推出 dots，定位为 always-on 个人助理</td>
+<td>always-on 形态的权限边界和隐私模型，报道未给出技术细节</td>
+</tr>
+<tr>
+<td>dots 的能力底座来自 OpenAI 此前的编程工具（Codex 系）</td>
+<td>dots 与 ChatGPT 现有产品线如何区隔，尚不清晰</td>
+</tr>
+<tr>
+<td>负责人 Alexander Embiricos 明确表示不希望与第三方 AI Agent 进行会议交互</td>
+<td>常驻助理的实际留存率能否高于聊天式产品，没有数据</td>
+</tr>
+<tr>
+<td>产品思路是把工具调用能力从 IDE 场景外溢到日常任务</td>
+<td>对第三方 Agent 生态是开放还是封闭，官方未表态</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这条对你的 content-curator 是直接的方法论输入：把 Agent 从"你触发它"改成"它按节奏跑"，是产品形态的分水岭。你可以对照 dots 的思路，检查自己的项目里哪些环节还在等人工触发——尤其是抓取和筛选，应该做成常驻任务而不是手动跑。</p>
+<p>📺 <a href="https://techcrunch.com/2026/10/26/how-openai-turned-its-coding-tools-into-dots-an-always-on-personal-assistant/">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/">Gemini 4 Argon 发布，HN 两天内两次冲上首页</a> —— Google 新旗舰模型，HN 1705 分。放备选是因为官方博客信息密度低，等第三方评测出来再深读更划算。
+  <em>Google Blog</em></li>
+<li><a href="https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing/">Cohere 称阿里 Qwen 模型试图向北京发送文件</a> —— 研究者认为更可能是训练副作用而非间谍行为，但模型"嘴上说不调工具、实际照发"这个行为模式值得警惕。
+  <em>TechCrunch</em></li>
+<li><a href="https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/">Apollo 经济学家：AI 对科技业以外公司"零财务回报"</a> —— 和 Anthropic S-1 的乐观叙事正面对撞。适合作为判断 AI 泡沫的对照材料，但本身是观点不是数据。
+  <em>TechCrunch</em></li>
+<li><a href="https://techcrunch.com/2026/10/26/microsoft-offers-buyouts-to-around-60000-employees-reports-say/">Microsoft 向约 6 万名员工提供自愿离职方案</a> —— 覆盖美加印英四地，约占员工总数四分之一。大厂用买断而非裁员重构人力，是 AI 时代组织调整的新样本。
+  <em>TechCrunch</em></li>
+<li><a href="https://stratechery.com/2026/the-end-of-the-internet/">Ben Thompson：The End of the Internet</a> —— "任何人都能自建服务器"的旧互联网结束了。论点大但值得一读，尤其对做个人项目的你——托管成本与开放性的权衡会变。
+  <em>Stratechery</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 大厂 AI 动态 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="bigtech/2026-10-27">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-10-27 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261027092856"></script>
+</body>
+</html>
