@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI 算力 / 半导体 · 2026-10-28 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261028101258">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html" class="active">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🔬 AI 算力 / 半导体 · 2026-10-28</div>
+  <h1>Curio · AI 算力 / 半导体 · 2026-10-28</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 3 条备选</p>
+</blockquote>
+<p><em>今天最重要的信号只有一个：Anthropic 递交 S-1，$16.3B 上半年营收、潜在 $2 万亿估值，同时招股书里自陈 AI 可能勒索人类、失控、终结人类——这是 AI 资本化与安全叙事第一次被写进同一份法律文件。第二个信号是算力侧的硬约束：TSMC 考虑 CoWoS 涨价 20%、Nvidia 掏钱给六家供应商扩产，供给瓶颈已经从芯片蔓延到封装和基板。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>2. TSMC 考虑 CoWoS 涨价 20%，Blackwell 与 Rubin 把封装产能压到极限，设备交期拉到 8 个月</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐⭐ · <em>Newton Gitonga</em></p>
+<p>瓶颈已经从制程挪到封装。TSMC 正在评估对 CoWoS 先进封装提价最多 20%，原因是 Nvidia 的 Blackwell 和即将到来的 Rubin 把产能吃满，相关设备交付周期已经拉长到 8 个月。同一天 Nvidia 宣布与六家供应商签十亿美元级协议，覆盖基板、先进封装、测试和光引擎，等于自己出钱给供应链扩产。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TSMC 据报评估 CoWoS 提价最多 20%</td>
+<td>涨价是否最终落地，还是作为产能分配的谈判筹码</td>
+</tr>
+<tr>
+<td>Blackwell 与 Rubin 是产能压力的直接来源</td>
+<td>Nvidia 垫资扩产会不会演变成对供应商的长期锁定</td>
+</tr>
+<tr>
+<td>封装设备交付周期已延长至 8 个月</td>
+<td>Rubin 的量产节奏是否会被封装卡住，进而影响 2027 的模型训练排期</td>
+</tr>
+<tr>
+<td>Nvidia 与六家供应商签十亿美元级协议，覆盖基板/封装/测试/光引擎</td>
+<td>面板级封装（panel-level）能否在两年内真正接住溢出需求</td>
+</tr>
+<tr>
+<td>Nvidia 的承诺覆盖到 2028 年产能预留</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这条对你做推理优化的判断很直接：未来 12 个月 GPU 单位算力成本大概率不降反升，靠堆卡解决延迟的路子会越来越贵。你的 content-curator 如果要做 embedding 或批量摘要，优先考虑小模型 + 本地推理，别把架构押在"API 会越来越便宜"上。</p>
+<p>📺 <a href="https://www.tomshardware.com/tech-industry/semiconductors/tsmc-reportedly-weighs-20-percent-cowos-price-increase-as-nvidia-blackwell-and-rubin-chips-put-pressure-on-packaging-capacity-equipment-lead-times-stretch-to-eight-months">打开原文</a></p>
+<hr />
+<h3>4. Cadence 推出 Maestro：专为芯片设计 Agent 微调的模型，声称质量高 30%、token 效率高 5 倍</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐ · <em>Shane Downing</em></p>
+<p>这是"垂直领域微调模型 + Agent"路线在 EDA 里的第一个大厂落地。Cadence 的 Maestro 不是通用模型套壳，而是针对芯片设计任务微调，官方给出的数字是结果质量提升最多 30%、token 效率提升最多 5 倍，Q4 2026 对部分客户开放早期访问。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cadence 发布 Maestro，面向芯片设计 Agent 的专用微调模型</td>
+<td>30% 与 5x 是内部基准还是客户实测，口径未公开</td>
+</tr>
+<tr>
+<td>官方声称结果质量提升最多 30%</td>
+<td>专用模型是否会牺牲跨任务泛化，导致只能跑固定流程</td>
+</tr>
+<tr>
+<td>token 效率相比通用模型提升最多 5 倍</td>
+<td>EDA 三巨头是否都会走这条路，形成新的护城河</td>
+</tr>
+<tr>
+<td>2026 Q4 对 select customers 开放早期访问</td>
+<td>对开源模型微调路线是否构成可复制的范式</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这条给你的启发是方法论层面的：与其用通用大模型硬扛垂直任务，不如微调一个小模型专做一件事。你的 content-curator 里"打分/选稿"这一步，未来完全可以换成小模型微调，token 成本和稳定性都会好很多——现在先把评分数据攒起来。</p>
+<p>📺 <a href="https://www.tomshardware.com/tech-industry/semiconductors/cadence-reveals-maestro-fine-tuned-ai-models-built-to-run-specialized-chip-design-agents-with-early-access-coming-for-select-customers-in-q4-2026-claims-up-to-30-percent-higher-quality-results-and-up-to-5x-token-efficiency-over-a-general-purpose-ai-model">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.tomshardware.com/tech-industry/semiconductors/nvidia-is-bankrolling-ai-accelerator-supply-chain-buildout-to-reserve-production-capacity-announces-billion-dollar-deals-with-six-major-suppliers-across-substrates-advanced-packaging-semiconductor-testing-and-optical-engines">Nvidia is bankrolling AI accelerator supply chain buildout to reserve production capacity</a> —— 与头条 2 同源，单独看是 Nvidia 用资本锁定 2028 年前产能，产业链垂直整合的典型样本。
+  <em>Etiido Uko</em></li>
+<li><a href="https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors">Opus 5.5 agents discover two room-temperature magnetic semiconductor candidates</a> —— Agent 做材料发现的首个公开案例，495 点，但结论需同行验证，先放备选。
+  <em>outlier99</em></li>
+<li><a href="https://www.tomshardware.com/pc-components/dram/micron-plans-to-use-wafer-bonding-and-high-na-euv-for-next-gen-dram-company-also-developing-vertical-high-bandwidth-memory-and-vertical-edge-inference-memory-integrated-directly-on-top-of-processors">Micron plans to use wafer bonding and High-NA EUV for next-gen DRAM</a> —— Micron 明确拒绝 4F2 路线，转向晶圆键合 + High-NA EUV，还提了垂直 HBM，是 HBM 瓶颈的另一条解法。
+  <em>Anton Shilov</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 算力 / 半导体 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="semiconductor/2026-10-28">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-10-28 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261028101258"></script>
+</body>
+</html>
