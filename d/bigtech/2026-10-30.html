@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 大厂 AI 动态 · 2026-10-30 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261030103833">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html" class="active">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🏛️ 大厂 AI 动态 · 2026-10-30</div>
+  <h1>Curio · 大厂 AI 动态 · 2026-10-30</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 3 条备选</p>
+</blockquote>
+<p><em>今天最硬的两个信号：Anthropic 的 S-1 把 AI 公司的算力账本第一次摊开——89 亿美元半年算力支出里不到三分之一用于服务客户，其余全烧在研发；同时 Gemini 4 Carbon 在 Artificial Analysis 指数上登顶，Google 一周内连发 Argon/Carbon 两代。算力成本与模型迭代速度正在同时加速，泡沫论和实力论都拿到了新弹药。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>2. Gemini 4 Carbon 登顶 Artificial Analysis 智能指数 v5，Google 一个月内连发两代旗舰</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐⭐ · <em>theHocineSaad / Hacker News</em></p>
+<p>Gemini 4 Carbon 在 Artificial Analysis Intelligence Index v5 上拿到第一，距离 Gemini 4 Argon 发布不到一个月。Argon 主打通用与机器人、Carbon 直接冲榜，Google 用双线迭代把「发布节奏」本身变成了竞争武器。榜单第一不等于最好用，但意味着在评测口径上 Google 重新拿回了话语权。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gemini 4 Carbon 在 Artificial Analysis Intelligence Index v5 排名第一</td>
+<td>Carbon 相对 Argon 是架构升级还是后训练调优，官方未给出技术细节</td>
+</tr>
+<tr>
+<td>Gemini 4 Argon 于 9 月底发布，Carbon 于 10 月 28 日发布，间隔不足一个月</td>
+<td>榜单第一在真实 Agent 长任务上的稳定性尚未有第三方复现</td>
+</tr>
+<tr>
+<td>Argon 已延伸出 Robotics 版本与 StarCraft 对局演示</td>
+<td>双线发布是否会稀释开发者对版本号的信任，需要观察后续命名策略</td>
+</tr>
+<tr>
+<td>Gemini 聊天内已支持直接生成与编辑 Docs、Sheets、PDF、Markdown 和代码文件</td>
+<td>文件编辑能力与 Agent 工具链的整合深度，目前只有产品演示层面证据</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你重度用 Agent 工具，值得把 Carbon 拉进你自己的评测集跑一遍——尤其是长上下文工具调用和文件产出这两项，正好对应 content-curator 的抓取-摘要-渲染链路。别只看榜单分，跑你自己的 5 个真实任务比任何指数都准。</p>
+<p>📺 <a href="https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1">打开原文</a></p>
+<hr />
+<h3>4. Stratechery 对话 Palantir CTO Shyam Sankar：AI 的「宗教战争」与前部署工程师模式</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐ · <em>Ben Thompson / Stratechery</em></p>
+<p>Ben Thompson 这期访谈聊的是 AI 扩散与安全之争，以及 Palantir 的 forward-deployed engineer 模式——工程师直接驻场客户，把模型能力翻译成业务动作。Sankar 把这称为一场「宗教战争」：一派相信模型即产品，一派相信交付才是产品。这个框架对做 Agent 的人很有用。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>访谈对象为 Palantir CTO Shyam Sankar，主持人为 Ben Thompson</td>
+<td>前部署模式在中小客户上是否可复制，访谈未给出单位经济数据</td>
+</tr>
+<tr>
+<td>主题覆盖 AI 扩散、AI 安全、前部署工程师角色</td>
+<td>「宗教战争」的二分法是否过度简化，开源与闭源阵营正在互相渗透</td>
+</tr>
+<tr>
+<td>Palantir 的商业模式核心是把工程师嵌入客户现场</td>
+<td>Sankar 对 AI 安全的立场带有 Palantir 政府业务的利益视角</td>
+</tr>
+<tr>
+<td>Stratechery 同期还分析了 Meta 财报与 Muse 模型战略</td>
+<td>这套方法论对个人开发者项目的迁移价值，需要自己提炼</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你最近反馈想多看名人访谈，这条正对味。听的时候重点抓 forward-deployed engineer 那段：它本质上就是「Agent 不是交付模型，是交付工作流」，和你做 content-curator 的思路同源——把 Agent 嵌进真实流程，而不是做一个通用聊天框。</p>
+<p>📺 <a href="https://stratechery.com/2026/an-interview-with-palantir-cto-shyam-sankar-about-the-ai-religious-war/">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience/">Reddit 宣布转向「必须登录」体验，搜索流量显著下滑</a> —— AI 搜索吃掉开放网页流量的标志性事件，对做内容抓取的项目是重要环境变化。
+  <em>Sarah Perez / TechCrunch</em></li>
+<li><a href="https://techcrunch.com/2026/10/29/mistral-releases-weights-for-its-trillion-parameter-ai-model-targeting-cybersecurity/">Mistral 开源万亿参数模型权重，主打网络安全场景</a> —— 万亿参数还放权重，欧洲阵营的差异化打法，安全场景的落地细节值得后续跟进。
+  <em>Lucas Ropek / TechCrunch</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/amazon-tells-engineers-to-stop-tokenmaxxing-to-look-productive-says-ai-will-be-central-to-software-development-but-usage-is-not-the-goal-new-guidelines-claim">Amazon 要求工程师停止 tokenmaxxing，称 AI 用量指标「有严重缺陷」</a> —— 大厂第一次公开否定「用 AI 量」作为绩效指标，对个人项目也有启发：看产出不看 token。
+  <em>Newton Gitonga / Tom's Hardware</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 大厂 AI 动态 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="bigtech/2026-10-30">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-10-30 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261030103833"></script>
+</body>
+</html>
