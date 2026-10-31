@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI 算力 / 半导体 · 2026-10-31 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261031100403">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html" class="active">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🔬 AI 算力 / 半导体 · 2026-10-31</div>
+  <h1>Curio · AI 算力 / 半导体 · 2026-10-31</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 4 条备选</p>
+</blockquote>
+<p><em>今天最重要的信号有两个：一是 AI 资本叙事开始出现裂缝——Intel 一天蒸发 1 万亿美元半导体市值、Alphabet 单日市值缩水 5000 亿、Anthropic 被研究机构称为"年度最荒谬 IPO"，同时 TechCrunch 直指 AI 支出热潮出现裂痕；二是 Google 把 TPU 送上卫星并跑通 Gemma 4，算力开始离开地面。对做 Agent 的你来说，真正的可操作信息在工程侧：Cisco 让一个 27 岁工程师用无限 token 重写 98% 遗留代码，以及 Anthropic 官方 Cursor 扩展被植入后门近 12 小时。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>2. Cisco 给一个 27 岁工程师无限 AI token，要求 24 个月重写 98% 遗留代码</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>Cisco 总裁 Jeetu Patel 把一件几乎不可能的事交给了一个 27 岁的前创业者：24 个月内用 AI 重写公司 98% 的遗留代码，token 不设上限。这是目前公开可见的最大规模"AI 重写存量系统"实验，也是对企业级 Agent 工作流最直接的一次压力测试。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cisco 总裁 Jeetu Patel 直接任命该工程师，授权不限量 AI token 消耗</td>
+<td>98% 这个数字大概率指代码行数覆盖率，而非业务逻辑等价性</td>
+</tr>
+<tr>
+<td>目标是在 24 个月内重写公司 98% 的遗留代码</td>
+<td>遗留系统重写的真正瓶颈在测试与回归验证，不在生成代码本身</td>
+</tr>
+<tr>
+<td>被任命者为 27 岁，此前是创业者，非 Cisco 资深员工</td>
+<td>若成功，会催生一批"AI 重写服务商"；若失败，会成为企业 AI 落地的反面教材</td>
+</tr>
+<tr>
+<td>Cisco 官方口径是让该工程师"放开手干"（go nuts）</td>
+<td>Cisco 未披露如何验证重写后的系统正确性</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这条对你的价值不在新闻本身，而在它暴露的工程问题：AI 重写存量代码时，验证成本远高于生成成本。你做 content-curator 时如果考虑让 Agent 改自己的代码库，先把测试和 diff 审查链路搭好——这正是简历上能讲清楚的"AI 工程实践"细节。</p>
+<p>📺 <a href="https://www.tomshardware.com/tech-industry/big-tech/cisco-gives-27-year-old-engineer-unlimited-ai-tokens-to-rewrite-98-percent-of-the-companys-legacy-code-in-24-months-president-plucks-former-startup-founder-telling-him-to-go-nuts">打开原文</a></p>
+<hr />
+<h3>4. Tom's Hardware 发布首个 Agentic AI 的 CPU 基准测试：不涉及 GPU 的吞吐量测量</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>Tom's Hardware 用半年时间观察到 Agent 负载正在把 CPU 推回中心位置，于是做了第一个专门测 Agentic AI 的 CPU 基准。核心发现是 Agent 负载呈突发性，CPU 大量时间处于空闲，这直接挑战了"Agent 只需要 GPU"的直觉。Google 同期也提出 Agentic AI 会对数据中心 CPU 提出新需求。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tom's Hardware 发布首个针对 agentic AI 工作负载的 CPU 基准测试方法</td>
+<td>单一媒体的基准方法尚未经过社区复现，结论需谨慎对待</td>
+</tr>
+<tr>
+<td>测试全程不涉及 GPU，只测 CPU 吞吐</td>
+<td>bursty 负载下真正的瓶颈可能是调度与内存带宽，而非核心数</td>
+</tr>
+<tr>
+<td>结论是 Agent 负载呈 bursty 特征，CPU 频繁空闲</td>
+<td>若结论成立，Agent 部署的成本模型会与纯推理服务显著不同</td>
+</tr>
+<tr>
+<td>Google 在 EE Times 上提出 agentic AI 将驱动数据中心 CPU 新需求</td>
+<td>目前没有公开的 Agent 负载标准数据集</td>
+</tr>
+<tr>
+<td>该基准基于过去六个月的实测数据构建</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这条对你部署 content-curator 有直接参考价值：如果你打算把 Agent 常驻跑（定时抓取、增量总结），瓶颈很可能不在模型调用而在调度与 IO。可以拿这个基准思路自测一下你的 Agent 在空闲期的资源占用，把"低峰期批处理 + 事件触发"写进架构，这是能讲出 why 的工程细节。</p>
+<p>📺 <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/our-first-step-at-defining-a-cpu-benchmark-for-agentic-ai">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.tomshardware.com/pc-components/gpus/nvidia-store-quietly-pulls-the-rtx-5080-following-rtx-5090-removal-street-prices-climb-to-2-2x-over-msrp">Nvidia 官网悄悄下架 RTX 5080，零售价涨到 MSRP 的 2.2 倍</a> —— 消费级 GPU 被 AI 需求挤出的直接证据，如果你想升级本地跑模型的机器，现在不是好时机。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.tomshardware.com/pc-components/ai-demand-triggers-massive-pcb-shortage-for-pc-makers-as-order-books-full-until-2030-lead-times-stretch-to-30-months-as-material-costs-surge-12x">AI 需求引发 PCB 大缺货，订单排到 2030 年，交期拉到 30 个月</a> —— 供应链最上游的卡点，比 GPU 更早反映真实需求强度，电子信息专业值得看。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.tomshardware.com/pc-components/cpus/deadly-intel-fab-28-explosion-causes-two-week-shutdown-to-cost-usd600-million-and-severely-disrupt-server-chip-manufacturing-for-six-months-10nm-xeon-shipments-stall-during-largest-shortage-in-memory">Intel Fab 28 爆炸致两周停产，损失 6 亿美元，服务器芯片供货受扰半年</a> —— 叠加内存短缺，服务器 CPU 供给雪上加霜，是本周半导体最硬的实体事件。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/photonics/psiquantum-turns-its-photonics-know-how-into-an-optical-switch-for-supercharging-ai-data-center-gpu-networks-8x8-lab-prototype-loses-less-light-than-rivals-with-plans-to-develop-larger-devices">PsiQuantum 把光子技术做成 AI 数据中心光交换，8x8 原型插损仅 1.2 dB</a> —— 光交换是 GPU 集群的下一个瓶颈解法，1.2 dB 对比行业 3 dB 上限，数字有说服力。
+  <em>Tom's Hardware</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 算力 / 半导体 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="semiconductor/2026-10-31">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-10-31 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261031100403"></script>
+</body>
+</html>
