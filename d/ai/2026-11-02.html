@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI · 2026-11-02 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261102115356">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html" class="active">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🤖 AI · 2026-11-02</div>
+  <h1>Curio · AI · 2026-11-02</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 1 条头条 + 5 条备选</p>
+</blockquote>
+<p><em>今天最重要的信号有两个：一是 Anthropic IPO 叙事开始被公开质疑，S-1 的高增长与算力成本同时摆上台面，配合美股科技股因 AI 成本担忧大跌、Alphabet 单日市值蒸发 5000 亿美元，AI 资本周期的情绪拐点可能已经出现；二是 DeepSeek Harness 生态在中文社区快速成型，Agent 工具链的竞争从模型转向 harness 层。工程侧值得关注的是 Claude Code 官方扩展被植入后门，以及 Nvidia 半速限制被开源工具解锁。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>3. DeepSeek Harness 教程 24 小时内上线，中文社区开始围绕 harness 层而非模型层做工程</h3>
+<p><strong>[AI]</strong> · ⭐⭐⭐⭐ · <em>Git源宝</em></p>
+<p>DeepSeek Harness（DSH）发布后不到一天，B 站就出现了 50 分钟级别的详细教程，讲 SuperAgent 的配置与使用。同期还有多条内容对比 DSH 与 Claude Code 在同一模型下的任务表现，讨论焦点从「哪个模型强」转向「哪个 harness 的工具链设计更好」。这是一个值得注意的信号：Agent 工程的竞争重心正在下移到 harness。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeepSeek Harness 教程视频于 2026-11-01 发布，时长约 50 分钟，作者称制作耗时 60 天</td>
+<td>单条对比视频的结论受任务选择和 prompt 影响大，不能直接推出 harness 优劣的普遍结论</td>
+</tr>
+<tr>
+<td>已有实测内容用同一 DeepSeek Pro 0813 模型在 Claude Code 与 DSH 中跑相同任务做对比</td>
+<td>DSH 的插件化与缓存机制是否真的优于 Claude Code，需要看源码或官方文档，目前只有二手实测</td>
+</tr>
+<tr>
+<td>对比维度包括插件化、流程记录、缓存命中和任务完成质量</td>
+<td>中文社区教程质量参差，50 分钟视频的信息密度需要自己筛</td>
+</tr>
+<tr>
+<td>DeepSeek V4.1 Flash 已发布，并有内容实测将其接入 DSH、WorkBuddy、Kimi Code 等六种工具</td>
+<td>harness 层竞争是否会成为长期趋势，还是模型厂商顺手做的附属功能，尚不明朗</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这是你这周最该花时间的方向：把 DSH 装起来，用你 content-curator 里的一个真实子任务（比如抓取+摘要）跑一遍，和 Claude Code 对比 token 消耗与失败率。harness 层的工程经验，比再学一个模型 API 更能写进简历。</p>
+<p>📺 <a href="http://www.bilibili.com/video/av117540671982699">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="http://www.bilibili.com/video/av116319122885806">Everything Claude Code：116K star 的 Claude Code 配置项目实战讲解</a> —— 斜杠命令、子代理、Hooks、学习系统的完整拆解，和你正在做的 Agent 项目直接相关，但发布较早，放备选。
+  <em>极客魔导师</em></li>
+<li><a href="https://sspai.com/post/118191">Claude Code 官方扩展被植入后门（派早报提及）</a> —— 供应链安全事件，直接影响你日常用的工具链，但细节需等官方通报，先记一笔。
+  <em>少数派编辑部</em></li>
+<li><a href="http://www.bilibili.com/video/av116046157647899">Claude Code Hooks 回调 + Agent Teams 实现零轮询全自动开发</a> —— Stop Hook 自动回调把 token 消耗压到接近忽略，是省成本的工程技巧，但内容偏旧。
+  <em>AI超元域</em></li>
+<li><a href="http://www.bilibili.com/video/av117511429295044">最新 Skills 开发教程：WorkBuddy + Codex + DeepSeek Harness 实战</a> —— 10-28 发布，Skills 开发是当前 Agent 工程的热点，但机构课信息密度通常偏低。
+  <em>尚硅谷</em></li>
+<li><a href="http://www.bilibili.com/video/av117459403150912">DeepSeek V4.1 Flash 接入六大 Agent 工具实测</a> —— 两种配置方法、模型名怎么填、哪里避坑，实操性强，但属于配置层而非原理层。
+  <em>跟着小陈玩AI</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="ai/2026-11-02">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-11-02 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261102115356"></script>
+</body>
+</html>
