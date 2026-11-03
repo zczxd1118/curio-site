@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI 算力 / 半导体 · 2026-11-03 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261103113038">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html" class="active">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🔬 AI 算力 / 半导体 · 2026-11-03</div>
+  <h1>Curio · AI 算力 / 半导体 · 2026-11-03</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 5 条备选</p>
+</blockquote>
+<p><em>今天最值得看的两条线：一是 AI 资本结构开始承压——Marvell 1150 亿美元吞下 Lumentum、Oracle 发 200 亿股债、Intel 领跌 3.5 万亿芯片股回调，钱在往光互联和算力上压重注，同时市场开始怀疑回报；二是 Anthropic 一边限制 Claude Code 复刻游戏 IP，一边自曝接近 RSI，模型厂商的自我约束和自加速同时发生。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. Marvell 以 1150 亿美元收购光子公司 Lumentum，赌 AI 互联而非算力本身</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐⭐ · <em>Majeed Ahmad</em></p>
+<p>这是科技史上最大并购之一。Marvell 要把网络处理器和激光器放在同一张图纸上协同设计，目标直指光模块——AI 集群里最先卡住的那一环。两家背后站着同一个战略投资人 Nvidia，说明这笔钱不是财务投资，是给算力扩张补血管。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>交易对价 1150 亿美元，为科技史最大并购之一</td>
+<td>协同设计能否真正缩短光模块交付周期，尚无产品时间表</td>
+</tr>
+<tr>
+<td>Lumentum 主营光收发器用激光器，Marvell 做网络处理器</td>
+<td>1150 亿美元溢价是否合理，要等监管与股东投票</td>
+</tr>
+<tr>
+<td>双方将协同设计网络处理器与激光器，做 AI 互联品类龙头</td>
+<td>Nvidia 在两边持股是否触发反垄断审查，未明朗</td>
+</tr>
+<tr>
+<td>Marvell 与 Lumentum 拥有同一战略投资人 Nvidia</td>
+<td>光互联会不会成为下一个产能瓶颈，取决于 CPO 落地节奏</td>
+</tr>
+<tr>
+<td>消息于 2026-11-03 由 EE Times 首发报道</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你如果只盯 GPU 会漏掉这条。AI 集群的瓶颈正从算力转向互联，光模块、CPO、交换芯片是未来 12 个月最值得跟踪的硬件方向。做 content-curator 时可以加一条「光互联」关键词，比追 GPU 新闻更有信息差。</p>
+<p>📺 <a href="https://www.eetimes.com/marvell-snaps-photonics-chipmaker-lumentum-to-bolster-ai-connectivity/">打开原文</a></p>
+<hr />
+<h3>4. 有人把 32 位 RISC-V CPU 编译进 Qwen 3.5 4B 的权重里，还跑起了 DOOM</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐ · <em>Mark Tyson</em></p>
+<p>Qwenputer 这个实验把一颗 32 位 RISC-V CPU 直接编译并塞进 Qwen 3.5 4B 的权重，模型能执行处理器算术运算，最后跑通了 DOOM。这不是产品，但它把「权重即程序」这件事推到了一个荒诞又清晰的极端。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>项目名 Qwenputer，基于 Qwen 3.5 4B 开源模型</td>
+<td>这是否代表一种新的模型能力范式，还是精巧的工程 trick</td>
+</tr>
+<tr>
+<td>32 位 RISC-V CPU 被编译并插入模型权重</td>
+<td>权重内嵌 CPU 对推理效率是否有任何实际收益，未知</td>
+</tr>
+<tr>
+<td>模型可执行处理器算术运算与代码</td>
+<td>方法能否迁移到更大模型或其他架构，未验证</td>
+</tr>
+<tr>
+<td>已成功运行 DOOM</td>
+<td>对模型可解释性研究是否有价值，尚属猜测</td>
+</tr>
+<tr>
+<td>由独立 AI 工程师完成，非官方项目</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这条值得你花 10 分钟看原理，因为它挑战了「模型只会预测 token」的默认假设。做 Agent 时你会越来越常遇到「模型内部模拟执行」的现象，理解这类实验能帮你想清楚 tool use 和内部推理的边界。</p>
+<p>📺 <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-engineer-successfully-compiles-a-32-bit-risc-v-cpu-in-qwen-3-5-4b-llm-inserted-directly-into-its-weights-built-in-cpu-can-run-processor-arithmetic-operations-code-and-of-course-doom">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.tomshardware.com/tech-industry/data-centers/openai-considers-rebranding-data-centers-to-ai-compute-campuses-as-data-center-backlash-intensifies-company-reportedly-sees-2028-presidential-election-becoming-an-ai-issue">OpenAI 考虑把数据中心改名为「AI 计算园区」，应对日益强烈的社区反弹</a> —— 改名是公关动作，但透露 OpenAI 已把 AI 基建政治化，预判 2028 大选议题。
+  <em>Newton Gitonga</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/data-centers/america-hates-data-centers-new-database-reveals-more-than-90-percent-of-10-000-public-comments-are-negative-only-21-percent-mention-ai-73-percent-of-meetings-had-no-data-center-supporters-water-is-the-number-one-concern">超 90% 公众评论反对数据中心，水是头号担忧</a> —— 1 万条公众评论的量化数据，是理解 AI 基建社会成本最硬的一份材料。
+  <em>Oliver Haslam</em></li>
+<li><a href="https://www.tomshardware.com/pc-components/gpus/open-source-usb-tool-unlocks-nvidias-half-speed-gpu-ai-limiter-on-windows-lifts-gpus-fp16-math-performance-up-to-65-percent-uefi-unlocker-covers-rtx-20-30-and-40-series-desktops-and-laptops">开源 USB 工具解锁 Nvidia 半速 AI 限制器，FP16 性能提升最高 65%</a> —— 覆盖 RTX 20/30/40 系，对跑本地模型的你有实操价值，但有保修风险。
+  <em>Shane Downing</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/cyber-security/nvidia-brev-security-breach-may-have-exposed-ssh-keys-used-to-access-customer-vms-investigation-finds-unauthorized-activity-spanning-16-days-but-no-evidence-of-misuse">Nvidia Brev 平台安全事件，可能泄露客户 VM 的 SSH 密钥</a> —— 16 天未授权活动，如果你用 Brev 跑开发环境，现在该轮换密钥。
+  <em>Newton Gitonga</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/cyber-security/new-ai-driven-windows-malware-feeds-stolen-data-to-claude-to-rank-victims-assets-by-value-then-deletes-itself-payload-builds-custom-target-assessment-can-switch-models-if-one-refuses-or-skip-the-ai-step-entirely">新型 AI 驱动 Windows 恶意软件把窃取数据喂给 Claude 按价值排序资产</a> —— Cisco Talos 披露的 VOLTA 样本，是 LLM 被武器化的具体案例，值得安全向读者看。
+  <em>Shane Downing</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 算力 / 半导体 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="semiconductor/2026-11-03">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-11-03 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261103113038"></script>
+</body>
+</html>
