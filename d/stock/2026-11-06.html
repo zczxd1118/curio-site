@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 股票 · 2026-11-06 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261106114240">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html" class="active">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">📰 股票 · 2026-11-06</div>
+  <h1>Curio · 股票 · 2026-11-06</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 1 条头条 + 3 条备选</p>
+</blockquote>
+<p><em>今天只有一个信号值得记住：美国中期选举把 AI 数据中心投成了政治议题，45 项地方公投几乎全数否决，纳指两天跌掉 5%、2.5 万亿美元市值蒸发，芯片股创 1896 年以来最差中期选举后表现。这不是技术问题，是 AI 基建的融资与选址逻辑被政治重定价。第二条线是 DeepSeek Harness 的 Super-agent 在中文社区持续发酵，工具链层面的竞争开始和模型本身脱钩。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. 中期选举后 AI 交易集体退潮：纳指单日跌 5%，2.5 万亿美元市值蒸发，芯片股创 1896 年以来最差选后表现</h3>
+<p><strong>[股票]</strong> · ⭐⭐⭐⭐⭐ · <em>armcat</em></p>
+<p>民主党横扫中期选举后，市场把「数据中心扩张会被地方政府卡住」当成确定性事件来定价。纳指跌入回调区间，费城半导体指数领跌，Alphabet 单日市值缩水一度逼近 5000 亿美元。这不是对 AI 需求本身的怀疑，而是对「能不能把电和地拿到手」的怀疑。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>纳指单日下跌约 5%，进入技术性回调区间</td>
+<td>跌幅中有多少是政治定价、多少是估值回归，目前无法拆分</td>
+</tr>
+<tr>
+<td>两天内美国股市合计蒸发约 2.5 万亿美元市值</td>
+<td>地方公投的否决是否具备法律约束力，各州差异很大，尚未明朗</td>
+</tr>
+<tr>
+<td>45 项数据中心相关地方公投中绝大多数被选民否决</td>
+<td>AI 基建融资成本上升会不会传导到模型训练节奏，需要看 Q4 财报</td>
+</tr>
+<tr>
+<td>芯片股创 1896 年以来最差中期选举次日表现</td>
+<td>若 2027 年数据中心审批普遍受阻，算力租赁价格可能反向上涨</td>
+</tr>
+<tr>
+<td>Alphabet 单日市值跌幅创公司历史纪录，一度接近 5000 亿美元</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你应该把这条当成「AI 基建的政治风险溢价」第一次被市场明确定价，而不是一次普通回调。对你做 content-curator 这类个人项目没有直接影响，但如果你在考虑任何依赖大模型 API 的产品，现在该开始关注供应商的算力锁定情况——未来半年 API 价格和限流政策可能比模型能力变化得更快。</p>
+<p>📺 <a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-05-2026">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.cnbc.com/2026/11/02/oracle-files-to-sell-20-billion-in-new-stock-bonds-to-finance-ai-buildout.html">Oracle 申请发行 200 亿美元新股与债券，为 AI 基建融资</a> —— AI 基建从「自有现金流」转向「发债发股」，是这轮周期性质变化的关键证据，但单条信息量不足以撑头条。
+  <em>smartmic</em></li>
+<li><a href="https://www.businessinsider.com/michael-burry-anthropic-ipo-outlook-ant-big-short-2026-11">Michael Burry：Anthropic 是在拿公司存亡赌乐观预期</a> —— 名人唱空，观点性强于事实性，适合作为市场情绪的注脚而非独立头条。
+  <em>mgh2</em></li>
+<li><a href="https://finance.yahoo.com/markets/stocks/articles/us-hedge-funds-just-sold-113114644.html">美国对冲基金已清空 2025 年以来买入的全部 AI 股票</a> —— 仓位数据比价格更能说明机构态度，但来源单一，需要交叉验证。
+  <em>robin_reala</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 股票 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="stock/2026-11-06">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-11-06 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261106114240"></script>
+</body>
+</html>
