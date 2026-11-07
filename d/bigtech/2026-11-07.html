@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 大厂 AI 动态 · 2026-11-07 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261107104929">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html" class="active">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🏛️ 大厂 AI 动态 · 2026-11-07</div>
+  <h1>Curio · 大厂 AI 动态 · 2026-11-07</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 3 条备选</p>
+</blockquote>
+<p><em>今天最重要的信号是同一件事的两面：中期选举民主党大胜后，市场把数据中心和 AI 资本开支当成政治风险来定价，Nasdaq 两天跌进修正区间、蒸发 2.5 万亿美元；但 OpenAI 同一天以 1.25 万亿美元估值再融 110 亿。资本在重新给 AI 定价，而不是离场。另一条线是 Nvidia 的 RTX Spark 加密固件把 Linux 推理压到 35% 速度，硬件层的封闭化开始影响实际算力。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>2. OpenAI 以 1.25 万亿美元估值再融 110 亿美元，Anthropic IPO 同期逼近</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐⭐ · <em>Lucas Ropek</em></p>
+<p>在市场因 AI 恐慌抛售的同一天，OpenAI 完成新一轮 110 亿美元融资，估值达 1.25 万亿美元，跻身全球最高市值公司之列。与此同时 Anthropic 的 IPO 进程在推进，Ramp 的数据却显示企业 AI 支出在放缓。一级市场和二级市场给出了完全相反的信号。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI 本轮融资 110 亿美元，估值 1.25 万亿美元，据 Bloomberg 报道</td>
+<td>1.25 万亿估值是否包含未披露的算力采购承诺，公开信息不足</td>
+</tr>
+<tr>
+<td>该轮融资尚未关闭，预计未来几周完成</td>
+<td>Anthropic IPO 定价会成为 AI 公司估值的新锚点还是警示案例，未知</td>
+</tr>
+<tr>
+<td>Anthropic 正在推进 IPO，其招股书警告可能'即将'接近递归自我改进</td>
+<td>企业支出放缓是价格下降导致的'量增价减'还是真实需求见顶，需要更多季度数据</td>
+</tr>
+<tr>
+<td>Ramp 数据显示 AI 使用量持续上升但支出停滞，降价和成本控制是主因</td>
+<td>一级市场与二级市场的背离能持续多久，取决于 OpenAI 下一轮的收入披露</td>
+</tr>
+<tr>
+<td>Oracle 申请发行 200 亿美元新股和债券为 AI 基建融资</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你该关注的是 Ramp 那条'使用量涨、支出停滞'的数据——它比估值数字更有信息量。如果你在简历项目里要论证 AI 产品的商业可行性，'降价换渗透'是当下最真实的行业叙事，比引用估值数字更站得住。</p>
+<hr />
+<h3>4. Meta 给 Muse Agent 加 Spaces：让 AI 现场生成 app 式的定制界面</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐ · <em>Emma Roth</em></p>
+<p>Meta 在 Muse 助手里推出 Spaces，允许 AI 根据当前需求即时构建购物中心、学校看板、音乐播放器等 app 式体验。这是把'Agent 生成 UI'从 demo 推向消费级产品的动作，和你的 Agent 工具构建方向直接相关。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spaces 允许 Muse 在应用内构建定制化的 app 式体验</td>
+<td>Spaces 生成的是静态界面还是可交互、可持久化的应用，官方描述模糊</td>
+</tr>
+<tr>
+<td>示例场景包括购物中心、学校看板、音乐播放器</td>
+<td>底层是否开放给第三方开发者调用，目前只有消费端入口</td>
+</tr>
+<tr>
+<td>TechCrunch 同日报道 Spaces 定位为与 Muse Agent 协作的新方式</td>
+<td>这种'Agent 生成 UI'模式的实际留存和复用率，需要看后续数据</td>
+</tr>
+<tr>
+<td>Meta 同期在 Amazon 封禁 Muse 后，Amazon 转而让用户通过短信让 Alexa 帮购物</td>
+<td>与 Claude 的 Artifacts、OpenAI 的 Canvas 相比差异化在哪，尚不清楚</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这条对你的 content-curator 有直接启发：'Agent 按需生成界面'正在成为大厂标配，你的项目可以考虑把简报渲染做成 Agent 动态生成而非固定模板。但先别跟风——Spaces 还没开放开发者接口，你可以先把'动态渲染'记进 backlog，等 API 出来再动手。</p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/">Gemini Omni 1.2 Flash 发布</a> —— 11 月 6 日刚发的多模态 Flash 模型，时效性最好，但官方博客信息量有限，缺第三方评测。
+  <em>thisisauserid</em></li>
+<li><a href="https://news.ycombinator.com/item?id=50363461">Tell HN：Gemini 对订阅用户也拿聊天记录训练模型</a> —— 726 分的 HN 讨论，涉及个人账号隐私，对你用 Gemini 做项目有实际影响，但属用户爆料非官方确认。
+  <em>jameslk</em></li>
+<li><a href="https://stratechery.com/2026/an-interview-with-intuit-ceo-sasan-goodarzi-about-accounting-and-ai/">An Interview With Intuit CEO Sasan Goodarzi About Accounting and AI</a> —— 契合你'想多看 AI 名人访谈'的反馈，Ben Thompson 的深度对话，但主题是会计行业，离你的方向稍偏。
+  <em>Ben Thompson</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 大厂 AI 动态 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="bigtech/2026-11-07">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-11-07 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261107104929"></script>
+</body>
+</html>
