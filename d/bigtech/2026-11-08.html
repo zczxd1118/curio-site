@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 大厂 AI 动态 · 2026-11-08 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261108105647">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html" class="active">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🏛️ 大厂 AI 动态 · 2026-11-08</div>
+  <h1>Curio · 大厂 AI 动态 · 2026-11-08</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 3 条备选</p>
+</blockquote>
+<p><em>今天最重要的信号只有一个：AI 叙事在资本市场被重新定价。中期选举后 Nasdaq 两日跌 5%、2.5 万亿美元市值蒸发、芯片股创 1896 年以来最差中期选举后单日表现，而 Ramp 数据显示企业 AI 支出在 Anthropic IPO 前夕停滞。另一条线是 Anthropic 用 AI 造 AI 的 METR 报告——如果模型迭代速度真的翻倍，那估值和算力支出的分歧只会更大。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>2. METR 报告：Anthropic 用 AI 造 AI，模型能力提升速度约为一年前的两倍，且没有放缓迹象</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐⭐ · <em>Robert Hart</em></p>
+<p>The Verge 报道了一份 METR 关于 Anthropic 内部 AI 辅助研发的报告：公司正用自家模型加速下一代模型的开发，能力提升速度约为一年前的 2 倍。报告让部分研究者不安的点不在于速度本身，而在于「没有看到明显的收益递减」。这和同期 Ramp 数据显示的企业 AI 支出停滞形成了一组刺眼的对照。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>METR 发布针对 Anthropic AI 辅助研发的报告</td>
+<td>「2 倍」的度量口径（benchmark 分数 vs 研发周期）报告未完全公开，可比性存疑</td>
+</tr>
+<tr>
+<td>模型能力提升速度约为一年前的 2 倍</td>
+<td>加速是否可外推到其他实验室，目前只有 Anthropic 一家的数据</td>
+</tr>
+<tr>
+<td>报告称目前未见明显放缓迹象</td>
+<td>递归自我改进（RSI）是否真的临近，Anthropic IPO 文件里的措辞只是风险提示而非结论</td>
+</tr>
+<tr>
+<td>该报告已引发 AI 安全研究者的公开讨论</td>
+<td>能力加速与商业变现之间的时滞，可能比技术曲线更长</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这条值得你花 20 分钟读原文而不是二手解读。对你做 content-curator 的直接含义是：如果模型迭代周期真的在缩短，你的 Agent 工具链（prompt、skill、评测集）的折旧速度也会加快——把「可替换模型层」设计进去，比押注某一个模型版本更划算。</p>
+<hr />
+<h3>3. Ramp 数据：AI 使用量还在涨，但企业支出停滞——恰好撞上 Anthropic 临近 IPO</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐ · <em>Rebecca Bellan</em></p>
+<p>Ramp 的企业支出数据显示，AI 工具的使用频次继续上升，但花在 AI 上的钱停滞了。原因是头部客户在降价和成本控制上做得越来越精细。这个时间点很微妙：Anthropic 正在冲刺 IPO，而投资者对 AI 超高速增长的假设正建立在「使用量=收入」的等式上。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ramp 数据显示 AI 使用量持续上升</td>
+<td>Ramp 样本以美国中小企业为主，能否代表大企业采购行为存疑</td>
+</tr>
+<tr>
+<td>同期企业 AI 支出出现停滞</td>
+<td>支出停滞可能是价格战导致而非需求见顶，两者对估值含义完全不同</td>
+</tr>
+<tr>
+<td>头部客户通过降价与成本控制压缩开支</td>
+<td>Anthropic 的收入结构（API vs 订阅）未披露，难以直接套用 Ramp 结论</td>
+</tr>
+<tr>
+<td>Anthropic 正处于 IPO 前夕</td>
+<td>若推理成本继续下降，单位支出下降未必等于行业收入下降</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这条是给你做产品判断用的：企业客户对 AI 的付费意愿正在从「按席位」转向「按实际价值」，这意味着你未来做 Agent 产品时，定价模型要能解释清楚省了多少人力/时间，而不是卖功能清单。同时提醒你：AI 叙事的分歧已经从技术层转移到财务层。</p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/">OpenAI 新一轮融资再募 110 亿美元，估值达 1.25 万亿美元</a> —— 与 AI 板块抛售同日发生，说明一级市场与二级市场的定价分歧正在拉大。
+  <em>Lucas Ropek</em></li>
+<li><a href="https://www.washingtonpost.com/technology/2026/11/03/google-deepmind-staff-protest-lifetime-ban-criticizing-company/">Google 研究员要求公开批评公司的自由，此前有员工因批评被终身禁言</a> —— DeepMind 内部治理摩擦的公开化，是理解前沿实验室决策机制的稀缺窗口。
+  <em>nsagent</em></li>
+<li><a href="https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1">Gemini 4 Carbon 登顶 Artificial Analysis Intelligence Index v5</a> —— 第三方评测榜单换榜首，是你做模型选型时的直接参考，但单一榜单不足以定论。
+  <em>theHocineSaad</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 大厂 AI 动态 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="bigtech/2026-11-08">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-11-08 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261108105647"></script>
+</body>
+</html>
