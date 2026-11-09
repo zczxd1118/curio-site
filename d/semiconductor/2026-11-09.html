@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI 算力 / 半导体 · 2026-11-09 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261109122315">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html" class="active">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🔬 AI 算力 / 半导体 · 2026-11-09</div>
+  <h1>Curio · AI 算力 / 半导体 · 2026-11-09</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 1 条头条 + 5 条备选</p>
+</blockquote>
+<p><em>今天最重要的信号有两个：一是 Nvidia 董事会正式调查黄仁勋与疑似中国间谍的关系，Yale 的 Sonnenfeld 给出「50-50 留任概率」——这不只是花边，是 AI 算力供应链最大单一节点的治理风险；二是 AI 交易在中期选举后遭遇 2.5 万亿美元级别的抛售，Nasdaq 进入回调区间，算力叙事第一次被政治与融资成本同时定价。工程侧则有一条被低估的：284B 参数 DeepSeek 在 64GB 内存、无 GPU 上跑起来了。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>3. llama-modchip：284B 参数 DeepSeek 在 64GB 内存、无 GPU 的机器上跑起来，HN 429 分</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐ · <em>joshcsimmons</em></p>
+<p>一个 GitHub 项目把 284B 参数的 DeepSeek 模型塞进了 64GB 内存的纯 CPU 环境，不依赖 GPU。同期还有 homelab 玩家用二代 Optane 持久内存跑 2.8 万亿参数的 Kimi K3，1-bit 量化下 0.85 tokens/s。这两条放在一起说明：内存带宽与量化技术正在把「大模型必须上 GPU」这条假设撕开一个口子。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>llama-modchip 项目在 HN 获 429 分，实现 284B DeepSeek 模型在 64GB RAM 无 GPU 环境运行</td>
+<td>0.85 tokens/s 的实际可用性极低，这类方案目前是技术验证而非生产可用</td>
+</tr>
+<tr>
+<td>Reddit homelab 用户用 Optane PMem 200 跑 Kimi K3（2.8T 参数），1-bit 量化下 0.85 tokens/s</td>
+<td>llama-modchip 的具体量化方案与内存布局未在摘要中说明，需读源码判断可复现性</td>
+</tr>
+<tr>
+<td>该用户警告 Optane 发热会烧毁邻近 DRAM，需用鼓风机散热</td>
+<td>Optane 已停产，这条路线依赖二手硬件，不具备规模化意义</td>
+</tr>
+<tr>
+<td>同期 CPU-Z 数据显示 64GB 内存 PC 占比同比下滑 18%，因 AI DRAM 涨价</td>
+<td>内存涨价是否会反过来压制本地推理社区的增长，尚待观察</td>
+</tr>
+<tr>
+<td>TSMC 否认应 Nvidia 要求探索 3D DRAM，称该技术距量产仍有数年</td>
+<td>「无 GPU 跑大模型」与「边缘设备跑小模型」是两条不同路线，别混为一谈</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这条对你的价值不在「能不能用」，而在「为什么能」——去读 llama-modchip 的 README，看它怎么做权重分片和量化调度，这套思路直接能迁移到你的 Agent 项目的本地推理降本上。如果你哪天要给 content-curator 加一个本地小模型做初筛，这就是现成的工程参考。</p>
+<p>📺 <a href="https://github.com/synchopate/llama-modchip">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.eetimes.com/deepx-tapes-out-second-gen-chip-projects-6-7x-performance-gain-with-lpddr5x-pim/">DeepX 流片二代芯片，LPDDR5x-PIM 架构宣称 6.7 倍性能提升</a> —— 5W 以内跑大模型，存内计算路线在边缘侧的又一次下注，数字漂亮但需等实测。
+  <em>Sally Ward-Foxton</em></li>
+<li><a href="https://www.tomshardware.com/pc-components/cooling/diamond-foundry-creates-worlds-first-200mm-single-crystal-diamond-wafer-massive-gem-aims-to-solve-ai-chip-cooling-crisis-envisioned-as-a-cooling-material-for-semiconductors">Diamond Foundry 造出全球首片 200mm 单晶金刚石晶圆</a> —— 冲着 AI 芯片散热危机去的材料突破，200mm 尺寸是关键，但离量产还远。
+  <em>Jowi Morales</em></li>
+<li><a href="https://www.mindstudio.ai/blog/linux-nvidia-rtx-spark-laptop">Nvidia RTX Spark 加密固件把 Linux 上推理速度压到 35%</a> —— HN 617 分，本地推理玩家必看：买卡之前先确认固件策略，这是实打实的踩坑预警。
+  <em>novaRom</em></li>
+<li><a href="https://www.tomshardware.com/pc-components/gpus/open-source-gpu-task-manager-reveals-exactly-whats-eating-your-vram-microsoft-vps-new-gpu-taskman-tool-reveals-every-process-using-your-gpu-how-much-memory-each-uses-and-breaks-down-ai-and-llm-workloads">开源 GPU 任务管理器 gputaskman 精确显示谁在吃你的 VRAM</a> —— 微软 VP Scott Hanselman 发布的小工具，能拆分 AI/LLM 负载，本地调试刚需。
+  <em>Mark Tyson</em></li>
+<li><a href="https://www.tomshardware.com/peripherals/docking-stations-hubs/synaptics-sends-cease-and-desist-order-to-creator-of-open-source-displaylink-driver-dares-him-to-publicize-its-threats-dev-reverse-engineers-displaylink-using-claude-ai-and-rust-synaptics-threatens-to-bill-creator-for-legal-documentation">Synaptics 向开源 DisplayLink 驱动作者发律师函，还「激将」其公开威胁</a> —— 开发者用 Claude AI + Rust 逆向 DisplayLink 被发函，AI 辅助逆向的法律边界案例。
+  <em>Jowi Morales</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 算力 / 半导体 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="semiconductor/2026-11-09">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-11-09 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261109122315"></script>
+</body>
+</html>
