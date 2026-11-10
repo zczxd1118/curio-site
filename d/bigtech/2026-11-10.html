@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 大厂 AI 动态 · 2026-11-10 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261110115837">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html" class="active">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🏛️ 大厂 AI 动态 · 2026-11-10</div>
+  <h1>Curio · 大厂 AI 动态 · 2026-11-10</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 3 条头条 + 3 条备选</p>
+</blockquote>
+<p><em>今天最重要的信号有两个：一是 Nvidia 的 Jensen Huang 与疑似中国间谍的关系被本人承认，董事会启动独立调查、国会传唤、集体诉讼同时压上，Nvidia 股价单日跌超 4%，这不只是八卦，而是直接卡住 Nvidia 对华游说与出口管制的关键变量；二是 AI 资本面同步转向，Nasdaq 一周内跌入回调区间、2.5 万亿美元市值蒸发，Anthropic 却在这时推进 IPO。技术侧则有一条被低估的：Claude Code 的 settings 文件正在 GitHub 上批量泄露密钥。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. Jensen Huang 承认与疑似中国间谍的婚外关系，Nvidia 董事会启动独立调查，Ben Thompson 判断「他能活下来，但影响力回不去了」</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐⭐ · <em>Ben Thompson</em></p>
+<p>Nvidia 董事会已成立独立委员会调查 CEO Jensen Huang 与 Megaspeed 董事 Alice Huang 的关系，Huang 本人向全员发信承认婚外情并道歉。国会中国问题特别委员会已传唤他作证，至少一家律所提起证券欺诈集体诉讼，Nvidia 股价单日跌超 4%。Ben Thompson 在 Stratechery 给出的判断很直接：他希望 Huang 挺过去，但 Huang 在华盛顿的话语权将永久性削弱。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Huang 向全体员工发信承认婚外关系并致歉，董事会成立独立委员会调查</td>
+<td>调查结论是否触及出口管制合规，目前无任何官方定性</td>
+</tr>
+<tr>
+<td>国会众议院中国问题特别委员会已传唤 Huang 出席作证</td>
+<td>Megaspeed 是否被认定为中国情报资产，美方尚未公开确认</td>
+</tr>
+<tr>
+<td>至少一家律所提起证券欺诈集体诉讼，多家律所跟进调查</td>
+<td>Huang 是否会因此失去 CEO 职位——Stratechery 判断不会，但这是判断不是事实</td>
+</tr>
+<tr>
+<td>Nvidia 股价在调查消息后单日下跌超过 4%</td>
+<td>对华 GPU 出口政策会否因此收紧，取决于国会而非公司</td>
+</tr>
+<tr>
+<td>做空机构 Culper Research 早在六个月前就质疑过这层关系</td>
+<td>集体诉讼能否成立，要看 Nvidia 早期披露是否构成误导</td>
+</tr>
+<tr>
+<td>Huang 已临时退出 ElevenLabs Summit 与一场 Anthropic 活动</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这条对你的实际含义不在八卦，而在算力供给的不确定性：Nvidia 对华政策一旦被国会接管，国内可获得的算力路径（云租赁、黑市 B300、二手 V100）价格与合规风险都会变。如果你在做需要调用海外模型的 Agent 项目，现在就该把「模型供应商可替换」当成架构约束写进设计，而不是等政策落地再改。</p>
+<p>📺 <a href="https://stratechery.com/2026/jensen-huangs-affair-the-culper-report-huangs-righteousness/">打开原文</a></p>
+<hr />
+<h3>3. Claude Code 的 settings 文件正在 GitHub 上批量泄露 API key 和密码，起因是「Do not ask again」这个授权选项</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐ · <em>Kyle Orland</em></p>
+<p>Ars Technica 报道，大量开发者把 Claude Code 的本地 settings 文件连同密钥一起提交到了公开仓库，泄露内容包括 API key、数据库密码等。根因是 Claude Code 在请求权限时提供的「Do not ask again」选项——用户为了少点几次确认，把敏感路径的访问权限永久放开了，而这些配置随后被 git 带上了 GitHub。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub 上已发现数千条来自 Claude Code settings 文件的密钥泄露</td>
+<td>受影响仓库的准确总数尚无权威统计</td>
+</tr>
+<tr>
+<td>泄露内容包含 API key、密码等凭证</td>
+<td>Anthropic 是否会修改默认权限模型，官方未表态</td>
+</tr>
+<tr>
+<td>直接诱因是「Do not ask again」权限选项被广泛使用</td>
+<td>有多少泄露密钥已被实际利用，目前未知</td>
+</tr>
+<tr>
+<td>Ars Technica 已核实多起案例</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你正在用 Claude Code 做 content-curator，这条是直接冲你来的。现在就去检查两件事：项目里有没有 .claude/settings*.json 被 git 跟踪，以及 .gitignore 有没有覆盖它。另外把「Do not ask again」改成对写操作永远确认——省下的点击次数，不值得用一次密钥泄露换。</p>
+<p>📺 <a href="https://arstechnica.com/ai/2026/11/claude-code-settings-files-expose-thousands-of-secrets-on-github/">打开原文</a></p>
+<hr />
+<h3>5. Meta 发布 Muse Ember：专为 Agent 执行设计的轻量模型，输入价格 0.1 美元/百万 token</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐ · <em>Russell Brandom</em></p>
+<p>Meta 发布 Muse Ember，定位明确——不是通用对话模型，而是给 Agent 执行用的轻量模型。输入定价 0.1 美元/百万 token，TechCrunch 称其显著低于 Haiku 和 Luna 等前沿竞品。同一天 Anthropic 发布 Claude Fable 5.2 与 Mythos 5.2，主打编码、推理与视觉能力提升。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Muse Ember 输入定价 0.1 美元/百万 token</td>
+<td>Ember 在真实 Agent 任务上的工具调用准确率，尚无第三方评测</td>
+</tr>
+<tr>
+<td>官方定位为 Agent 执行场景的轻量模型</td>
+<td>0.1 美元定价是否可持续，取决于 Meta 的补贴意愿</td>
+</tr>
+<tr>
+<td>价格显著低于 Haiku、Luna 等竞品</td>
+<td>与 Claude 新模型的对比结论，需要等独立 benchmark</td>
+</tr>
+<tr>
+<td>同日 Anthropic 发布 Claude Fable 5.2 与 Mythos 5.2</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>Agent 项目的成本结构正在被重写：当执行层模型降到 0.1 美元/百万 token，你的 content-curator 里那些「跑很多次、每次任务简单」的环节（分类、抽取、格式化）就该换模型了。建议做一次分层：规划用强模型，执行用 Ember 这类便宜模型，先量一下你现在的 token 花在哪一层。</p>
+<p>📺 <a href="https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://techcrunch.com/2026/11/09/anthropic-reportedly-plans-to-move-forward-with-ipo-plans/">Anthropic 推进 IPO，本周将确定估值区间</a> —— WSJ 称本周定价，但 Michael Burry 和多家机构公开质疑 1.5 万亿美元估值能否成立——和上面的市场抛售是同一条线。
+  <em>TechCrunch</em></li>
+<li><a href="https://www.theverge.com/ai-artificial-intelligence/1030005/anthropic-claude-fable-mythos-5-2">Anthropic 发布 Claude Fable 5.2 与 Mythos 5.2</a> —— 官方称在编码、推理、视觉上有提升，但发布稿没给具体 benchmark 数字，等第三方评测再决定要不要迁移。
+  <em>The Verge</em></li>
+<li><a href="https://github.com/thisisme6598/gemini_files/">Google Gemini 把个人 Drive 文件和邮件路由给人工标注员</a> —— HN 736 分的另一条 Gemini 训练数据争议，和「订阅用户聊天记录也被训练」是同一问题的两面。
+  <em>Hacker News</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 大厂 AI 动态 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="bigtech/2026-11-10">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-11-10 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261110115837"></script>
+</body>
+</html>
