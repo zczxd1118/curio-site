@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI 算力 / 半导体 · 2026-11-12 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261112120030">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html" class="active">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🔬 AI 算力 / 半导体 · 2026-11-12</div>
+  <h1>Curio · AI 算力 / 半导体 · 2026-11-12</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 4 条备选</p>
+</blockquote>
+<p><em>今天最重要的信号是 Nvidia 的治理危机：董事会据报准备罢免黄仁勋，股价自丑闻发酵以来已跌 20%，第二段婚外情与「中国间谍」指控叠加国会传唤。另一条是 AI 资本面的裂缝——OpenAI 单季营收首破 100 亿美元，但 Nasdaq 已跌入回调区间，AI 交易正在被重新定价。这两件事共同说明：算力叙事进入「人」与「钱」的检验期。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. Nvidia 董事会据报准备罢免黄仁勋：第二段婚外情曝光，股价自丑闻以来已跌 20%</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>WSJ 与多家媒体在 11 月 11 日晚同步报道，Nvidia 董事会正就黄仁勋的去留召开紧急会议，最早周三晚可能做出决定。触发点是第二段婚外情——对象是向他直接汇报的 Nvidia 高管，此前他已承认与一名被指为中国情报人员的女性有染。公司 33 年来只有这一位 CEO，没有公开的继任方案。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WSJ 首发报道董事会准备罢免黄仁勋，Tom's Hardware、TechCrunch、Ars Technica 同日跟进</td>
+<td>「准备罢免」目前仍是匿名信源，董事会是否真投票、何时投票未确认</td>
+</tr>
+<tr>
+<td>第二段婚外情对象为向其直接汇报的 Nvidia 高管，另有掩盖指控</td>
+<td>黄仁勋是否会主动辞职或以其他方式留任，尚无任何一方表态</td>
+</tr>
+<tr>
+<td>股价自丑闻爆发以来累计下跌约 20%</td>
+<td>继任者人选完全空白，TechCrunch 的名单只是媒体推测</td>
+</tr>
+<tr>
+<td>美国众议院三个委员会主席要求黄仁勋出席闭门简报，否则可能发传票</td>
+<td>对华出口与 Megaspeed 调查是否与此次治理危机直接挂钩，仍不明朗</td>
+</tr>
+<tr>
+<td>FBI 已介入调查，Nvidia 董事会同步调查间谍案</td>
+<td>股价 20% 跌幅中有多少来自丑闻、多少来自大盘 AI 回调，无法拆分</td>
+</tr>
+<tr>
+<td>黄仁勋任 CEO 已 33 年，公司无公开继任计划</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你不需要关心八卦，但要关心治理风险如何传导到算力供给。Nvidia 一旦进入 CEO 过渡期，Rubin 出货节奏、对华政策口径、云厂商长约都可能被重新谈判。如果你在做任何依赖 GPU 成本假设的项目或判断，这周先把「Nvidia 供应稳定」从前提里拿掉，改成情景假设。</p>
+<p>📺 <a href="https://www.tomshardware.com/pc-components/gpus/nvidias-board-reportedly-preparing-to-oust-ceo-jensen-huang-as-second-extra-marital-affair-emerges-stock-has-plunged-20-percent-since-scandals-began-huang-has-been-first-and-only-ceo-for-33-years">打开原文</a></p>
+<hr />
+<h3>5. Linux 内核内存管理审阅者因 AI 生成补丁泛滥辞职：「浪费的时间已经太多，而这只是开始」</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐ · <em>Tom's Hardware</em></p>
+<p>一位 Linux 内核内存管理子系统的审阅者宣布卸任该职责，直接原因是 AI 生成的低质量补丁（AI slop）大量涌入。他的原话是「浪费在 AI slop 上的时间已经太多，而这只是这股提交量的开始」，叠加人力不足，只能退出。这是开源治理被 LLM 输出规模冲击的第一个高知名度案例。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux 内核内存管理子系统的审阅者因 AI 生成补丁泛滥卸任</td>
+<td>AI slop 补丁在总提交量中的占比没有量化数据</td>
+</tr>
+<tr>
+<td>当事人称「浪费在 AI slop 上的时间已经太多，而这只是开始」</td>
+<td>内核社区是否会引入 AI 生成内容标注或自动过滤机制，尚未讨论</td>
+</tr>
+<tr>
+<td>人力不足是辞职的叠加因素</td>
+<td>其他子系统是否出现同类退出，未提及</td>
+</tr>
+<tr>
+<td>Tom's Hardware 于 11 月 11 日报道</td>
+<td>这是否会改变开源项目对 AI 辅助贡献的整体态度，属于推测</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这条对你有两层用处。一是提醒：你用 Claude Code 生成代码提交 PR 时，审阅者的时间成本是真实的外部性，别把「能生成」当成「该提交」。二是它揭示了一个产品机会——AI 生成内容的过滤与质量门禁，正在从「nice to have」变成基础设施级需求，这可能是你 side project 值得切入的方向。</p>
+<p>📺 <a href="https://www.tomshardware.com/software/linux/linux-kernel-reviewer-steps-down-from-memory-management-duties-due-to-influx-of-ai-slop-patches-the-amount-of-time-wasted-on-ai-slop-is-already-too-much-and-were-only-at-the-start-of-this-volume-of-submissions-and-low-manpower-forces-the-step-back">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.storagereview.com/review/nvidia-vera-cpu-review">Nvidia Vera CPU 评测：2TB/s 内存带宽，真正的 x86 对手</a> —— Vera CPU 的实测数据首次公开，2TB/s 带宽是硬指标。被黄仁勋丑闻淹没，但对理解 Nvidia 从 GPU 走向整机架的战略很关键。
+  <em>StorageReview / HN</em></li>
+<li><a href="https://www.tomshardware.com/pc-components/cpus/amds-venice-x-maxes-out-family-at-5-3-ghz-returning-3d-v-cache-to-data-center-after-four-years-chips-target-hpc-workloads-with-pcie-6-0-and-1-6-tb-s-memory-bandwidth">AMD Venice-X 最高 5.3GHz，3D V-Cache 四年后回归数据中心</a> —— 2027 下半年上市，PCIe 6.0 + 1.6TB/s 带宽。是 AMD 对 Nvidia Vera 的正面回应，时间线偏远所以放备选。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.tomshardware.com/pc-components/cpus/amd-shares-how-it-can-retain-95-percent-of-server-performance-with-just-half-the-dram-sidestepping-memory-shortages-with-mext-tech-powers-over-100-servers-already-running-with-plans-to-expand-to-2-000-servers-in-2027">AMD 用 MEXT 技术在半数 DRAM 下保住 95% 服务器性能</a> —— 已有 100+ 台服务器在跑，2027 扩到 2000 台。内存短缺背景下的实用工程方案，数字扎实，但受众偏基础设施。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.tomshardware.com/software/linux/cyanogen-co-founder-unveils-kora-a-linux-os-that-splits-ai-models-across-the-cpu-gpu-and-npu-snapdragon-x2-elite-and-hexagon-npu-get-full-support-first">Linux 桌面 OS Kora 把 AI 模型拆分到 CPU/GPU/NPU 上跑</a> —— Cyanogen 联合创始人新项目，2027 上 PC，首发支持 Snapdragon X2 Elite。本地推理的异构调度思路有意思，但离落地还远。
+  <em>Tom's Hardware</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 算力 / 半导体 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="semiconductor/2026-11-12">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-11-12 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261112120030"></script>
+</body>
+</html>
