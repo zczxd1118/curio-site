@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 大厂 AI 动态 · 2026-11-15 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261115114118">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html" class="active">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🏛️ 大厂 AI 动态 · 2026-11-15</div>
+  <h1>Curio · 大厂 AI 动态 · 2026-11-15</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 4 条备选</p>
+</blockquote>
+<p><em>今天最重要的信号只有一个：Jensen Huang 因与下属（其中一人被指向中国转运芯片的公司高管）的关系辞职，Nvidia 董事会已接触 Arm CEO Rene Haas 接任，同时美国财政部质疑 Nvidia 是否知情向空壳公司卖 GPU。第二个信号是 Anthropic IPO 定价逻辑被金融圈当成一次信用事件而非成长股故事。对你的含义：AI 硬件叙事进入「治理与合规风险」定价阶段，做 Agent 项目时别把模型/算力供应商假设成稳定不变的基础设施。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>3. LangChain 估值冲到 30 亿美元，LangSmith 称已有 7000 家客户</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐ · <em>Julie Bort</em></p>
+<p>LangChain 在 Nvidia 动荡、AI 股回调的同一周拿到 30 亿美元估值，卖点是模型与平台无关的 Agent 管理工具 LangSmith，客户数 7000。这条对做 Agent 的人是反向信号：基础设施层在挤泡沫，但「Agent 可观测/管理」这一层反而在被定价。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LangChain 最新估值 30 亿美元</td>
+<td>30 亿估值对应的收入与增速未披露，无法判断是否透支</td>
+</tr>
+<tr>
+<td>LangSmith 平台客户数达 7000 家</td>
+<td>7000 客户中付费比例与留存未知</td>
+</tr>
+<tr>
+<td>定位为模型无关、平台无关的 Agent 管理工具</td>
+<td>模型无关的定位在 OpenAI/Google 自家 Agent 平台挤压下能撑多久，存疑</td>
+</tr>
+<tr>
+<td>融资发生在 AI 股整体回调、Nasdaq 进入修正区间的一周</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你的 content-curator 项目正好落在「Agent 可观测 + 管理」这条被资本认可的赛道上。与其再写一个 Agent demo，不如把「运行记录、prompt 版本、失败重放」做成可展示的一小块——这正是 LangSmith 卖钱的地方，也是简历上最容易被追问的细节。</p>
+<p>📺 <a href="https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/">打开原文</a></p>
+<hr />
+<h3>4. ChatGPT 上线 Wallet，让 Agent 直接替你下单结账</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐ · <em>Sarah Perez</em></p>
+<p>OpenAI 推出 ChatGPT Wallet，Agent 可代用户完成购物与结账，先向美国 Pro 订阅用户限量开放。这是 Agent 从「读」跨到「花钱」的一步，也是权限与责任模型第一次被推到消费级产品里。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChatGPT Wallet 支持 Agent 代用户购物与结账</td>
+<td>支付授权边界、退款与纠纷责任归属未公开细节</td>
+</tr>
+<tr>
+<td>首批仅限美国 Pro 订阅用户，限量开放</td>
+<td>是否会开放给第三方 Agent 调用，未知</td>
+</tr>
+<tr>
+<td>属于 OpenAI 在 Agent 商业化上的新动作</td>
+<td>对电商与支付渠道的实际冲击规模，短期难评估</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>这是你该拆开看的产品：Agent 拿到支付权限后，prompt 注入、工具调用越权、失败回滚都变成真金白银的问题。如果你在做 Agent 项目，把「危险动作需人工确认」做成一个可演示的环节，比多接十个工具更有说服力。</p>
+<p>📺 <a href="https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/">Gemini 4 Hydrogen 与 Orchestrator 登陆 Google Antigravity</a> —— Google 把新模型和编排层一起塞进自家 Agent 平台，值得试但今天头条位不够。
+  <em>jonbaer</em></li>
+<li><a href="https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview">Helen Toner 访谈：罢免 Sam Altman 的董事说我们仍不能信任 AI CEO</a> —— 契合你想多看名人访谈的偏好，长对话，但今天被 Nvidia 事件压过。
+  <em>Nilay Patel</em></li>
+<li><a href="https://stratechery.com/2026/the-end-of-jensen/">Stratechery：The End of Jensen</a> —— Ben Thompson 的周度综述，把 Huang 之死、企业与 Intel 串起来，值得周末读。
+  <em>Ben Thompson</em></li>
+<li><a href="https://github.com/synchopate/llama-modchip">LangChain 之外：llama-modchip 在 64GB 内存、无 GPU 上跑 284B DeepSeek</a> —— 纯 CPU 跑大模型的开源工程，有代码可跑，适合你周末动手验证。
+  <em>joshcsimmons</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 大厂 AI 动态 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="bigtech/2026-11-15">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-11-15 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261115114118"></script>
+</body>
+</html>
