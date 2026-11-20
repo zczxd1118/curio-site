@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 大厂 AI 动态 · 2026-11-20 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261120122210">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html" class="active">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🏛️ 大厂 AI 动态 · 2026-11-20</div>
+  <h1>Curio · 大厂 AI 动态 · 2026-11-20</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 2 条头条 + 3 条备选</p>
+</blockquote>
+<p><em>今天两条主线：一是 Anthropic 以 $83/股登陆纳斯达克、开盘 $111，7 位创始人合计套现近 $2B，AI 泡沫的定价权第一次交给公开市场；二是 Nvidia 在黄仁勋辞职后交出 $115.8B 季度营收，同时被曝通过循环融资制造 GPU 稀缺。前者决定 AI 资本周期，后者决定算力供给叙事——两者叠加，接下来 6 个月 AI 板块波动会明显放大。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. Anthropic 以 $83 定价、开盘 $111 登陆纳斯达克，募资超 $80B，AI 泡沫正式接受公开市场检验</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐⭐ · <em>TechCrunch</em></p>
+<p>Anthropic 昨晚在纳斯达克挂牌，IPO 定价 $83/股，开盘冲到 $111，较定价高 33%。按 $83 计算公司募得超 $800 亿新资本，是史上最大科技 IPO 之一。Dario Amodei 在敲钟演讲里重申不会因商业或政治压力加快 AI 开发节奏。这是 AI 资本周期第一次被公开市场直接定价，后面所有 frontier lab 的估值锚都会看这一单。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IPO 定价 $83/股，开盘 $111，较定价高 33%</td>
+<td>开盘溢价能否维持到锁定期结束，目前无数据</td>
+</tr>
+<tr>
+<td>按定价计算募资超 $800 亿新资本</td>
+<td>信用评级机构此前预期给出高收益级『垃圾』评级，实际评级尚未公布</td>
+</tr>
+<tr>
+<td>7 位创始人合计套现近 $2B，每人约 $2.8 亿</td>
+<td>$900B 的 AI 算力采购承诺如何与公开市场财报节奏匹配，仍是黑箱</td>
+</tr>
+<tr>
+<td>Dario Amodei 敲钟演讲重申按自己节奏推进 AI 开发</td>
+<td>B2D（开发者驱动企业销售）模式能否撑起 $1.5T 估值，只有 CUDA 一个成功先例</td>
+</tr>
+<tr>
+<td>公司 Public Benefit Foundation 及员工捐赠按 $95 股价折算约 $156B</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你不需要买这只股票，但要看懂它的定价逻辑：Anthropic 把『开发者先用起来→企业买单』这条路径摆上了台面，这正是你做 content-curator 的底层假设。建议把招股书里关于 Claude Code 使用量、API 收入结构的部分找出来读一遍，比任何 AI 商业分析文章都硬。</p>
+<p>📺 <a href="https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/">打开原文</a></p>
+<hr />
+<h3>3. Gemini 拿到 Mac 控制权：能整理文件、填表单、跑多步工作流，桌面 Agent 战开打</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐ · <em>TechCrunch</em></p>
+<p>Google 给 Gemini 加了 Mac 端 Agent 能力，可以替你整理文件、填表、执行多步骤工作流。同一周 Apple 被曝在招人自建 AI agent（能浏览网页、跨 App 操作、写代码），Meta 的 Muse Charm 小设备传定价 $300。三家大厂在同一周把『Agent 直接操作你的电脑』摆上台面，桌面成了下一个入口战场。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gemini 新增 Mac 端 Agent，支持文件整理、表单填写、多步工作流</td>
+<td>Gemini 的 Mac Agent 实际权限边界和沙箱机制尚未公开</td>
+</tr>
+<tr>
+<td>Apple 招聘信息显示在自建可跨 App 操作、写代码的 AI agent</td>
+<td>Apple 的 agent 仍在招聘阶段，落地时间不明</td>
+</tr>
+<tr>
+<td>Meta Muse Charm 据 The Information 报道定价 $300</td>
+<td>Meta Muse 被曝混淆对话、可能泄露隐私数据，产品成熟度存疑</td>
+</tr>
+<tr>
+<td>Gemini 4 Neon 在 Models Engineering Index 上排到第一</td>
+<td>桌面 Agent 的权限模型会不会重演浏览器扩展的安全问题，无人给出答案</td>
+</tr>
+<tr>
+<td>Google 搜索首页开始内嵌 AI 对话侧边栏</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你做 content-curator 这类个人 Agent，桌面控制是绕不开的一环。建议现在就去试 Gemini 的 Mac Agent，重点看它怎么处理『多步任务中途失败』——这是所有 Agent 框架最脆弱的地方，也是你能在简历里讲出深度的点。</p>
+<p>📺 <a href="https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://git-aarvin.github.io/mei/">Gemini 4 Neon 登顶 Models Engineering Index</a> —— 新模型排名第一，但 MEI 这个榜单本身权威性一般，当参考不当结论。
+  <em>Hacker News</em></li>
+<li><a href="https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/">Meta 的 AI Agent Muse 被曝混淆对话、可能泄露隐私数据</a> —— 员工称 Muse 弹出从未发起的育儿请求、银行余额等信息。Agent 的记忆隔离做不好就是这个下场，做个人 Agent 的必读反例。
+  <em>TechCrunch</em></li>
+<li><a href="https://www.gdmunion.co.uk">DeepMind 员工正在组建工会</a> —— frontier lab 内部劳资关系首次公开化，和 Anthropic 上市同周发生，值得留意 AI 公司治理风向。
+  <em>Hacker News</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 大厂 AI 动态 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="bigtech/2026-11-20">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-11-20 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261120122210"></script>
+</body>
+</html>
