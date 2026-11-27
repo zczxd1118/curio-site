@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · 大厂 AI 动态 · 2026-11-27 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261127132123">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html" class="active">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🏛️ 大厂 AI 动态 · 2026-11-27</div>
+  <h1>Curio · 大厂 AI 动态 · 2026-11-27</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 1 条头条 + 4 条备选</p>
+</blockquote>
+<p><em>今天最重的信号来自 Nvidia：Jensen Huang 被董事会重新任命为 CEO，同时公司暂停向东南亚出货、SEC 调查会计问题、S&amp;P 考虑下调信用评级——一家公司的治理风险正在变成整个 AI 算力供应链的风险。另一条线是 Anthropic 上市后跌破 83 美元发行价，AI 资本叙事第一次出现公开市场的反向定价。对做 Agent 的你来说，工具链层面真正的新东西是 T3 Code 这类多 Agent 并行工作台。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>3. Gemini 4 Neon 发布，在 Models Engineering Index 上登顶，被指对标 Opus 5.5</h3>
+<p><strong>[大厂 AI 动态]</strong> · ⭐⭐⭐⭐ · <em>yigitdemirag</em></p>
+<p>Google 在 11 月 18 日发布 Gemini 4 Neon，随后在第三方 Models Engineering Index 上排到第一，社区讨论普遍把它和 Opus 5.5 放在同一档比较。这是 Google 在一个月内连续放出 Carbon、Hydrogen、Neon 三个 Gemini 4 变体后的最新一版。发布节奏本身比单次跑分更值得注意。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gemini 4 Neon 于 11 月 18 日在 Google 官方博客发布，HN 讨论 1071 分</td>
+<td>Models Engineering Index 是社区维护的第三方榜单，权重设计未公开，排名第一不等于综合最强</td>
+</tr>
+<tr>
+<td>该模型在 Models Engineering Index 上排名第一，索引页面公开可查</td>
+<td>「对标 Opus 5.5」目前只是博客作者的判断，没有官方基准对比</td>
+</tr>
+<tr>
+<td>Google 在 10 月底至 11 月中旬已连续发布 Gemini 4 Carbon、4 Hydrogen、Omni 1.2 Flash 等多个变体</td>
+<td>Neon 与 Carbon、Hydrogen 的定位差异官方说明含糊，命名体系像营销分层而非能力分层</td>
+</tr>
+<tr>
+<td>Gemini 4 Carbon 曾在 Artificial Analysis Intelligence Index v5 上排第一</td>
+<td>实际编码与 Agent 任务表现缺少独立复现，社区评测样本还很少</td>
+</tr>
+<tr>
+<td>Google 同期发布 Genie 4 与 AlphaProof Code</td>
+<td>定价与上下文窗口细节在发布博客中不完整</td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>别急着换模型。你现在跑 Agent 的核心成本是调试 prompt 和工具链，不是模型分数。真正值得做的是：拿你自己 content-curator 的 3-5 个真实任务，在 Neon 和当前模型上各跑一遍，看工具调用成功率而不是看榜单。如果 Google 的发布节奏继续这个密度，模型选型会变成季度动作，把评测脚本固化下来比追新更有价值。</p>
+<p>📺 <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/">OpenAI 合并 Chat 与 Work，重度用户会更早触达用量上限</a> —— 统一用量计费表。对重度用户是实质性收紧，做 Agent 项目时要重新算 token 预算。
+  <em>TechCrunch</em></li>
+<li><a href="https://techcrunch.com/2026/11/25/fcc-approves-spacex-plan-to-put-ai-data-centers-in-space/">FCC 批准 SpaceX 在太空部署 AI 数据中心的计划</a> —— FCC 驳回了科研威胁等反对意见，理由是超出其监管权限。听起来科幻，但批文是真的，算力基建的边界在往外推。
+  <em>TechCrunch</em></li>
+<li><a href="https://techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd/">Dario Amodei 回应「向 AI 交出人类控制权」指控：荒谬</a> —— 竞争对手指控他在自动化研发上走得太远。属于你偏好的名人表态类内容，但只有立场没有技术细节，所以放备选。
+  <em>TechCrunch</em></li>
+<li><a href="https://devnull.land/amd-specific-llama-cpp">AMD 专用版 llama.cpp 分支</a> —— 针对 AMD 硬件的推理优化分支，HN 377 分。如果你以后想在非 Nvidia 硬件上跑本地模型，这是条实用线索。
+  <em>HN</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 大厂 AI 动态 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="bigtech/2026-11-27">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-11-27 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261127132123"></script>
+</body>
+</html>

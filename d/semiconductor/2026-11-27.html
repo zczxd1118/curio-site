@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curio · AI 算力 / 半导体 · 2026-11-27 · Curio</title>
+<link rel="stylesheet" href="../../styles.css?v=20261127132121">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../../index.html">Curio<span class="dot">.</span></a>
+    <!-- 顶部导航不再展示领域 chip（避免重复 + 同步问题）；点 brand 回首页用卡片选 -->
+    <div class="nav-links" style="display:none"><a href="../../index.html">首页</a><a href="../../d/ai/index.html">AI</a><a href="../../d/semiconductor/index.html" class="active">AI 算力 / 半导体</a><a href="../../d/bigtech/index.html">大厂 AI 动态</a><a href="../../d/stock/index.html">股票</a><a href="../../d/finance-fed/index.html">金融</a><a href="../../d/tech-chip/index.html">电子信息与芯片</a></div>
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <input type="text" class="search-input" id="curio-search" placeholder="搜索  ⌘K" autocomplete="off">
+        <div class="search-results" id="curio-search-results"></div>
+      </div>
+      <button class="subscribe-btn" id="subscribe-btn" title="订阅 Curio 邮件简报">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="sub-label">订阅</span>
+      </button>
+      <button class="theme-toggle" id="settings-btn" title="设置（评分链路）">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="theme-toggle" id="theme-toggle" title="切换主题（深/浅色）">
+        <span class="icon-moon-default" style="display:inline-flex">
+          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+        <span class="icon-sun">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="toc" id="curio-toc">
+  <div class="toc-title">本期目录</div>
+  <div id="curio-toc-list"></div>
+</aside>
+
+<main>
+
+<div class="hero">
+  <div class="kicker">🔬 AI 算力 / 半导体 · 2026-11-27</div>
+  <h1>Curio · AI 算力 / 半导体 · 2026-11-27</h1>
+  <div class="meta">📖 主编点评</div>
+</div>
+<div class="content">
+<blockquote>
+<p>今日 1 条头条 + 4 条备选</p>
+</blockquote>
+<p><em>今天最重的信号来自 Nvidia：Jensen Huang 被董事会重新任命为 CEO，同时公司暂停向东南亚出货、SEC 调查会计问题、S&amp;P 考虑下调信用评级——一家公司的治理风险正在变成整个 AI 算力供应链的风险。另一条线是 Anthropic 上市后跌破 83 美元发行价，AI 资本叙事第一次出现公开市场的反向定价。对做 Agent 的你来说，工具链层面真正的新东西是 T3 Code 这类多 Agent 并行工作台。</em></p>
+<hr />
+<h2>🌟 今日精选</h2>
+<h3>1. Nvidia 董事会重新任命 Jensen Huang 为 CEO，治理争议与出口管制同时压顶</h3>
+<p><strong>[AI 算力 / 半导体]</strong> · ⭐⭐⭐⭐⭐ · <em>jaz</em></p>
+<p>Huang 此前辞任后，董事会在 Trump 政府推动下将其重新任命为总裁、CEO 兼董事，CNBC 与 Nvidia 官方新闻稿同日确认。但国会公开抨击这是「品格失败」，S&amp;P 表示正考虑因治理与「关键人风险」下调其信用评级。这不是一次普通的人事回归，而是把公司治理问题直接暴露在监管和债权人面前。</p>
+<table>
+<thead>
+<tr>
+<th>✅ 已确认</th>
+<th>⚖️ 尚属判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nvidia 董事会已正式重新任命 Jensen Huang 为总裁、CEO 及董事会成员，官方新闻稿与 CNBC 报道一致</td>
+<td>Huang 辞任的真实原因至今没有官方完整说明，外界关于高管个人丑闻的报道仍属未经证实的指控</td>
+</tr>
+<tr>
+<td>Huang 此前已辞去 CEO 职务，本次为回归，Reuters 与 FT 在 11 月 15 日已报道其与盟友讨论复出</td>
+<td>Trump 政府在其中扮演的角色有多深，NYT 称其「指示推动复职」，但白宫未正面确认细节</td>
+</tr>
+<tr>
+<td>S&amp;P 表示正考虑将 Nvidia 信用评级下调至 AA-，理由包括治理与关键人风险</td>
+<td>S&amp;P 是否真的下调评级尚未决定，目前只是「考虑」，时间表不明</td>
+</tr>
+<tr>
+<td>国会两党议员公开批评此次回归，CNBC 报道用词为「outrageous」与「failure of character」</td>
+<td>暂停东南亚出货是临时合规动作还是长期策略转向，Nvidia 未给出恢复时间</td>
+</tr>
+<tr>
+<td>Nvidia 已通知制造伙伴暂停向马来西亚、新加坡、泰国、印尼发运服务器</td>
+<td>会计问题调查会不会升级为正式指控，目前无任何监管文件支持</td>
+</tr>
+<tr>
+<td>SEC 对 Nvidia 的调查正在审查潜在会计问题，Reuters 援引消息人士</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>📖 主编点评</strong></p>
+<p>你不需要跟踪 Nvidia 的股价，但需要知道一件事：AI 算力的供给端现在带着治理不确定性。如果你在做需要长期稳定推理成本的项目，别把架构绑死在单一云厂商的最新 GPU 档位上，留一条降级路径。另外这轮风波里最值得读的不是新闻，是 Steve Blank 那篇《What's Next for Nvidia?》——它讲的是公司治理如何反噬技术护城河。</p>
+<p>📺 <a href="https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-ceo.html">打开原文</a></p>
+<hr />
+<h2>📋 备选阅读</h2>
+<ul>
+<li><a href="https://www.eetimes.com/huawei-next-big-ai-move-hbm-workaround/">Huawei 将在 ISSCC 2027 公布自研 HBM 方案</a> —— 华为绕开 HBM 供应限制的自研设计，明年年初在旧金山披露细节。出口管制下的技术路线值得跟，但目前只有预告没有参数。
+  <em>EE Times</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/big-tech/nvidia-agrees-to-usd290-million-settlement-over-2018-crypto-mining-gpu-sales-ends-eight-year-investor-lawsuit-without-admitting-wrongdoing">Nvidia 就 2018 年矿卡销售误导投资者达成 2.9 亿美元和解</a> —— 八年集体诉讼收尾，不认错。金额对 Nvidia 不算大，但和当前的会计调查放在一起看，是同一类问题的历史回声。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/data-centers/texas-lifts-freeze-on-1-800-data-center-projects-in-greg-abbott-u-turn-companies-rush-for-permits-before-gina-hinojosas-january-arrival">Texas 解冻 1800+ 数据中心项目审批</a> —— 8 月暂停后政策反转，开发商抢在 1 月新监管者到任前拿许可。算力基建的监管不确定性在州一级先显现。
+  <em>Tom's Hardware</em></li>
+<li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/activists-enter-third-day-of-hunger-strike-outside-anthropics-san-francisco-hq-over-recursive-ai-self-improvement-protester-threatens-to-go-40-days-and-target-openai-next">反 RSI 活动人士在 Anthropic 旧金山总部外绝食进入第三天</a> —— 抗议递归自我改进，声称要绝食 40 天并把目标转向 OpenAI。和 Anthropic 招股书里的 RSI 警告形成互文，值得知道存在这股力量。
+  <em>Tom's Hardware</em></li>
+</ul>
+<hr />
+<h2>💬 觉得 AI 算力 / 半导体 这期怎么样？</h2>
+<p><a href="https://github.com/zczxd1118/curio-app/issues/new?labels=curio-feedback">提一条反馈 Issue</a> 让 Agent 下次调整。</p>
+</div>
+
+    <div class="feedback" data-issue-id="semiconductor/2026-11-27">
+      <h2>📝 本期反馈</h2>
+      <p class="desc">下次 Agent 跑前会读这段，用来调整搜索关键词、打分倾向。</p>
+
+      <div class="fallback-notice" style="display:none">
+        反馈需要后端支持。运行 <code>python server.py</code>，然后用 <code>http://localhost:8765/</code> 打开本页。
+      </div>
+
+      
+
+      <div class="long-term">
+        <label>最近更关注</label>
+        <input type="text" id="lt-more" placeholder="如：AI Agent 实战 / 半导体先进制程 / 美股期权策略">
+
+        <label>最近不太关注</label>
+        <input type="text" id="lt-less" placeholder="如：纯产品更新 / 概念股炒作">
+
+        <label>报道笔法（这是新尝试，重点反馈）</label>
+        <input type="text" id="lt-format" placeholder="如：二栏太多 / 时间线很好 / 想看更多引述">
+      </div>
+
+      <div class="fb-submit">
+        <button class="btn-primary fb-submit-btn">提交反馈</button>
+        <span class="fb-status">未提交</span>
+      </div>
+    </div>
+
+</main>
+
+<footer>
+  Curio v0.9 · 2026-11-27 · 由你和 AI 共同策展 · <a href="https://github.com/zczxd1118/curio-app" target="_blank" rel="noopener" style="color:inherit;opacity:0.6">zxd</a>
+</footer>
+
+<script>
+window.CURIO_REL_ROOT = "../../";
+window.CURIO_API_BASE = "https://api.curioradar.fun";
+window.CURIO_GH_REPO = "zczxd1118/curio-app";
+</script>
+<script src="../../app.js?v=20261127132121"></script>
+</body>
+</html>
